@@ -139,13 +139,13 @@ a {
 }
 
 .sidebar-section-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--fmr-text-muted);
-    padding: 12px 12px 4px;
-    margin-top: 4px;
+    font-family: 'Courier New', 'Consolas', 'Roboto Mono', monospace;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #8C96A3;
+    padding: 14px 12px 6px;
+    margin-top: 6px;
 }
 
 .sidebar-menu {
@@ -1064,31 +1064,51 @@ a {
 .customer-table-card {
     background: #FFFFFF;
     border-radius: var(--fmr-radius-lg);
-    padding: 16px 24px 28px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
     border: 1px solid #F1F5F9;
+    overflow: hidden;
 }
 
 .customer-table {
     width: 100%;
     margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .customer-table thead th {
-    font-size: 0.78rem;
-    font-weight: 700;
+    background-color: #C8D7E0;
     color: #111827;
-    border-bottom: 1px solid #EEF2F6;
-    padding: 14px 12px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    padding: 16px 14px;
+    border: none;
     white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.customer-table thead tr th:first-child {
+    padding-left: 28px;
+}
+
+.customer-table thead tr th:last-child {
+    padding-right: 28px;
 }
 
 .customer-table tbody td {
-    padding: 18px 12px;
-    border-bottom: 1px solid #F1F5F9;
+    padding: 16px 14px;
+    border-bottom: 1px solid #EEF2F6;
     vertical-align: middle;
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     color: #111827;
+}
+
+.customer-table tbody tr td:first-child {
+    padding-left: 28px;
+}
+
+.customer-table tbody tr td:last-child {
+    padding-right: 28px;
 }
 
 .customer-table tbody tr:last-child td {
@@ -1454,6 +1474,382 @@ a {
 .btn-delete-confirm:hover {
     background-color: #B91C1C;
 }
+
+/* =========================================================
+   MASTER DATA FORKLIFT PAGE
+   ========================================================= */
+.forklift-table-card {
+    background: #FFFFFF;
+    border-radius: var(--fmr-radius-lg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+    border: 1px solid #F1F5F9;
+    overflow: hidden;
+}
+
+.forklift-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.forklift-table thead th {
+    background-color: #C8D7E0;
+    color: #111827;
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 16px 20px;
+    border: none;
+    letter-spacing: 0.01em;
+}
+
+.forklift-table thead tr th:first-child {
+    padding-left: 28px;
+}
+
+.forklift-table thead tr th:last-child {
+    padding-right: 28px;
+}
+
+.forklift-table tbody td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #EEF2F6;
+    font-size: 0.88rem;
+    color: #111827;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.forklift-table tbody tr td:first-child {
+    padding-left: 28px;
+}
+
+.forklift-table tbody tr td:last-child {
+    padding-right: 28px;
+}
+
+.forklift-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-status-green {
+    background-color: #A7F3D0;
+    color: #15803D;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 18px;
+    border-radius: 14px;
+    display: inline-block;
+    text-align: center;
+}
+
+.modal-forklift-content {
+    border-radius: 24px;
+    border: none;
+    padding: 28px 36px 36px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.modal-forklift-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.forklift-form-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.forklift-form-input {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #8FAEC2;
+    border-radius: 22px;
+    padding: 0 18px;
+    font-size: 0.88rem;
+    color: #111827;
+    background-color: #FFFFFF;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.forklift-form-input:focus {
+    border-color: var(--fmr-blue-primary);
+    box-shadow: 0 0 0 3px rgba(96, 132, 153, 0.15);
+}
+
+.btn-forklift-save {
+    background-color: #FBBA16;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 44px;
+    cursor: pointer;
+    min-width: 140px;
+    transition: background-color 0.15s ease;
+}
+
+.btn-forklift-save:hover {
+    background-color: #E5A50A;
+}
+
+/* =========================================================
+   OPERASIONAL INPUT MAINTENANCE PAGE
+   ========================================================= */
+.input-maint-wrapper-card {
+    background: #FCFCF9;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 26px 28px 28px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.02);
+}
+
+.input-maint-sub-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 18px;
+    padding: 22px 24px;
+    height: 100%;
+}
+
+.input-maint-card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 18px;
+}
+
+.input-maint-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-maint-pill {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #475569;
+    border-radius: 22px;
+    padding: 0 16px;
+    font-size: 0.88rem;
+    color: #111827;
+    background-color: #FFFFFF;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.input-maint-pill:focus {
+    border-color: var(--fmr-blue-primary);
+}
+
+.input-maint-select-pill {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #475569;
+    border-radius: 22px;
+    padding: 0 34px 0 16px;
+    font-size: 0.88rem;
+    color: #111827;
+    background-color: #FFFFFF;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px 12px;
+    transition: border-color 0.15s ease;
+}
+
+.input-maint-select-pill:focus {
+    border-color: var(--fmr-blue-primary);
+}
+
+.hour-meter-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #475569;
+    border-radius: 22px;
+    height: 42px;
+    width: 100%;
+    max-width: 220px;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+.hour-meter-group input {
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0 14px;
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    width: 100%;
+    color: #111827;
+}
+
+.hour-meter-group .hm-badge {
+    border-left: 1.5px solid #475569;
+    padding: 0 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #111827;
+    background: #FFFFFF;
+}
+
+.date-input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #475569;
+    border-radius: 22px;
+    height: 42px;
+    width: 100%;
+    overflow: hidden;
+    background: #FFFFFF;
+    padding-right: 14px;
+}
+
+.date-input-group input {
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0 14px;
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 500;
+    width: 100%;
+    color: #111827;
+}
+
+.date-input-group i {
+    color: #111827;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.maint-radio-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 16px 0;
+}
+
+.sparepart-table-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 14px;
+}
+
+.sparepart-table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.sparepart-table thead th {
+    background-color: #C8D7E0;
+    color: #111827;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 10px 14px;
+    border: none;
+}
+
+.sparepart-table tbody td {
+    padding: 14px 14px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #111827;
+    border-bottom: 1px solid #EEF2F6;
+    vertical-align: middle;
+}
+
+.sparepart-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.catatan-textarea {
+    width: 100%;
+    height: 130px;
+    border: 1.5px solid #111827;
+    border-radius: 16px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    outline: none;
+    resize: none;
+    color: #111827;
+    background-color: #FFFFFF;
+}
+
+.catatan-textarea:focus {
+    border-color: var(--fmr-blue-primary);
+}
+
+.btn-maint-cancel {
+    background-color: #DC2626;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 36px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-maint-cancel:hover {
+    background-color: #B91C1C;
+}
+
+.btn-maint-submit {
+    background-color: #FBBA16;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 36px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-maint-submit:hover {
+    background-color: #E5A50A;
+}
+
+.btn-maint-cek {
+    background-color: #FBBA16;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.82rem;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 32px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-maint-cek:hover {
+    background-color: #E5A50A;
+}
+
+
 
 
 

@@ -31,7 +31,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="master_customer.php" class="sidebar-link <?= ($currentPage == 'master_customer.php') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-user-gear"></i></span>
+                <span class="icon-box"><i class="fa-solid fa-user-check"></i></span>
                 <span>Customer</span>
             </a>
         </li>
@@ -53,7 +53,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <div class="sidebar-section-label">Operasional</div>
     <ul class="sidebar-menu">
         <li class="sidebar-item">
-            <a href="operasional_input.php" class="sidebar-link <?= ($currentPage == 'operasional_input.php') ? 'active' : '' ?>">
+            <a href="operasional_input_maintenance.php" class="sidebar-link <?= ($currentPage == 'operasional_input_maintenance.php' || $currentPage == 'operasional_input.php') ? 'active' : '' ?>">
                 <span class="icon-box"><i class="fa-regular fa-pen-to-square"></i></span>
                 <span>Input Maintenance</span>
             </a>
@@ -65,14 +65,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="operasional_jadwal.php" class="sidebar-link <?= ($currentPage == 'operasional_jadwal.php') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-regular fa-calendar-days"></i></span>
-                <span>Jadwal Maintenance</span>
-            </a>
-        </li>
-        <li class="sidebar-item">
             <a href="opersional_outstanding.php" class="sidebar-link <?= ($currentPage == 'opersional_outstanding.php') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span class="icon-box"><i class="fa-solid fa-exclamation"></i></span>
                 <span>Outstanding</span>
             </a>
         </li>

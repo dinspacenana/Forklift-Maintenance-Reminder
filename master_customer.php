@@ -13,7 +13,7 @@ include_once __DIR__ . '/header.php';
         <!-- Search Input -->
         <div class="search-input-pill">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Cari Username atau Nama" id="searchCustomerInput">
+            <input type="text" placeholder="Cari Customer" id="searchCustomerInput">
         </div>
 
         <div class="d-flex align-items-center gap-3 flex-wrap">
@@ -21,7 +21,6 @@ include_once __DIR__ . '/header.php';
             <div class="dropdown">
                 <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>Tipe Operasi</span>
-                    <i class="fa-solid fa-chevron-down ms-1" style="font-size: 0.75rem;"></i>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
                     <li><a class="dropdown-item" href="#">Low Duty</a></li>
@@ -34,7 +33,6 @@ include_once __DIR__ . '/header.php';
             <div class="dropdown">
                 <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>Status</span>
-                    <i class="fa-solid fa-chevron-down ms-1" style="font-size: 0.75rem;"></i>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
                     <li><a class="dropdown-item" href="#">Aktif</a></li>
