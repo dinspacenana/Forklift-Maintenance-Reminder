@@ -1,57 +1,52 @@
 <?php
-/**
- * footer.php
- * Penutup layout: modal Profile + script Bootstrap + script custom.
- */
+// footer.php - Footer & Modal Profil Akun
 ?>
-    </div><!-- /.app-content -->
-</div><!-- /.app-wrapper -->
+    </div><!-- /.fmr-main -->
+</div><!-- /.fmr-layout -->
 
-<!-- Modal Profil (dummy, belum terhubung ke database) -->
-<div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="border-radius: 18px; border:none;">
-            <div class="modal-body p-4">
-                <h5 class="fw-bold mb-4">Profil Akun</h5>
+<!-- MODAL: Profil Akun -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
+        <div class="modal-content fmr-modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header fmr-modal-header d-flex justify-content-between align-items-center">
+                <h5 class="modal-title fmr-modal-title" id="profileModalLabel">Profil Akun</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-                <div class="text-center mb-4">
-                    <div class="position-relative d-inline-block">
-                        <img src="https://ui-avatars.com/api/?name=<?= urlencode(currentUserName()) ?>&background=83A8BD&color=fff&size=128"
-                             alt="Avatar" style="width:96px;height:96px;border-radius:50%;object-fit:cover;">
-                        <span class="position-absolute bottom-0 end-0 bg-white rounded-circle p-1 shadow-sm">
-                            <i class="bi bi-camera-fill text-primary"></i>
-                        </span>
+            <!-- Modal Body -->
+            <div class="modal-body fmr-modal-body">
+                <!-- Avatar with Camera Icon Overlay -->
+                <div class="avatar-edit-container">
+                    <img src="dist/images/avatar.svg" alt="Andi Wijaya" class="avatar-edit-img">
+                    <div class="avatar-camera-btn" title="Ubah Foto Profil">
+                        <i class="fa-solid fa-camera"></i>
                     </div>
                 </div>
 
-                <label class="form-label fw-semibold">Nama</label>
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" value="<?= e(currentUserName()) ?>" readonly>
-                    <span class="input-group-text bg-white"><i class="bi bi-pencil"></i></span>
-                </div>
-                <p class="text-muted small mb-4">Logged as <?= e(currentUserRole()) ?>.</p>
+                <!-- Profile Form -->
+                <form onsubmit="event.preventDefault();">
+                    <div class="mb-3">
+                        <label for="profileNameInput" class="fmr-form-label">Nama</label>
+                        <div class="fmr-input-wrapper">
+                            <input type="text" class="fmr-form-control" id="profileNameInput" value="Andi Wijaya">
+                            <i class="fa-solid fa-pencil fmr-input-edit-icon"></i>
+                        </div>
+                        <p class="fmr-form-subtext">Logged as Administrator.</p>
+                    </div>
 
-                <div class="text-end">
-                    <button type="button" class="btn btn-fmr" style="width:auto;padding-inline:28px;" data-bs-dismiss="modal">
-                        Simpan
-                    </button>
-                </div>
+                    <!-- Action Button -->
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="button" class="fmr-btn-submit" data-bs-dismiss="modal">Simpan</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Toggle sidebar (mobile)
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const appSidebar = document.getElementById('appSidebar');
+<!-- Bootstrap 5 Bundle JS (Includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    if (sidebarToggle && appSidebar) {
-        sidebarToggle.addEventListener('click', function () {
-            appSidebar.classList.toggle('show');
-        });
-    }
-</script>
 </body>
 </html>

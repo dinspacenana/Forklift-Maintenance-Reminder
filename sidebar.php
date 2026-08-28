@@ -1,87 +1,125 @@
 <?php
-/**
- * sidebar.php
- * Menu navigasi utama aplikasi.
- * Set variabel $activeMenu di halaman pemanggil untuk menandai menu aktif.
- * Contoh: $activeMenu = 'dashboard';
- */
-
-$activeMenu = $activeMenu ?? '';
-
-function menuActive(string $key, string $active): string
-{
-    return $key === $active ? 'active' : '';
-}
+// sidebar.php - Sidebar Navigasi FMR
+$currentPage = basename($_SERVER['PHP_SELF']);
 ?>
-<aside class="app-sidebar" id="appSidebar">
-    <div class="sidebar-brand">
-        <img src="dist/images/logo.svg" alt="Logo FMR">
-        <div>
-            <div class="brand-title">FMR</div>
-            <div class="brand-subtitle">Forklift Maintenance<br>Reminder</div>
-        </div>
+<!-- SIDEBAR -->
+<aside class="fmr-sidebar" id="sidebarMenu">
+    <!-- Brand / Logo -->
+    <div class="sidebar-brand-wrapper">
+        <a href="index.php" class="sidebar-brand-link">
+            <img src="dist/images/Gemini_Generated_Image_5p4qem5p4qem5p4q-removebg-preview.png" alt="FMR Logo" class="sidebar-brand-logo">
+            <div class="sidebar-brand-text">
+                <div class="brand-title-fmr">FMR</div>
+                <div class="brand-subtitle-fmr">Forklift Maintenance<br>Reminder</div>
+            </div>
+        </a>
     </div>
 
-    <div class="sidebar-section-title">Utama</div>
-    <ul class="sidebar-nav">
-        <li><a href="home.php" class="nav-link-item <?= menuActive('dashboard', $activeMenu) ?>">
-            <i class="bi bi-grid-fill"></i> Dashboard
-        </a></li>
+    <!-- Section: Utama -->
+    <div class="sidebar-section-label">Utama</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="index.php" class="sidebar-link <?= ($currentPage == 'index.php' || $currentPage == 'home.php' || $currentPage == '') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-table-cells-large"></i></span>
+                <span>Dashboard</span>
+            </a>
+        </li>
     </ul>
 
-    <div class="sidebar-section-title">Master Data</div>
-    <ul class="sidebar-nav">
-        <li><a href="master_customer.php" class="nav-link-item <?= menuActive('customer', $activeMenu) ?>">
-            <i class="bi bi-person-lines-fill"></i> Customer
-        </a></li>
-        <li><a href="master_forklift.php" class="nav-link-item <?= menuActive('forklift', $activeMenu) ?>">
-            <i class="bi bi-truck"></i> Forklift
-        </a></li>
-        <li><a href="master_jenis.php" class="nav-link-item <?= menuActive('jenis', $activeMenu) ?>">
-            <i class="bi bi-wrench-adjustable"></i> Jenis Maintenance
-        </a></li>
+    <!-- Section: Master Data -->
+    <div class="sidebar-section-label">Master Data</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="master_customer.php" class="sidebar-link <?= ($currentPage == 'master_customer.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-user-gear"></i></span>
+                <span>Customer</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="master_forklift.php" class="sidebar-link <?= ($currentPage == 'master_forklift.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></span>
+                <span>Forklift</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="master_jenis_maintenance.php" class="sidebar-link <?= ($currentPage == 'master_jenis_maintenance.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-wrench"></i></span>
+                <span>Jenis Maintenance</span>
+            </a>
+        </li>
     </ul>
 
-    <div class="sidebar-section-title">Operasional</div>
-    <ul class="sidebar-nav">
-        <li><a href="operasional_input.php" class="nav-link-item <?= menuActive('input_maintenance', $activeMenu) ?>">
-            <i class="bi bi-pencil-square"></i> Input Maintenance
-        </a></li>
-        <li><a href="operasional_unit.php" class="nav-link-item <?= menuActive('unit_forklift', $activeMenu) ?>">
-            <i class="bi bi-truck-flatbed"></i> Unit Forklift
-        </a></li>
-        <li><a href="operasional_jadwal.php" class="nav-link-item <?= menuActive('jadwal', $activeMenu) ?>">
-            <i class="bi bi-calendar-check"></i> Jadwal Maintenance
-        </a></li>
-        <li><a href="operasional_outstanding.php" class="nav-link-item <?= menuActive('outstanding', $activeMenu) ?>">
-            <i class="bi bi-exclamation-circle"></i> Outstanding
-        </a></li>
+    <!-- Section: Operasional -->
+    <div class="sidebar-section-label">Operasional</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="operasional_input.php" class="sidebar-link <?= ($currentPage == 'operasional_input.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-regular fa-pen-to-square"></i></span>
+                <span>Input Maintenance</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="operasional_unit_forklift.php" class="sidebar-link <?= ($currentPage == 'operasional_unit_forklift.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></span>
+                <span>Unit Forklift</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="operasional_jadwal.php" class="sidebar-link <?= ($currentPage == 'operasional_jadwal.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-regular fa-calendar-days"></i></span>
+                <span>Jadwal Maintenance</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="opersional_outstanding.php" class="sidebar-link <?= ($currentPage == 'opersional_outstanding.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-circle-exclamation"></i></span>
+                <span>Outstanding</span>
+            </a>
+        </li>
     </ul>
 
-    <div class="sidebar-section-title">Reminder</div>
-    <ul class="sidebar-nav">
-        <li><a href="reminder.php" class="nav-link-item <?= menuActive('reminder', $activeMenu) ?>">
-            <i class="bi bi-bell-fill"></i> Reminder
-        </a></li>
+    <!-- Section: Reminder -->
+    <div class="sidebar-section-label">Reminder</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="reminder.php" class="sidebar-link <?= ($currentPage == 'reminder.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-regular fa-bell"></i></span>
+                <span>Reminder</span>
+            </a>
+        </li>
     </ul>
 
-    <div class="sidebar-section-title">Administration</div>
-    <ul class="sidebar-nav">
-        <li><a href="data-user.php" class="nav-link-item <?= menuActive('user_management', $activeMenu) ?>">
-            <i class="bi bi-people-fill"></i> User Management
-        </a></li>
-        <li><a href="setting.php" class="nav-link-item <?= menuActive('setting', $activeMenu) ?>">
-            <i class="bi bi-gear-fill"></i> Setting
-        </a></li>
+    <!-- Section: Administration -->
+    <div class="sidebar-section-label">Administration</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="data-user.php" class="sidebar-link <?= ($currentPage == 'data-user.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-user-group"></i></span>
+                <span>User Management</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="setting.php" class="sidebar-link <?= ($currentPage == 'setting.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-gear"></i></span>
+                <span>Setting</span>
+            </a>
+        </li>
     </ul>
 
-    <div class="sidebar-section-title">Report</div>
-    <ul class="sidebar-nav">
-        <li><a href="inquiry-daftar-done.php" class="nav-link-item <?= menuActive('history', $activeMenu) ?>">
-            <i class="bi bi-clock-history"></i> History
-        </a></li>
-        <li><a href="activity-log.php" class="nav-link-item <?= menuActive('activity_log', $activeMenu) ?>">
-            <i class="bi bi-list-check"></i> Activity Log
-        </a></li>
+    <!-- Section: Report -->
+    <div class="sidebar-section-label">Report</div>
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <a href="inquiry-coba.php" class="sidebar-link <?= ($currentPage == 'inquiry-coba.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-solid fa-list-check"></i></span>
+                <span>History</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="activity-log.php" class="sidebar-link <?= ($currentPage == 'activity-log.php') ? 'active' : '' ?>">
+                <span class="icon-box"><i class="fa-regular fa-clock"></i></span>
+                <span>Activity Log</span>
+            </a>
+        </li>
     </ul>
 </aside>
