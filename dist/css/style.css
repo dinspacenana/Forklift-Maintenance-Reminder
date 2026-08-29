@@ -1849,6 +1849,512 @@ a {
     background-color: #E5A50A;
 }
 
+/* =========================================================
+   USER MANAGEMENT & ROLE ACCESS PAGE
+   ========================================================= */
+.user-mgmt-card {
+    background: #FFFFFF;
+    border-radius: var(--fmr-radius-lg);
+    padding: 24px 28px 32px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.02);
+    border: 1px solid #F1F5F9;
+}
+
+.user-tabs-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.tab-pill-btn {
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 8px 32px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.15s ease;
+}
+
+.tab-pill-btn.active {
+    background-color: #608499;
+    color: #FFFFFF;
+}
+
+.tab-pill-btn.inactive {
+    background-color: #E2E8F0;
+    color: #334155;
+}
+
+.tab-pill-btn.inactive:hover {
+    background-color: #CBD5E1;
+    color: #1E293B;
+}
+
+.user-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.btn-reset-filter {
+    background: #FFFFFF;
+    border: 1.5px solid #475569;
+    border-radius: 24px;
+    padding: 7px 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1F2937;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-reset-filter:hover {
+    background-color: #F8FAFC;
+    border-color: #1E293B;
+    color: #111827;
+}
+
+.btn-add-user {
+    background-color: #FBBA16;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.88rem;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-add-user:hover {
+    background-color: #E5A50A;
+}
+
+.user-table thead th {
+    background-color: #DFE7EC;
+    color: #111827;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 14px 12px;
+    border: none;
+    white-space: nowrap;
+}
+
+.user-table thead tr th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-left: 18px;
+}
+
+.user-table thead tr th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-right: 18px;
+}
+
+.user-table tbody td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #EEF2F6;
+    vertical-align: middle;
+    font-size: 0.85rem;
+    color: #111827;
+}
+
+.user-table tbody tr td:first-child {
+    padding-left: 18px;
+}
+
+.user-table tbody tr td:last-child {
+    padding-right: 18px;
+}
+
+.user-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-role {
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    color: #1E293B;
+    font-weight: 600;
+    font-size: 0.76rem;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.badge-status-aktif-blue {
+    background-color: #E0F0FA;
+    color: #0284C7;
+    font-weight: 600;
+    font-size: 0.76rem;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.badge-status-nonaktif-gray {
+    background-color: #F1F5F9;
+    color: #64748B;
+    font-weight: 600;
+    font-size: 0.76rem;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* Pagination */
+.pagination-custom {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: #475569;
+}
+
+.pagination-custom a {
+    text-decoration: none;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.pagination-custom a.active {
+    background-color: #FBBA16;
+    color: #111827;
+    font-weight: 700;
+}
+
+.pagination-custom a:hover:not(.active) {
+    color: #111827;
+    background-color: #F1F5F9;
+}
+
+/* Role Cards Grid (tab_role.php) */
+.role-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.role-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.role-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.badge-role-users {
+    background-color: #A7F3D0;
+    color: #15803D;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.badge-role-access {
+    background-color: #E0F2FE;
+    color: #0284C7;
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 4px 14px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.role-date-text {
+    font-size: 0.8rem;
+    color: #64748B;
+    margin-top: 14px;
+}
+
+.btn-role-edit {
+    background-color: #FBBA16;
+    border: none;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.82rem;
+    border-radius: 8px;
+    padding: 6px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-role-edit:hover {
+    background-color: #E5A50A;
+}
+
+.btn-role-akses {
+    background-color: #FBBA16;
+    border: none;
+    color: #111827;
+    font-weight: 700;
+    font-size: 0.82rem;
+    border-radius: 8px;
+    padding: 6px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-role-akses:hover {
+    background-color: #E5A50A;
+}
+
+.user-tab-divider {
+    border: none;
+    border-top: 1.5px solid #E2E8F0;
+    margin: 20px 0 28px;
+    opacity: 1;
+}
+
+/* User & Role Modals */
+.modal-user-content {
+    border-radius: 24px;
+    border: none;
+    padding: 28px 36px 36px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.modal-user-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.user-form-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.user-form-input {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #8FAEC2;
+    border-radius: 22px;
+    padding: 0 18px;
+    font-size: 0.88rem;
+    color: #111827;
+    background-color: #FFFFFF;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.user-form-input:focus {
+    border-color: var(--fmr-blue-primary);
+    box-shadow: 0 0 0 3px rgba(96, 132, 153, 0.15);
+}
+
+.user-form-select {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #8FAEC2;
+    border-radius: 22px;
+    padding: 0 34px 0 18px;
+    font-size: 0.88rem;
+    color: #111827;
+    background-color: #FFFFFF;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px 12px;
+    transition: border-color 0.15s ease;
+}
+
+.user-form-select:focus {
+    border-color: var(--fmr-blue-primary);
+}
+
+.user-date-input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #8FAEC2;
+    border-radius: 22px;
+    height: 42px;
+    width: 100%;
+    overflow: hidden;
+    background: #FFFFFF;
+    padding-right: 14px;
+}
+
+.user-date-input-group input {
+    border: none;
+    outline: none;
+    height: 100%;
+    padding: 0 18px;
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 500;
+    width: 100%;
+    color: #111827;
+}
+
+.user-date-input-group i {
+    color: #111827;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.custom-checkbox-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #111827;
+    user-select: none;
+}
+
+.custom-checkbox-item input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    border-radius: 4px;
+    border: 1.5px solid #475569;
+    accent-color: #0284C7;
+    cursor: pointer;
+}
+
+.btn-permission-action {
+    background: #FFFFFF;
+    border: 1.5px solid #8FAEC2;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.76rem;
+    border-radius: 8px;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-permission-action:hover {
+    background-color: #F1F5F9;
+}
+
+/* Permission Pill List Items */
+.perm-pill-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.perm-pill-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0284C7;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.perm-pill-box {
+    border: 1.5px solid #8FAEC2;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 0.86rem;
+    color: #64748B;
+    background: #FFFFFF;
+    flex: 1;
+    display: block;
+}
+
+/* Hak Akses Scroll Box */
+.hak-akses-box-container {
+    border: 1.5px solid #8FAEC2;
+    border-radius: 20px;
+    padding: 20px 22px;
+    max-height: 280px;
+    overflow-y: scroll;
+    background: #FFFFFF;
+    position: relative;
+}
+
+.hak-akses-box-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.hak-akses-box-container::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 8px;
+}
+
+.hak-akses-box-container::-webkit-scrollbar-thumb {
+    background-color: #1E3E5B;
+    border-radius: 8px;
+}
+
+.hak-akses-pill-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.hak-akses-pill-item .perm-pill-box {
+    border: 1.5px solid #8FAEC2;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 0.86rem;
+    color: #64748B;
+    background: #FFFFFF;
+    flex: 1;
+}
+
+.hak-akses-pill-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0284C7;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+
 
 
 
