@@ -2359,3 +2359,370 @@ a {
 
 
 
+
+/* =========================================================
+   REMINDER PAGE STYLES
+   ========================================================= */
+.reminder-page-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.reminder-filter-bar {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.reminder-search-pill {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+.reminder-search-icon {
+    color: #6c757d;
+    margin-right: 10px;
+}
+
+.reminder-search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.reminder-date-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reminder-date-pill-active {
+    border: 1px solid #3b82f6;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+}
+
+.reminder-date-pill-inactive {
+    border: 1px solid #495057;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+}
+
+.reminder-date-input {
+    border: none;
+    outline: none;
+    width: 70px;
+    background: transparent;
+    font-weight: 500;
+}
+
+.reminder-date-icon {
+    color: #495057;
+}
+
+.reminder-date-separator {
+    font-weight: bold;
+    color: #495057;
+}
+
+.reminder-dropdown-pill {
+    border: 1px solid #495057;
+    border-radius: 20px;
+    padding: 8px 15px;
+    background: white;
+}
+
+.reminder-select-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.reminder-reset-btn {
+    border: 1px solid #adb5bd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.reminder-table-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.reminder-table {
+    vertical-align: middle;
+}
+
+.reminder-table thead {
+    background-color: #e9ecef;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.reminder-table th {
+    padding: 15px;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.reminder-table tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.reminder-table td {
+    padding: 15px;
+}
+
+.reminder-td-bold {
+    font-weight: bold;
+    color: #212529;
+}
+
+.reminder-td-muted {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+.reminder-td-font-500 {
+    font-weight: 500;
+}
+
+.reminder-td-date {
+    color: #495057;
+}
+
+.reminder-icon-wa {
+    color: #25D366;
+    font-size: 1.5rem;
+}
+
+.reminder-icon-mail {
+    color: #c99369;
+    font-size: 1.5rem;
+}
+
+.reminder-badge-sent {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.reminder-badge-waiting {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.reminder-btn-upload {
+    background-color: #f8f9fa;
+    border: 1px dashed #adb5bd;
+    color: #adb5bd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.reminder-btn-upload-alt {
+    background-color: #e9ecef;
+    border: 1px dashed #ced4da;
+    color: #6c757d;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.reminder-pagination {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.reminder-pagination-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.reminder-page-item {
+    cursor: pointer;
+}
+
+.reminder-page-item-active {
+    background-color: #ffc107;
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reminder-modal-dialog {
+    max-width: 500px;
+}
+
+.reminder-modal-content {
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.reminder-modal-header {
+    border-bottom: none;
+    justify-content: center;
+    position: relative;
+}
+
+.reminder-modal-title {
+    font-weight: bold;
+}
+
+.reminder-modal-unit-cust {
+    color: #6ea8fe;
+    font-size: 0.85rem;
+}
+
+.reminder-modal-unit-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #212529;
+}
+
+.reminder-modal-hr {
+    border-color: #dee2e6;
+    margin-bottom: 15px;
+}
+
+.reminder-modal-instruction {
+    color: #6ea8fe;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.reminder-modal-upload-area {
+    border: 2px dashed #9ec5fe;
+    border-radius: 12px;
+    background-color: transparent;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.reminder-modal-upload-title {
+    font-weight: bold;
+    color: #212529;
+}
+
+.reminder-modal-upload-subtitle {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.reminder-modal-upload-status {
+    color: #6ea8fe;
+    font-size: 0.75rem;
+    margin-bottom: 25px;
+}
+
+.reminder-modal-datetime-label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #212529;
+}
+
+.reminder-modal-datetime-group {
+    display: flex;
+    gap: 15px;
+}
+
+.reminder-modal-date-input {
+    flex: 1;
+    border: 1px solid #9ec5fe;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reminder-modal-date-field {
+    border: none;
+    outline: none;
+    width: 80%;
+    background: transparent;
+    font-weight: 500;
+    color: #495057;
+}
+
+.reminder-modal-time-input {
+    flex: 1;
+    border: 1px solid #9ec5fe;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reminder-modal-time-field {
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    font-weight: 500;
+    color: #495057;
+}
+
+.reminder-modal-footer {
+    border-top: none;
+}
+
+.reminder-modal-btn-submit {
+    background-color: #ffc107;
+    color: #000;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 8px 30px;
+    border: none;
+}
