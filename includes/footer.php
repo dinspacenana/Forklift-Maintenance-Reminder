@@ -45,6 +45,28 @@
     </div>
 </div>
 
+<!-- MODAL: Logout Confirmation -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
+        <div class="modal-content fmr-modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header fmr-modal-header border-0 pb-0">
+                <h5 class="modal-title fmr-modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body fmr-modal-body pt-3">
+                <p class="mb-4">Apakah Anda yakin ingin keluar dari sistem?</p>
+                <div class="d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="border-radius: 10px; font-weight: 600;">Batal</button>
+                    <a href="login.php" class="btn btn-danger" style="border-radius: 10px; font-weight: 600;">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Bootstrap 5 Bundle JS (Includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

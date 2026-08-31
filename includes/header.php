@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item text-danger" href="login.php">
+                        <a class="dropdown-item text-danger" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutModal">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Logout</span>
                         </a>
