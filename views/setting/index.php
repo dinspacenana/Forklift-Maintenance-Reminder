@@ -20,7 +20,7 @@
                             <span id="selectedEmailModeText">Pilih Mode</span>
                         </button>
                         <ul class="dropdown-menu settings-dropdown-menu" aria-labelledby="dropdownEmailMode">
-                            <li><a class="dropdown-item active" href="#" data-mode="Semi Automatic">Semi Automatic</a></li>
+                            <li><a class="dropdown-item" href="#" data-mode="Semi Automatic">Semi Automatic</a></li>
                             <li><a class="dropdown-item" href="#" data-mode="Full Automatic">Full Automatic</a></li>
                         </ul>
                     </div>

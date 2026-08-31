@@ -33,7 +33,7 @@
                     <span>Reminder Type</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
-                    <li><a class="dropdown-item active" href="#">Email</a></li>
+                    <li><a class="dropdown-item" href="#">Email</a></li>
                     <li><a class="dropdown-item" href="#">WhatsApp</a></li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                     <span>Status</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item active" href="#">Menunggu</a></li>
+                    <li><a class="dropdown-item" href="#">Menunggu</a></li>
                     <li><a class="dropdown-item" href="#">Terkirim</a></li>
                 </ul>
             </div>

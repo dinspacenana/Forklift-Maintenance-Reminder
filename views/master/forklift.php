@@ -19,7 +19,7 @@
                     <span>Semua</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterForklift">
-                    <li><a class="dropdown-item active" href="#">Semua</a></li>
+                    <li><a class="dropdown-item" href="#">Semua</a></li>
                     <li><a class="dropdown-item" href="#">Toyota</a></li>
                     <li><a class="dropdown-item" href="#">Mitsubishi</a></li>
                     <li><a class="dropdown-item" href="#">Komatsu</a></li>

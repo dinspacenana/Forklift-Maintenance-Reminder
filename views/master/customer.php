@@ -19,7 +19,7 @@
                     <span>Tipe Operasi</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                    <li><a class="dropdown-item active" href="#">Low Duty</a></li>
+                    <li><a class="dropdown-item" href="#">Low Duty</a></li>
                     <li><a class="dropdown-item" href="#">Medium Duty</a></li>
                     <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
                 </ul>
@@ -31,7 +31,7 @@
                     <span>Status</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item active" href="#">Aktif</a></li>
+                    <li><a class="dropdown-item" href="#">Aktif</a></li>
                     <li><a class="dropdown-item" href="#">Nonaktif</a></li>
                 </ul>
             </div>

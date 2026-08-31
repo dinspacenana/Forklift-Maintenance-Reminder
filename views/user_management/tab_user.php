@@ -10,24 +10,24 @@
 
         <!-- Filter Dropdown: Role -->
         <div class="dropdown">
-            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserRole" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px; justify-content: space-between;">
+            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserRole" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px;">
                 <span>Role</span>
             </button>
-            <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserRole" style="background-color: #1E3E5B;">
-                <li><a class="dropdown-item text-white active" href="#" style="background-color: #164E63;">Administrator</a></li>
-                <li><a class="dropdown-item text-white" href="#">Kepala Toko</a></li>
-                <li><a class="dropdown-item text-white" href="#">Admin Sales</a></li>
+            <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserRole">
+                <li><a class="dropdown-item" href="#">Administrator</a></li>
+                <li><a class="dropdown-item" href="#">Kepala Toko</a></li>
+                <li><a class="dropdown-item" href="#">Admin Sales</a></li>
             </ul>
         </div>
 
         <!-- Filter Dropdown: Status -->
         <div class="dropdown">
-            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserStatus" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px; justify-content: space-between;">
+            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserStatus" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px;">
                 <span>Status</span>
             </button>
-            <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserStatus" style="background-color: #1E3E5B;">
-                <li><a class="dropdown-item text-white active" href="#" style="background-color: #164E63;">Aktif</a></li>
-                <li><a class="dropdown-item text-white" href="#">Nonaktif</a></li>
+            <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserStatus">
+                <li><a class="dropdown-item" href="#">Aktif</a></li>
+                <li><a class="dropdown-item" href="#">Nonaktif</a></li>
             </ul>
         </div>
 

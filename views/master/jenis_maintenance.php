@@ -19,7 +19,7 @@
                     <span>Semua Jenis</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterSemuaJenis">
-                    <li><a class="dropdown-item active" href="#">Umum</a></li>
+                    <li><a class="dropdown-item" href="#">Umum</a></li>
                     <li><a class="dropdown-item" href="#">Khusus</a></li>
                 </ul>
             </div>

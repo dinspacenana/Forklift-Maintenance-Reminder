@@ -1069,11 +1069,13 @@ a {
 }
 
 .filter-dropdown-menu {
+    background-color: #FFFFFF !important;
     border-radius: 12px;
     border: 1px solid #E2E8F0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     padding: 6px 0;
     min-width: 150px;
+    overflow: hidden;
 }
 
 .filter-dropdown-menu .dropdown-item {
@@ -1081,12 +1083,14 @@ a {
     padding: 8px 16px;
     font-weight: 500;
     color: #334155;
+    background-color: #FFFFFF;
+    transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .filter-dropdown-menu .dropdown-item:hover,
-.filter-dropdown-menu .dropdown-item.active {
-    background-color: #1E3A8A;
-    color: #FFFFFF;
+.filter-dropdown-menu .dropdown-item:focus {
+    background-color: #1E3A8A !important;
+    color: #FFFFFF !important;
 }
 
 .btn-add-customer {
@@ -3062,24 +3066,28 @@ a {
 }
 
 .settings-dropdown-menu {
+    background-color: #FFFFFF !important;
     border-radius: 12px;
     border: 1px solid #CBD5E1;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     padding: 6px 0;
     min-width: 190px;
+    overflow: hidden;
 }
 
 .settings-dropdown-menu .dropdown-item {
     font-size: 0.88rem;
     font-weight: 500;
     color: #111827;
+    background-color: #FFFFFF;
     padding: 9px 18px;
+    transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .settings-dropdown-menu .dropdown-item:hover,
-.settings-dropdown-menu .dropdown-item.active {
-    background-color: #1E3A8A;
-    color: #FFFFFF;
+.settings-dropdown-menu .dropdown-item:focus {
+    background-color: #1E3A8A !important;
+    color: #FFFFFF !important;
 }
 
 .settings-pill-input-box {
