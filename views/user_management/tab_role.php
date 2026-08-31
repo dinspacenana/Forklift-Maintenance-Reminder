@@ -197,38 +197,143 @@
             <form onsubmit="event.preventDefault();">
                 <div class="mb-4">
                     <div class="hak-akses-box-container">
+                        <!-- 1. VIEW PERMISSIONS -->
                         <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">View</h6>
-
-                        <div class="d-flex flex-column gap-2">
-                            <!-- Item 1 -->
+                        <div class="d-flex flex-column gap-2 mb-4">
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_dashboard</span>
                                 <input type="checkbox" name="hak_akses[]" value="can_view_dashboard" checked>
                             </div>
-                            <!-- Item 2 -->
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_customer</span>
                                 <input type="checkbox" name="hak_akses[]" value="can_view_customer" checked>
                             </div>
-                            <!-- Item 3 -->
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_forklift</span>
                                 <input type="checkbox" name="hak_akses[]" value="can_view_forklift">
                             </div>
-                            <!-- Item 4 -->
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_jenis_maintenance</span>
                                 <input type="checkbox" name="hak_akses[]" value="can_view_jenis_maintenance">
                             </div>
-                            <!-- Item 5 -->
                             <div class="hak-akses-pill-item">
-                                <span class="perm-pill-box">can_view_jadwal_maintenance</span>
-                                <input type="checkbox" name="hak_akses[]" value="can_view_jadwal_maintenance" checked>
+                                <span class="perm-pill-box">can_view_input_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_input_maintenance" checked>
                             </div>
-                            <!-- Item 6 -->
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_unit_forklift</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_unit_forklift" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_outstanding</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_outstanding" checked>
+                            </div>
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_reminder</span>
                                 <input type="checkbox" name="hak_akses[]" value="can_view_reminder" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_user_management</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_user_management">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_setting</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_setting">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_history</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_history" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_view_activity_log</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_view_activity_log" checked>
+                            </div>
+                        </div>
+
+                        <!-- 2. CREATE PERMISSIONS -->
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Create</h6>
+                        <div class="d-flex flex-column gap-2 mb-4">
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_customer</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_customer" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_forklift</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_forklift" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_jenis_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_jenis_maintenance">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_input_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_input_maintenance" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_user</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_user">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_create_role</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_create_role">
+                            </div>
+                        </div>
+
+                        <!-- 3. EDIT PERMISSIONS -->
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Edit</h6>
+                        <div class="d-flex flex-column gap-2 mb-4">
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_customer</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_customer" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_forklift</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_forklift" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_jenis_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_jenis_maintenance">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_input_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_input_maintenance" checked>
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_user</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_user">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_role</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_role">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_edit_setting</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_edit_setting">
+                            </div>
+                        </div>
+
+                        <!-- 4. DELETE PERMISSIONS -->
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Delete</h6>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_delete_customer</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_delete_customer">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_delete_forklift</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_delete_forklift">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_delete_jenis_maintenance</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_delete_jenis_maintenance">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_delete_user</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_delete_user">
+                            </div>
+                            <div class="hak-akses-pill-item">
+                                <span class="perm-pill-box">can_delete_role</span>
+                                <input type="checkbox" name="hak_akses[]" value="can_delete_role">
                             </div>
                         </div>
                     </div>
