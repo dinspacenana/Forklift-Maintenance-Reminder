@@ -14,16 +14,16 @@
         </div>
 
         <div class="d-flex align-items-center gap-3 flex-wrap">
-            <!-- Date Range Picker (Statis) -->
+            <!-- Date Range Picker -->
             <div class="d-flex align-items-center gap-2">
-                <div class="filter-dropdown-btn d-flex align-items-center gap-2" style="cursor: default; padding: 6px 14px;">
-                    <input type="text" value="01/08/26" readonly style="border: none; outline: none; width: 60px; background: transparent; font-weight: 500; font-size: 0.85rem; color: #475569;">
-                    <i class="fa-regular fa-calendar" style="color: #64748B;"></i>
+                <div class="date-filter-pill-box">
+                    <input type="text" value="01/08/2026" readonly>
+                    <i class="fa-regular fa-calendar"></i>
                 </div>
                 <span class="fw-bold" style="color: #94A3B8;">-</span>
-                <div class="filter-dropdown-btn d-flex align-items-center gap-2" style="cursor: default; padding: 6px 14px; background-color: white; border-color: #dee2e6;">
-                    <input type="text" value="02/08/26" readonly style="border: none; outline: none; width: 60px; background: transparent; font-weight: 500; font-size: 0.85rem; color: #475569;">
-                    <i class="fa-regular fa-calendar" style="color: #64748B;"></i>
+                <div class="date-filter-pill-box">
+                    <input type="text" value="02/08/2026" readonly>
+                    <i class="fa-regular fa-calendar"></i>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                     <span>Reminder Type</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
-                    <li><a class="dropdown-item" href="#">Email</a></li>
+                    <li><a class="dropdown-item active" href="#">Email</a></li>
                     <li><a class="dropdown-item" href="#">WhatsApp</a></li>
                 </ul>
             </div>
@@ -44,14 +44,15 @@
                     <span>Status</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item" href="#">Menunggu</a></li>
+                    <li><a class="dropdown-item active" href="#">Menunggu</a></li>
                     <li><a class="dropdown-item" href="#">Terkirim</a></li>
                 </ul>
             </div>
 
             <!-- Reset Button -->
-            <button type="button" class="filter-dropdown-btn d-flex align-items-center gap-2">
-                <i class="fa-solid fa-arrow-rotate-right" style="color: #64748B;"></i> Reset
+            <button type="button" class="btn-reset-filter" id="btnResetReminder" onclick="document.getElementById('searchReminderInput').value='';">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reset</span>
             </button>
         </div>
     </div>
@@ -127,7 +128,8 @@
                         <td class="fw-bold" style="color: #334155;">Tune Up</td>
                         <td style="color: #475569;">26 Agu 2026</td>
                         <td style="color: #475569;">
-                            
+                            <div>26 Agu 2026</div>
+                            <div class="text-muted" style="font-size: 0.85rem;">15.00</div>
                         </td>
                         <td class="text-center">
                             <i class="fa-brands fa-whatsapp type-icon-wa"></i>
@@ -170,16 +172,16 @@
         </div>
 
         <!-- Pagination -->
-        <div class="d-flex justify-content-end mt-4">
-            <div class="d-flex gap-2 align-items-center" style="font-size: 0.85rem; font-weight: 500; color: #64748B;">
-                <span style="cursor: pointer;">&lt;</span>
-                <span style="background-color: #F59E0B; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: bold; cursor: pointer;">1</span>
-                <span style="cursor: pointer;">2</span>
-                <span style="cursor: pointer;">3</span>
-                <span style="cursor: pointer;">4</span>
-                <span>...</span>
-                <span style="cursor: pointer;">10</span>
-                <span style="cursor: pointer;">&gt;</span>
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+            <div class="pagination-custom ms-auto">
+                <a href="#" class="page-arrow">&lt;</a>
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num">4</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-num">10</a>
+                <a href="#" class="page-arrow">&gt;</a>
             </div>
         </div>
     </div>

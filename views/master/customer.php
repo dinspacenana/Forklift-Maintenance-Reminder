@@ -19,7 +19,7 @@
                     <span>Tipe Operasi</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                    <li><a class="dropdown-item" href="#">Low Duty</a></li>
+                    <li><a class="dropdown-item active" href="#">Low Duty</a></li>
                     <li><a class="dropdown-item" href="#">Medium Duty</a></li>
                     <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
                 </ul>
@@ -31,10 +31,16 @@
                     <span>Status</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item" href="#">Aktif</a></li>
+                    <li><a class="dropdown-item active" href="#">Aktif</a></li>
                     <li><a class="dropdown-item" href="#">Nonaktif</a></li>
                 </ul>
             </div>
+
+            <!-- Reset Button -->
+            <button type="button" class="btn-reset-filter" id="btnResetCustomer" onclick="document.getElementById('searchCustomerInput').value='';">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reset</span>
+            </button>
 
             <!-- Add Customer Button -->
             <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
@@ -123,7 +129,7 @@
                         <td>26 – 08 – 03, 18.00</td>
                         <td>Kepala Toko</td>
                         <td>
-                            <span class="status-pill-badge nonaktif">Non-Aktif</span>
+                            <span class="status-pill-badge nonaktif">Nonaktif</span>
                         </td>
                         <td>
                             <div class="action-icons-group">
@@ -179,7 +185,7 @@
                         <td>26 – 08 – 03, 18.00</td>
                         <td>Kepala Toko</td>
                         <td>
-                            <span class="status-pill-badge nonaktif">Non-Aktif</span>
+                            <span class="status-pill-badge nonaktif">Nonaktif</span>
                         </td>
                         <td>
                             <div class="action-icons-group">
@@ -254,36 +260,22 @@
                             </div>
                         </td>
                     </tr>
-
-                    <!-- Row 8 -->
-                    <tr>
-                        <td class="fw-bold">TM-001</td>
-                        <td class="fw-bold">PT. Jeon Grup</td>
-                        <td>Medium Duty</td>
-                        <td>26 – 08 – 03, 18.00</td>
-                        <td>Admin Sales</td>
-                        <td>
-                            <span class="status-pill-badge aktif">Aktif</span>
-                        </td>
-                        <td>
-                            <div class="action-icons-group">
-                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
-                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
-                                </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+            <div class="pagination-custom ms-auto">
+                <a href="#" class="page-arrow">&lt;</a>
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num">4</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-num">10</a>
+                <a href="#" class="page-arrow">&gt;</a>
+            </div>
         </div>
     </div>
 </main>
@@ -292,7 +284,7 @@
      MODAL 1: Informasi Detail Customer (READ-ONLY)
      ========================================================= -->
 <div class="modal fade" id="detailCustomerModal" tabindex="-1" aria-labelledby="detailCustomerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 840px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 820px;">
         <div class="modal-content modal-customer-content">
             <h4 class="modal-customer-title" id="detailCustomerModalLabel">Informasi Detail Customer</h4>
 
@@ -302,12 +294,12 @@
                     <!-- Code & Name Box -->
                     <div class="customer-info-box mb-3">
                         <div class="customer-code-name-row">
-                            <div>
+                            <div style="flex: 1;">
                                 <div class="info-sub-label">Code Customer</div>
                                 <div class="info-val-large">TM-001</div>
                             </div>
                             <div class="box-vertical-divider"></div>
-                            <div>
+                            <div style="flex: 1.5;">
                                 <div class="info-sub-label">Nama Customer</div>
                                 <div class="info-val-large">PT. Toyo Matsu</div>
                             </div>
@@ -353,7 +345,7 @@
                                     <td>12345</td>
                                     <td>Electric</td>
                                     <td>12 Ton</td>
-                                    <td><span class="status-pill-badge aktif" style="padding: 2px 10px; font-size: 0.7rem;">Aktif</span></td>
+                                    <td><span class="badge-status-aktif-blue" style="padding: 2px 10px; font-size: 0.72rem;">Aktif</span></td>
                                 </tr>
                                 <tr>
                                     <td class="fw-bold">FL-101</td>
@@ -361,7 +353,7 @@
                                     <td>12345</td>
                                     <td>Diesel</td>
                                     <td>8 Ton</td>
-                                    <td><span class="status-pill-badge aktif" style="padding: 2px 10px; font-size: 0.7rem;">Aktif</span></td>
+                                    <td><span class="badge-status-aktif-blue" style="padding: 2px 10px; font-size: 0.72rem;">Aktif</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -388,7 +380,7 @@
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="info-pill-box">
-                        <span>Status : <span class="status-text-highlight">Aktif</span></span>
+                        <span>Status : <span style="color: #0284C7; font-weight: 700;">Aktif</span></span>
                     </div>
                 </div>
             </div>
@@ -404,99 +396,10 @@
 </div>
 
 <!-- =========================================================
-     MODAL 2: Edit Detail Customer (EDITABLE / UPDATE)
-     ========================================================= -->
-<div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 740px;">
-        <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="editCustomerModalLabel">Edit Detail Customer</h4>
-
-            <form onsubmit="event.preventDefault();">
-                <div class="row g-3">
-                    <!-- Left Column -->
-                    <div class="col-12 col-md-7">
-                        <!-- Code & Name Box -->
-                        <div class="customer-info-box mb-3">
-                            <div class="customer-code-name-row">
-                                <div>
-                                    <div class="info-sub-label">Code Customer</div>
-                                    <div class="info-val-large">TM-001</div>
-                                </div>
-                                <div class="box-vertical-divider"></div>
-                                <div>
-                                    <div class="info-sub-label">Nama Customer</div>
-                                    <div class="info-val-large">PT. Toyo Matsu</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Address, Phone, Email Box -->
-                        <div class="customer-info-box">
-                            <div class="address-title">Alamat</div>
-                            <div class="address-desc">JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia</div>
-                            <div class="contact-info-grid">
-                                <div class="contact-info-item">
-                                    <div class="contact-label">No. Telp</div>
-                                    <div class="contact-val">081-2345678</div>
-                                </div>
-                                <div class="contact-info-item">
-                                    <div class="contact-label">Email</div>
-                                    <div class="contact-val">Toyomatsu@gmail.com</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="col-12 col-md-5">
-                        <!-- Tipe Operasi Select Box -->
-                        <div class="select-box-wrapper mb-3">
-                            <select class="custom-modal-select" id="editTipeOperasi">
-                                <option value="Heavy Duty" selected>Heavy Duty</option>
-                                <option value="Medium Duty">Medium Duty</option>
-                                <option value="Low Duty">Low Duty</option>
-                            </select>
-                        </div>
-
-                        <!-- Status Radio Card -->
-                        <div class="status-radio-card">
-                            <div class="status-radio-title">Status</div>
-                            <div class="status-radio-group">
-                                <label class="custom-radio-item">
-                                    <input type="radio" name="editStatus" value="Aktif" checked>
-                                    <span>Aktif</span>
-                                </label>
-                                <label class="custom-radio-item">
-                                    <input type="radio" name="editStatus" value="Non-Aktif">
-                                    <span>Non-Aktif</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
-                    <button type="button" class="btn-modal-sync">
-                        <i class="fa-solid fa-arrows-rotate"></i> Sinkronisasi
-                    </button>
-                    <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
-                        Simpan
-                    </button>
-                    <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
-                        Back
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- =========================================================
-     MODAL 3: Add Customer
+     MODAL 2: Add Customer
      ========================================================= -->
 <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 740px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
         <div class="modal-content modal-customer-content">
             <h4 class="modal-customer-title" id="addCustomerModalLabel">Add Customer</h4>
 
@@ -507,12 +410,12 @@
                         <!-- Code & Name Box -->
                         <div class="customer-info-box mb-3">
                             <div class="customer-code-name-row">
-                                <div>
+                                <div style="flex: 1;">
                                     <div class="info-sub-label">Code Customer</div>
                                     <div class="info-val-large">TM-001</div>
                                 </div>
                                 <div class="box-vertical-divider"></div>
-                                <div>
+                                <div style="flex: 1.5;">
                                     <div class="info-sub-label">Nama Customer</div>
                                     <div class="info-val-large">PT. Toyo Matsu</div>
                                 </div>
@@ -582,12 +485,94 @@
 </div>
 
 <!-- =========================================================
-     MODAL 4: Delete Confirmation Pop-up
+     MODAL 3: Edit Detail Customer (Pop-up menyusul)
+     ========================================================= -->
+<div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
+        <div class="modal-content modal-customer-content">
+            <h4 class="modal-customer-title" id="editCustomerModalLabel">Edit Detail Customer</h4>
+
+            <form onsubmit="event.preventDefault();">
+                <div class="row g-3">
+                    <div class="col-12 col-md-7">
+                        <div class="customer-info-box mb-3">
+                            <div class="customer-code-name-row">
+                                <div style="flex: 1;">
+                                    <div class="info-sub-label">Code Customer</div>
+                                    <div class="info-val-large">TM-001</div>
+                                </div>
+                                <div class="box-vertical-divider"></div>
+                                <div style="flex: 1.5;">
+                                    <div class="info-sub-label">Nama Customer</div>
+                                    <div class="info-val-large">PT. Toyo Matsu</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="customer-info-box">
+                            <div class="address-title">Alamat</div>
+                            <div class="address-desc">JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia</div>
+                            <div class="contact-info-grid">
+                                <div class="contact-info-item">
+                                    <div class="contact-label">No. Telp</div>
+                                    <div class="contact-val">081-2345678</div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="contact-label">Email</div>
+                                    <div class="contact-val">Toyomatsu@gmail.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-5">
+                        <div class="select-box-wrapper mb-3">
+                            <select class="custom-modal-select" id="editTipeOperasi">
+                                <option value="Heavy Duty" selected>Heavy Duty</option>
+                                <option value="Medium Duty">Medium Duty</option>
+                                <option value="Low Duty">Low Duty</option>
+                            </select>
+                        </div>
+
+                        <div class="status-radio-card">
+                            <div class="status-radio-title">Status</div>
+                            <div class="status-radio-group">
+                                <label class="custom-radio-item">
+                                    <input type="radio" name="editStatus" value="Aktif" checked>
+                                    <span>Aktif</span>
+                                </label>
+                                <label class="custom-radio-item">
+                                    <input type="radio" name="editStatus" value="Non-Aktif">
+                                    <span>Non-Aktif</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
+                    <button type="button" class="btn-modal-sync">
+                        <i class="fa-solid fa-arrows-rotate"></i> Sinkronisasi
+                    </button>
+                    <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
+                        Simpan
+                    </button>
+                    <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
+                        Back
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     MODAL 4: Delete Confirmation Pop-up (Menyusul)
      ========================================================= -->
 <div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
         <div class="modal-content modal-delete-content">
-            <h4 class="modal-delete-title" id="deleteCustomerModalLabel">Yakin ingin mengapus?</h4>
+            <h4 class="modal-delete-title" id="deleteCustomerModalLabel">Yakin ingin menghapus?</h4>
             <p class="modal-delete-subtext">Data akan hilang permanen</p>
 
             <div class="d-flex justify-content-center align-items-center gap-3">

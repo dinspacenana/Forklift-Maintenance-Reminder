@@ -15,9 +15,8 @@
         <div class="d-flex align-items-center gap-3 flex-wrap">
             <!-- Filter: Semua Dropdown -->
             <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterForklift" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 140px; justify-content: space-between;">
+                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterForklift" data-bs-toggle="dropdown" aria-expanded="false">
                     <span>Semua</span>
-                    <i class="fa-solid fa-chevron-down ms-1" style="font-size: 0.75rem;"></i>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterForklift">
                     <li><a class="dropdown-item active" href="#">Semua</a></li>
@@ -27,9 +26,15 @@
                 </ul>
             </div>
 
-            <!-- Add Unit Button -->
+            <!-- Reset Button -->
+            <button type="button" class="btn-reset-filter" id="btnResetForklift" onclick="document.getElementById('searchForkliftInput').value='';">
+                <i class="fa-solid fa-rotate-right"></i>
+                <span>Reset</span>
+            </button>
+
+            <!-- Add Forklift Button -->
             <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addForkliftModal">
-                <i class="fa-solid fa-plus"></i> Unit
+                <i class="fa-solid fa-plus"></i> Add Forklift
             </button>
         </div>
     </div>
@@ -62,10 +67,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -84,10 +89,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -106,10 +111,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -128,10 +133,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -150,10 +155,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -172,10 +177,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -194,10 +199,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -216,10 +221,10 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Unit" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Unit" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </button>
                             </div>
@@ -228,35 +233,37 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Pagination -->
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+            <div class="pagination-custom ms-auto">
+                <a href="#" class="page-arrow">&lt;</a>
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="page-num">3</a>
+                <a href="#" class="page-num">4</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-num">10</a>
+                <a href="#" class="page-arrow">&gt;</a>
+            </div>
+        </div>
     </div>
 </main>
 
 <!-- =========================================================
-     MODAL 1: Tambah Unit
+     MODAL 1: Add Forklift
      ========================================================= -->
 <div class="modal fade" id="addForkliftModal" tabindex="-1" aria-labelledby="addForkliftModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 540px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
         <div class="modal-content modal-forklift-content">
-            <h4 class="modal-forklift-title" id="addForkliftModalLabel">Tambah Unit</h4>
+            <h4 class="modal-forklift-title" id="addForkliftModalLabel">Add Forklift</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
-                    <!-- Unit Field -->
-                    <div class="col-6">
-                        <label for="addUnitCode" class="forklift-form-label">Unit</label>
-                        <input type="text" class="forklift-form-input" id="addUnitCode">
-                    </div>
-
                     <!-- Nama Forklift Field -->
                     <div class="col-6">
                         <label for="addNamaForklift" class="forklift-form-label">Nama Forklift</label>
                         <input type="text" class="forklift-form-input" id="addNamaForklift">
-                    </div>
-
-                    <!-- Type Field -->
-                    <div class="col-6">
-                        <label for="addType" class="forklift-form-label">Type</label>
-                        <input type="text" class="forklift-form-input" id="addType">
                     </div>
 
                     <!-- Engine Field -->
@@ -266,25 +273,29 @@
                     </div>
                 </div>
 
-                <!-- Status Radio Group -->
-                <div class="mb-4">
-                    <label class="forklift-form-label">Status</label>
-                    <div class="d-flex align-items-center gap-4">
-                        <label class="custom-radio-item">
-                            <input type="radio" name="addForkliftStatus" value="Aktif" checked>
-                            <span>Aktif</span>
-                        </label>
-                        <label class="custom-radio-item">
-                            <input type="radio" name="addForkliftStatus" value="Non-Aktif">
-                            <span>Non-Aktif</span>
-                        </label>
+                <div class="row g-3 mb-4">
+                    <!-- Tipe Field -->
+                    <div class="col-6">
+                        <label for="addType" class="forklift-form-label">Tipe</label>
+                        <input type="text" class="forklift-form-input" id="addType">
+                    </div>
+
+                    <!-- Status Checkbox -->
+                    <div class="col-6">
+                        <label class="forklift-form-label">Status</label>
+                        <div class="mt-2">
+                            <label class="custom-checkbox-item">
+                                <input type="checkbox" id="addForkliftStatus" checked>
+                                <span>Aktif</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Submit Button -->
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-end">
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
-                        Simpan
+                        Simpan Unit
                     </button>
                 </div>
             </form>
@@ -293,31 +304,19 @@
 </div>
 
 <!-- =========================================================
-     MODAL 2: Edit Unit
+     MODAL 2: Edit Forklift
      ========================================================= -->
 <div class="modal fade" id="editForkliftModal" tabindex="-1" aria-labelledby="editForkliftModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 540px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
         <div class="modal-content modal-forklift-content">
-            <h4 class="modal-forklift-title" id="editForkliftModalLabel">Edit Unit</h4>
+            <h4 class="modal-forklift-title" id="editForkliftModalLabel">Edit Forklift</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
-                    <!-- Unit Field -->
-                    <div class="col-6">
-                        <label for="editUnitCode" class="forklift-form-label">Unit</label>
-                        <input type="text" class="forklift-form-input" id="editUnitCode" value="FL-101">
-                    </div>
-
                     <!-- Nama Forklift Field -->
                     <div class="col-6">
                         <label for="editNamaForklift" class="forklift-form-label">Nama Forklift</label>
                         <input type="text" class="forklift-form-input" id="editNamaForklift" value="Toyota">
-                    </div>
-
-                    <!-- Type Field -->
-                    <div class="col-6">
-                        <label for="editType" class="forklift-form-label">Type</label>
-                        <input type="text" class="forklift-form-input" id="editType" value="8FD30">
                     </div>
 
                     <!-- Engine Field -->
@@ -327,25 +326,29 @@
                     </div>
                 </div>
 
-                <!-- Status Radio Group -->
-                <div class="mb-4">
-                    <label class="forklift-form-label">Status</label>
-                    <div class="d-flex align-items-center gap-4">
-                        <label class="custom-radio-item">
-                            <input type="radio" name="editForkliftStatus" value="Aktif" checked>
-                            <span>Aktif</span>
-                        </label>
-                        <label class="custom-radio-item">
-                            <input type="radio" name="editForkliftStatus" value="Non-Aktif">
-                            <span>Non-Aktif</span>
-                        </label>
+                <div class="row g-3 mb-4">
+                    <!-- Tipe Field -->
+                    <div class="col-6">
+                        <label for="editType" class="forklift-form-label">Tipe</label>
+                        <input type="text" class="forklift-form-input" id="editType" value="8FD30">
+                    </div>
+
+                    <!-- Status Checkbox -->
+                    <div class="col-6">
+                        <label class="forklift-form-label">Status</label>
+                        <div class="mt-2">
+                            <label class="custom-checkbox-item">
+                                <input type="checkbox" id="editForkliftStatus" checked>
+                                <span>Aktif</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Submit Button -->
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-end">
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
-                        Simpan
+                        Simpan Unit
                     </button>
                 </div>
             </form>
