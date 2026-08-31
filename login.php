@@ -20,13 +20,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body class="login-body">
 
     <div class="login-card-container">
         <!-- Logo Emblem -->
-        <img src="dist/images/Gemini_Generated_Image_5p4qem5p4qem5p4q-removebg-preview.png" alt="Forklift Maintenance Reminder Logo" class="login-logo-img">
+        <img src="assets/images/Gemini_Generated_Image_5p4qem5p4qem5p4q-removebg-preview.png" alt="Forklift Maintenance Reminder Logo" class="login-logo-img" onerror="this.src='dist/images/Gemini_Generated_Image_5p4qem5p4qem5p4q-removebg-preview.png'">
 
         <!-- Title & Subtitle -->
         <h1 class="login-main-title">Forklift Maintenance Reminder</h1>
