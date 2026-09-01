@@ -1,3 +1,9 @@
+<style>
+.user-date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+</style>
 <!-- tab_user.php - Konten Tab User -->
 <!-- Filter Bar -->
 <div class="user-filter-bar">
@@ -276,12 +282,12 @@
                             <label class="user-form-label">Expiration Date</label>
                             <div class="mb-2">
                                 <label class="custom-checkbox-item">
-                                    <input type="checkbox" id="addForever">
+                                    <input type="checkbox" id="addForever" checked>
                                     <span>Forever</span>
                                 </label>
                             </div>
                             <div class="user-date-input-group">
-                                <input type="text" value="02/08/26" id="addExpDate">
+                                <input type="text" id="addExpDate" disabled>
                                 <span class="material-symbols-outlined">calendar_today</span>
                             </div>
                         </div>
@@ -351,12 +357,12 @@
                             <label class="user-form-label">Expiration Date</label>
                             <div class="mb-2">
                                 <label class="custom-checkbox-item">
-                                    <input type="checkbox" id="editForever">
+                                    <input type="checkbox" id="editForever" checked>
                                     <span>Forever</span>
                                 </label>
                             </div>
                             <div class="user-date-input-group">
-                                <input type="text" value="02/08/26" id="editExpDate">
+                                <input type="text" id="editExpDate" disabled>
                                 <span class="material-symbols-outlined">calendar_today</span>
                             </div>
                         </div>
@@ -477,5 +483,53 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Expiration date toggle logic
+    function handleExpDateToggle(checkboxId, dateInputId) {
+        const cb = document.getElementById(checkboxId);
+        const dt = document.getElementById(dateInputId);
+        if (!cb || !dt) return;
+        
+        const group = dt.closest('.user-date-input-group');
+        const icon = group.querySelector('.material-symbols-outlined');
+
+        function update() {
+            if (cb.checked) {
+                dt.type = 'text';
+                dt.disabled = true;
+                group.style.backgroundColor = '#e9ecef';
+                group.style.cursor = 'not-allowed';
+                dt.style.backgroundColor = 'transparent';
+                dt.style.cursor = 'not-allowed';
+                dt.style.color = '#6b7280';
+                dt.value = 'dd/mm/yyyy';
+                if (icon) icon.style.cursor = 'not-allowed';
+            } else {
+                dt.type = 'date';
+                dt.disabled = false;
+                group.style.backgroundColor = '#FFFFFF';
+                group.style.cursor = 'text';
+                dt.style.backgroundColor = 'transparent';
+                dt.style.cursor = 'text';
+                dt.style.color = '#111827';
+                if (dt.value === 'dd/mm/yyyy') dt.value = '';
+                if (icon) icon.style.cursor = 'pointer';
+            }
+        }
+
+        if (icon) {
+            icon.addEventListener('click', function() {
+                if (!dt.disabled && dt.type === 'date' && typeof dt.showPicker === 'function') {
+                    dt.showPicker();
+                }
+            });
+        }
+
+        cb.addEventListener('change', update);
+        update();
+    }
+
+    handleExpDateToggle('addForever', 'addExpDate');
+    handleExpDateToggle('editForever', 'editExpDate');
 });
 </script>

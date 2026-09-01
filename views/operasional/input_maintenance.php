@@ -94,7 +94,7 @@
                                 <span>Self-Service</span>
                             </label>
                             <label class="custom-radio-item">
-                                <input type="radio" name="serviceCategory" value="sparepart" id="radioSparepart" checked>
+                                <input type="radio" name="serviceCategory" value="sparepart" id="radioSparepart">
                                 <span>Sparepart</span>
                             </label>
                         </div>
@@ -126,11 +126,11 @@
                     <div class="input-maint-sub-card">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h4 class="input-maint-card-title mb-0">Cek Sparepart</h4>
-                            <button type="button" class="btn-maint-cek">Cek</button>
+                            <button type="button" class="btn-maint-cek" id="btnCekSparepart" disabled style="background-color: #d1d5db; border-color: #d1d5db; cursor: not-allowed; color: #6b7280;">Cek</button>
                         </div>
 
                         <!-- Sparepart Table -->
-                        <div class="table-responsive">
+                        <div class="table-responsive" id="sparepartTableContainer" style="display: none;">
                             <table class="table sparepart-table">
                                 <thead>
                                     <tr>
@@ -196,6 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
             servedByContainer.style.display = 'none';
             salesOrderContainer.style.display = 'block';
             salesOrderContainer.className = 'col-12 col-sm-6';
+        } else {
+            dynamicRow.style.display = 'none';
         }
     }
 
@@ -249,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                         
                         suggestionsBox.style.display = 'none';
+                        if (typeof checkEnableCekButton === 'function') checkEnableCekButton();
                     });
                 });
             } else {
@@ -260,6 +263,78 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(e) {
             if (!custInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
                 suggestionsBox.style.display = 'none';
+            }
+        });
+    }
+
+    // Button Cek Logic
+    const btnCekSparepart = document.getElementById('btnCekSparepart');
+    const sparepartTableContainer = document.getElementById('sparepartTableContainer');
+    const jenisMaintSelect = document.getElementById('jenisMaintSelect');
+
+    function checkEnableCekButton() {
+        if (custInput && jenisMaintSelect && custInput.value.trim() !== '' && jenisMaintSelect.value !== '') {
+            btnCekSparepart.disabled = false;
+            btnCekSparepart.style.backgroundColor = '';
+            btnCekSparepart.style.borderColor = '';
+            btnCekSparepart.style.cursor = 'pointer';
+            btnCekSparepart.style.color = '';
+        } else {
+            btnCekSparepart.disabled = true;
+            btnCekSparepart.style.backgroundColor = '#d1d5db';
+            btnCekSparepart.style.borderColor = '#d1d5db';
+            btnCekSparepart.style.cursor = 'not-allowed';
+            btnCekSparepart.style.color = '#6b7280';
+            if (sparepartTableContainer) sparepartTableContainer.style.display = 'none';
+        }
+    }
+
+    if (custInput) custInput.addEventListener('input', checkEnableCekButton);
+    if (jenisMaintSelect) jenisMaintSelect.addEventListener('change', checkEnableCekButton);
+
+    if (btnCekSparepart) {
+        btnCekSparepart.addEventListener('click', function() {
+            if (!this.disabled && sparepartTableContainer) {
+                sparepartTableContainer.style.display = 'block';
+            }
+        });
+    }
+
+    // HM Validation Logic
+    const toastHTML = `
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
+        <div id="hmErrorToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Error: Nilai HM tidak boleh lebih kecil atau sama dengan Last HM.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>`;
+    document.body.insertAdjacentHTML('beforeend', toastHTML);
+
+    const form = document.querySelector('form');
+    const hourMeterInput = document.getElementById('hourMeterInput');
+    const lastHM = 5000; // Simulasi nilai last HM
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (hourMeterInput && hourMeterInput.value !== '') {
+                if (parseInt(hourMeterInput.value) <= lastHM) {
+                    const toastEl = document.getElementById('hmErrorToast');
+                    if (typeof bootstrap !== 'undefined') {
+                        const toast = new bootstrap.Toast(toastEl);
+                        toast.show();
+                    } else {
+                        toastEl.classList.add('show');
+                        setTimeout(() => toastEl.classList.remove('show'), 3000);
+                    }
+                } else {
+                    // Berhasil disubmit
+                    alert('Data berhasil disimpan!');
+                }
             }
         });
     }

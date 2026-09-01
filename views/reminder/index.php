@@ -41,11 +41,13 @@
             <!-- Dropdown Status -->
             <div class="dropdown">
                 <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Status</span>
+                    <span>Menunggu</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
+                    <li><a class="dropdown-item" href="#">Semua Status</a></li>
                     <li><a class="dropdown-item" href="#">Menunggu</a></li>
                     <li><a class="dropdown-item" href="#">Terkirim</a></li>
+                    <li><a class="dropdown-item" href="#">Gagal</a></li>
                 </ul>
             </div>
 
@@ -74,7 +76,7 @@
                 </thead>
                 <tbody>
                     <!-- Row 1 -->
-                    <tr>
+                    <tr class="reminder-row" data-status="Terkirim" style="display: none;">
                         <td>
                             <div class="fw-bold">PT. Toyomatsu</div>
                             <div class="text-muted" style="font-size: 0.85rem;">Toyota 8FD30-11029</div>
@@ -98,7 +100,7 @@
                         </td>
                     </tr>
                     <!-- Row 2 -->
-                    <tr>
+                    <tr class="reminder-row" data-status="Terkirim" style="display: none;">
                         <td>
                             <div class="fw-bold">PT. Toyomatsu</div>
                             <div class="text-muted" style="font-size: 0.85rem;">Toyota 8FD30-11029</div>
@@ -120,7 +122,7 @@
                         </td>
                     </tr>
                     <!-- Row 3 -->
-                    <tr>
+                    <tr class="reminder-row" data-status="Menunggu">
                         <td>
                             <div class="fw-bold">PT. Toyomatsu</div>
                             <div class="text-muted" style="font-size: 0.85rem;">Toyota 8FD30-11029</div>
@@ -144,7 +146,7 @@
                         </td>
                     </tr>
                     <!-- Row 4 -->
-                    <tr>
+                    <tr class="reminder-row" data-status="Gagal" style="display: none;">
                         <td>
                             <div class="fw-bold">PT. Toyomatsu</div>
                             <div class="text-muted" style="font-size: 0.85rem;">Toyota 8FD30-11029</div>
@@ -159,7 +161,7 @@
                             <span class="material-symbols-outlined type-icon-wa">chat</span>
                         </td>
                         <td>
-                            <span class="status-badge sukses">Terkirim</span>
+                            <span class="status-badge gagal">Gagal</span>
                         </td>
                         <td>
                             <button data-bs-toggle="modal" data-bs-target="#uploadBuktiModal" class="btn btn-sm btn-outline-secondary rounded-pill" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
@@ -236,3 +238,38 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterStatusItems = document.querySelectorAll('#filterStatus + .dropdown-menu .dropdown-item');
+    const filterStatusBtn = document.querySelector('#filterStatus span');
+    const rows = document.querySelectorAll('.reminder-row');
+
+    filterStatusItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const status = this.textContent.trim();
+            filterStatusBtn.textContent = status;
+            filterRows(status);
+        });
+    });
+
+    function filterRows(status) {
+        rows.forEach(row => {
+            if (status === 'Semua Status' || row.dataset.status === status) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    const btnReset = document.getElementById('btnResetReminder');
+    if (btnReset) {
+        btnReset.addEventListener('click', function() {
+            filterStatusBtn.textContent = 'Menunggu';
+            filterRows('Menunggu');
+        });
+    }
+});
+</script>

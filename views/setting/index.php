@@ -33,7 +33,7 @@
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
                         <span class="settings-pill-prefix">H -</span>
-                        <input type="number" id="reminderGenDays" placeholder="Harus angka">
+                        <input type="number" id="reminderGenDays" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
                     </div>
                     <span class="settings-trailing-text">From Maintenance Due Date</span>
                 </div>
@@ -44,7 +44,7 @@
                 <label class="settings-label">Due Soon status starts at</label>
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
-                        <input type="number" id="dueSoonHm" placeholder="Harus angka">
+                        <input type="number" id="dueSoonHm" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
                         <span class="settings-pill-suffix">HM</span>
                     </div>
                     <span class="settings-trailing-text">Before Maintenance Due Date</span>
