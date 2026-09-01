@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="page-title mb-0">Activity Log</h2>
         <button class="btn fmr-btn-submit d-flex align-items-center" style="gap: 8px;">
-            <i class="fa-solid fa-download"></i> Ekspor Laporan
+            <span class="material-symbols-outlined">download</span> Ekspor Laporan
         </button>
     </div>
 
@@ -13,7 +13,7 @@
         
         <!-- Search Input -->
         <div class="search-input-pill">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Cari User" id="searchLogInput">
         </div>
 
@@ -22,12 +22,12 @@
             <div class="d-flex align-items-center gap-2">
                 <div class="date-filter-pill-box">
                     <input type="text" value="01/08/26" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
                 <span class="fw-bold" style="color: #94A3B8;">-</span>
                 <div class="date-filter-pill-box">
                     <input type="text" value="02/08/26" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
 
             <!-- Reset Button -->
             <button type="button" class="btn-reset-filter" id="btnResetLog" onclick="document.getElementById('searchLogInput').value='';">
-                <i class="fa-solid fa-rotate-right"></i>
+                <span class="material-symbols-outlined">restart_alt</span>
                 <span>Reset</span>
             </button>
         </div>
@@ -166,7 +166,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>

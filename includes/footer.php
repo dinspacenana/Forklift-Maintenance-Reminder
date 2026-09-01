@@ -20,7 +20,7 @@
                 <div class="avatar-edit-container">
                     <img src="assets/images/avatar.svg" alt="Andi Wijaya" class="avatar-edit-img" onerror="this.src='dist/images/avatar.svg'">
                     <div class="avatar-camera-btn" title="Ubah Foto Profil">
-                        <i class="fa-solid fa-camera"></i>
+                        <span class="material-symbols-outlined">photo_camera</span>
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@
                         <label for="profileNameInput" class="fmr-form-label">Nama</label>
                         <div class="fmr-input-wrapper">
                             <input type="text" class="fmr-form-control" id="profileNameInput" value="Andi Wijaya">
-                            <i class="fa-solid fa-pencil fmr-input-edit-icon"></i>
+                            <span class="material-symbols-outlined fmr-input-edit-icon">edit</span>
                         </div>
                         <p class="fmr-form-subtext">Logged as Administrator.</p>
                     </div>
@@ -67,8 +67,8 @@
     </div>
 </div>
 
-<!-- Bootstrap 5 Bundle JS (Includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Bootstrap 5 Bundle JS (Local) -->
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

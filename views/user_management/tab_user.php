@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center gap-3 flex-wrap">
         <!-- Search Input -->
         <div class="search-input-pill" style="min-width: 280px;">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Cari Username atau Nama" id="searchUserInput">
         </div>
 
@@ -33,14 +33,14 @@
 
         <!-- Reset Button -->
         <button type="button" class="btn-reset-filter" onclick="document.getElementById('searchUserInput').value='';">
-            <i class="fa-solid fa-rotate-right"></i>
+            <span class="material-symbols-outlined">restart_alt</span>
             <span>Reset</span>
         </button>
     </div>
 
     <!-- Add User Button -->
     <button type="button" class="btn-add-user" data-bs-toggle="modal" data-bs-target="#addUserModal">
-        <i class="fa-solid fa-plus"></i> Add User
+        <span class="material-symbols-outlined">add</span> Add User
     </button>
 </div>
 
@@ -49,8 +49,8 @@
     <table class="table user-table">
         <thead>
             <tr>
+                <th style="width: 13%;">Username</th>
                 <th style="width: 17%;">Nama</th>
-                <th style="width: 11%;">Username</th>
                 <th style="width: 13%;">Role</th>
                 <th style="width: 15%;">Created Datetime</th>
                 <th style="width: 13%;">Created By</th>
@@ -62,20 +62,20 @@
         <tbody>
             <!-- Row 1 -->
             <tr>
-                <td class="fw-bold">Marsha Thalita</td>
-                <td>marsha</td>
+                <td class="fw-bold">marsha</td>
+                <td>Marsha Thalita</td>
                 <td><span class="badge-role">Administrator</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
                 <td><span class="badge-status-aktif-blue">Aktif</span></td>
                 <td>26 – 08 – 03, 18.00</td>
-                <td class="text-center">
+                <td style="text-align: center;">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -83,20 +83,20 @@
 
             <!-- Row 2 -->
             <tr>
-                <td class="fw-bold">Dina Ayu</td>
-                <td>dina</td>
+                <td class="fw-bold">dina</td>
+                <td>Dina Ayu</td>
                 <td><span class="badge-role">Administrator</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
                 <td><span class="badge-status-aktif-blue">Aktif</span></td>
                 <td>26 – 08 – 03, 18.00</td>
-                <td class="text-center">
+                <td style="text-align: center;">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -104,8 +104,8 @@
 
             <!-- Row 3 -->
             <tr>
-                <td class="fw-bold">Arqueeny Zahra</td>
-                <td>lita</td>
+                <td class="fw-bold">lita</td>
+                <td>Arqueeny Zahra</td>
                 <td><span class="badge-role">Kepala Toko</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -114,10 +114,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -125,8 +125,8 @@
 
             <!-- Row 4 -->
             <tr>
-                <td class="fw-bold">Navyza Marcha</td>
-                <td>caca</td>
+                <td class="fw-bold">caca</td>
+                <td>Navyza Marcha</td>
                 <td><span class="badge-role">Admin Sales</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -135,10 +135,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -146,8 +146,8 @@
 
             <!-- Row 5 -->
             <tr>
-                <td class="fw-bold">Salman Alfarizqi</td>
-                <td>salman</td>
+                <td class="fw-bold">salman</td>
+                <td>Salman Alfarizqi</td>
                 <td><span class="badge-role">Administrator</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -156,10 +156,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -167,8 +167,8 @@
 
             <!-- Row 6 -->
             <tr>
-                <td class="fw-bold">Reza Ardiansyah</td>
-                <td>reza</td>
+                <td class="fw-bold">reza</td>
+                <td>Reza Ardiansyah</td>
                 <td><span class="badge-role">Kepala Toko</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -177,10 +177,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -188,8 +188,8 @@
 
             <!-- Row 7 -->
             <tr>
-                <td class="fw-bold">Andhika Lingga</td>
-                <td>rio</td>
+                <td class="fw-bold">rio</td>
+                <td>Andhika Lingga</td>
                 <td><span class="badge-role">Admin Sales</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -198,10 +198,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -209,8 +209,8 @@
 
             <!-- Row 8 -->
             <tr>
-                <td class="fw-bold">Aldy</td>
-                <td>aldy</td>
+                <td class="fw-bold">aldy</td>
+                <td>Aldy</td>
                 <td><span class="badge-role">Admin Sales</span></td>
                 <td>26 – 08 – 03, 18.00</td>
                 <td>Administrator</td>
@@ -219,10 +219,10 @@
                 <td class="text-center">
                     <div class="action-icons-group justify-content-center">
                         <button class="action-icon-btn icon-edit" title="Edit User" data-bs-toggle="modal" data-bs-target="#editUserModal">
-                            <i class="fa-solid fa-pencil"></i>
+                            <span class="material-symbols-outlined">edit</span>
                         </button>
                         <button class="action-icon-btn icon-delete" title="Hapus User" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-                            <i class="fa-solid fa-trash-can"></i>
+                            <span class="material-symbols-outlined">delete</span>
                         </button>
                     </div>
                 </td>
@@ -232,7 +232,7 @@
 </div>
 
 <!-- Pagination -->
-<div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+<div class="table-pagination-footer d-flex justify-content-end align-items-center">
     <div class="pagination-custom ms-auto">
         <a href="#" class="page-arrow">&lt;</a>
         <a href="#" class="page-num active">1</a>
@@ -282,7 +282,7 @@
                             </div>
                             <div class="user-date-input-group">
                                 <input type="text" value="02/08/26" id="addExpDate">
-                                <i class="fa-regular fa-calendar-days"></i>
+                                <span class="material-symbols-outlined">calendar_today</span>
                             </div>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
                             </div>
                             <div class="user-date-input-group">
                                 <input type="text" value="02/08/26" id="editExpDate">
-                                <i class="fa-regular fa-calendar-days"></i>
+                                <span class="material-symbols-outlined">calendar_today</span>
                             </div>
                         </div>
                     </div>

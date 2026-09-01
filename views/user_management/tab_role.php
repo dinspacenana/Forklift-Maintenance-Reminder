@@ -19,10 +19,10 @@
             </div>
             <div class="d-flex justify-content-end align-items-center gap-2 mt-4 pt-2">
                 <button type="button" class="btn-role-edit" data-bs-toggle="modal" data-bs-target="#editRoleModal">
-                    <i class="fa-solid fa-pencil"></i> Edit
+                    <span class="material-symbols-outlined">edit</span> Edit
                 </button>
                 <button type="button" class="btn-role-akses" data-bs-toggle="modal" data-bs-target="#hakAksesModal">
-                    <i class="fa-solid fa-key"></i> Akses
+                    <span class="material-symbols-outlined">key</span> Akses
                 </button>
             </div>
         </div>
@@ -43,10 +43,10 @@
             </div>
             <div class="d-flex justify-content-end align-items-center gap-2 mt-4 pt-2">
                 <button type="button" class="btn-role-edit" data-bs-toggle="modal" data-bs-target="#editRoleModal">
-                    <i class="fa-solid fa-pencil"></i> Edit
+                    <span class="material-symbols-outlined">edit</span> Edit
                 </button>
                 <button type="button" class="btn-role-akses" data-bs-toggle="modal" data-bs-target="#hakAksesModal">
-                    <i class="fa-solid fa-key"></i> Akses
+                    <span class="material-symbols-outlined">key</span> Akses
                 </button>
             </div>
         </div>
@@ -67,10 +67,10 @@
             </div>
             <div class="d-flex justify-content-end align-items-center gap-2 mt-4 pt-2">
                 <button type="button" class="btn-role-edit" data-bs-toggle="modal" data-bs-target="#editRoleModal">
-                    <i class="fa-solid fa-pencil"></i> Edit
+                    <span class="material-symbols-outlined">edit</span> Edit
                 </button>
                 <button type="button" class="btn-role-akses" data-bs-toggle="modal" data-bs-target="#hakAksesModal">
-                    <i class="fa-solid fa-key"></i> Akses
+                    <span class="material-symbols-outlined">key</span> Akses
                 </button>
             </div>
         </div>

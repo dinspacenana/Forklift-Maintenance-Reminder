@@ -8,7 +8,7 @@
     <div class="customer-filter-bar">
         <!-- Search Input -->
         <div class="search-input-pill">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Search" id="searchJenisMaintInput">
         </div>
 
@@ -26,13 +26,13 @@
 
             <!-- Reset Button -->
             <button type="button" class="btn-reset-filter" id="btnResetJenisMaint" onclick="document.getElementById('searchJenisMaintInput').value='';">
-                <i class="fa-solid fa-rotate-right"></i>
+                <span class="material-symbols-outlined">restart_alt</span>
                 <span>Reset</span>
             </button>
 
             <!-- Add Jenis Maintenance Button -->
             <button type="button" class="btn-add-jenis-maint" data-bs-toggle="modal" data-bs-target="#addJenisMaintModal">
-                <i class="fa-solid fa-plus"></i> Jenis Maintenance
+                <span class="material-symbols-outlined">add</span> Jenis Maintenance
             </button>
         </div>
     </div>
@@ -68,10 +68,10 @@
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
                                 <button class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
                                 <button class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -90,10 +90,10 @@
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
                                 <button class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
                                 <button class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -112,10 +112,10 @@
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
                                 <button class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
                                 <button class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -134,10 +134,10 @@
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
                                 <button class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
                                 <button class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -156,10 +156,10 @@
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
                                 <button class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
                                 <button class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -169,7 +169,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>
@@ -244,7 +244,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <label class="maint-form-label mb-0">List Sparepart yang di ganti</label>
                         <button type="button" class="btn-add-row" onclick="addSparepartRow('addSparepartContainer')">
-                            <i class="fa-solid fa-plus"></i> Add a Row
+                            <span class="material-symbols-outlined">add</span> Add a Row
                         </button>
                     </div>
 
@@ -336,7 +336,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-2">
                         <label class="maint-form-label mb-0">List Sparepart yang di ganti</label>
                         <button type="button" class="btn-add-row" onclick="addSparepartRow('editSparepartContainer')">
-                            <i class="fa-solid fa-plus"></i> Add a Row
+                            <span class="material-symbols-outlined">add</span> Add a Row
                         </button>
                     </div>
 

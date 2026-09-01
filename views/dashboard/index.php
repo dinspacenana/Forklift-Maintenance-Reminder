@@ -21,7 +21,7 @@
             <div class="stat-card card-blue">
                 <div class="stat-header">
                     <div class="stat-icon-wrapper">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <span class="material-symbols-outlined">forklift</span>
                     </div>
                     <span class="stat-title">Total Forklift</span>
                 </div>
@@ -34,7 +34,7 @@
             <div class="stat-card card-yellow">
                 <div class="stat-header">
                     <div class="stat-icon-wrapper">
-                        <i class="fa-regular fa-clock"></i>
+                        <span class="material-symbols-outlined">schedule</span>
                     </div>
                     <span class="stat-title">Due Soon</span>
                 </div>
@@ -47,7 +47,7 @@
             <div class="stat-card card-red">
                 <div class="stat-header">
                     <div class="stat-icon-wrapper">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span class="material-symbols-outlined">warning</span>
                     </div>
                     <span class="stat-title">Overdue</span>
                 </div>
@@ -60,7 +60,7 @@
             <div class="stat-card card-maroon">
                 <div class="stat-header">
                     <div class="stat-icon-wrapper">
-                        <i class="fa-solid fa-exclamation"></i>
+                        <span class="material-symbols-outlined">priority_high</span>
                     </div>
                     <span class="stat-title">Outstanding</span>
                 </div>
@@ -101,7 +101,7 @@
                                     <span class="due-date">20 Agu 2026</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                                    <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="status-badge due-soon">Due Soon</span>
@@ -121,7 +121,7 @@
                                     <span class="due-date">15 Agu 2026</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-regular fa-envelope type-icon-mail"></i>
+                                    <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="status-badge over-due">Over Due</span>
@@ -141,7 +141,7 @@
                                     <span class="due-date">21 Agu 2026</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                                    <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="status-badge over-due">Over Due</span>
@@ -161,7 +161,7 @@
                                     <span class="due-date">1 Sep 2026</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-regular fa-envelope type-icon-mail"></i>
+                                    <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="status-badge h-7">H - 7</span>
@@ -181,7 +181,7 @@
                                     <span class="due-date">1 Sep 2026</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-regular fa-envelope type-icon-mail"></i>
+                                    <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="status-badge h-7">H - 7</span>
@@ -226,13 +226,13 @@
                                     <span class="maint-name">Ganti Oli Mesin</span>
                                 </td>
                                 <td style="width: 10%; text-align: center;">
-                                    <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                                    <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td style="width: 14%; text-align: center; color: #475569; font-size: 0.82rem; font-weight: 500;">
                                     08:16
                                 </td>
                                 <td style="width: 14%; text-align: end;">
-                                    <span class="status-badge sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Sukses</span>
                                 </td>
                             </tr>
 
@@ -246,13 +246,13 @@
                                     <span class="maint-name">Preventive Service</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-regular fa-envelope type-icon-mail"></i>
+                                    <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td style="text-align: center; color: #475569; font-size: 0.82rem; font-weight: 500;">
                                     11:44
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge gagal">Gagal</span>
+                                    <span class="status-badge status-gagal">Gagal</span>
                                 </td>
                             </tr>
 
@@ -266,13 +266,13 @@
                                     <span class="maint-name">Ganti Filter Oli</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                                    <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td style="text-align: center; color: #475569; font-size: 0.82rem; font-weight: 500;">
                                     08:34
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Sukses</span>
                                 </td>
                             </tr>
 
@@ -286,13 +286,13 @@
                                     <span class="maint-name">Ganti Oli Mesin</span>
                                 </td>
                                 <td class="text-center">
-                                    <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                                    <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td style="text-align: center; color: #475569; font-size: 0.82rem; font-weight: 500;">
                                     08:16
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Sukses</span>
                                 </td>
                             </tr>
                         </tbody>

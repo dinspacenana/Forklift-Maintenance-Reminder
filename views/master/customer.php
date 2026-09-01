@@ -8,7 +8,7 @@
     <div class="customer-filter-bar">
         <!-- Search Input -->
         <div class="search-input-pill">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Cari Customer" id="searchCustomerInput">
         </div>
 
@@ -38,13 +38,13 @@
 
             <!-- Reset Button -->
             <button type="button" class="btn-reset-filter" id="btnResetCustomer" onclick="document.getElementById('searchCustomerInput').value='';">
-                <i class="fa-solid fa-rotate-right"></i>
+                <span class="material-symbols-outlined">restart_alt</span>
                 <span>Reset</span>
             </button>
 
             <!-- Add Customer Button -->
             <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
-                <i class="fa-solid fa-plus"></i> Add Customer
+                <span class="material-symbols-outlined">add</span> Add Customer
             </button>
         </div>
     </div>
@@ -78,16 +78,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Toyo Matsu') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -106,16 +106,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Nusantara Logistik') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -134,16 +134,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Robin Jaya') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -162,16 +162,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Maju Jaya') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -190,16 +190,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. GatotKaca Logistik') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -218,16 +218,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Maju Mundur Makmur') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -246,16 +246,16 @@
                         <td>
                             <div class="action-icons-group">
                                 <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
                                 <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <i class="fa-solid fa-pencil"></i>
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-forklift" title="Unit Forklift">
-                                    <i class="fa-solid fa-truck-ramp-box"></i>
-                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('CV. Baja Perkasa') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
                                 <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -265,7 +265,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>
@@ -470,7 +470,7 @@
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
                     <button type="button" class="btn-modal-sync">
-                        <i class="fa-solid fa-arrows-rotate"></i> Sinkronisasi
+                        <span class="material-symbols-outlined">sync</span> Sinkronisasi
                     </button>
                     <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
                         Simpan
@@ -552,7 +552,7 @@
 
                 <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
                     <button type="button" class="btn-modal-sync">
-                        <i class="fa-solid fa-arrows-rotate"></i> Sinkronisasi
+                        <span class="material-symbols-outlined">sync</span> Sinkronisasi
                     </button>
                     <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
                         Simpan

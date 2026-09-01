@@ -9,7 +9,7 @@
         
         <!-- Search Input -->
         <div class="search-input-pill">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Masukkan Customer / Unit" id="searchReminderInput">
         </div>
 
@@ -18,12 +18,12 @@
             <div class="d-flex align-items-center gap-2">
                 <div class="date-filter-pill-box">
                     <input type="text" value="01/08/2026" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
                 <span class="fw-bold" style="color: #94A3B8;">-</span>
                 <div class="date-filter-pill-box">
                     <input type="text" value="02/08/2026" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
 
             <!-- Reset Button -->
             <button type="button" class="btn-reset-filter" id="btnResetReminder" onclick="document.getElementById('searchReminderInput').value='';">
-                <i class="fa-solid fa-rotate-right"></i>
+                <span class="material-symbols-outlined">restart_alt</span>
                 <span>Reset</span>
             </button>
         </div>
@@ -86,14 +86,14 @@
                             <div class="text-muted" style="font-size: 0.85rem;">15.00</div>
                         </td>
                         <td class="text-center">
-                            <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                            <span class="material-symbols-outlined type-icon-wa">chat</span>
                         </td>
                         <td>
                             <span class="status-badge sukses">Terkirim</span>
                         </td>
                         <td>
                             <button data-bs-toggle="modal" data-bs-target="#uploadBuktiModal" class="btn btn-sm btn-outline-secondary rounded-pill" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-paperclip"></i> Upload
+                                <span class="material-symbols-outlined" style="font-size: 16px;">attach_file</span> Upload
                             </button>
                         </td>
                     </tr>
@@ -110,7 +110,7 @@
                             <div class="text-muted" style="font-size: 0.85rem;">15.00</div>
                         </td>
                         <td class="text-center">
-                            <i class="fa-regular fa-envelope type-icon-mail"></i>
+                            <span class="material-symbols-outlined type-icon-mail">mail</span>
                         </td>
                         <td>
                             <span class="status-badge sukses">Terkirim</span>
@@ -132,14 +132,14 @@
                             <div class="text-muted" style="font-size: 0.85rem;">15.00</div>
                         </td>
                         <td class="text-center">
-                            <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                            <span class="material-symbols-outlined type-icon-wa">chat</span>
                         </td>
                         <td>
                             <span class="status-badge due-soon">Menunggu</span>
                         </td>
                         <td>
                             <button data-bs-toggle="modal" data-bs-target="#uploadBuktiModal" class="btn btn-sm btn-outline-secondary rounded-pill" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-paperclip"></i> Upload
+                                <span class="material-symbols-outlined" style="font-size: 16px;">attach_file</span> Upload
                             </button>
                         </td>
                     </tr>
@@ -156,14 +156,14 @@
                             <div class="text-muted" style="font-size: 0.85rem;">15.00</div>
                         </td>
                         <td class="text-center">
-                            <i class="fa-brands fa-whatsapp type-icon-wa"></i>
+                            <span class="material-symbols-outlined type-icon-wa">chat</span>
                         </td>
                         <td>
                             <span class="status-badge sukses">Terkirim</span>
                         </td>
                         <td>
                             <button data-bs-toggle="modal" data-bs-target="#uploadBuktiModal" class="btn btn-sm btn-outline-secondary rounded-pill" style="font-size: 0.8rem; display: flex; align-items: center; gap: 6px;">
-                                <i class="fa-solid fa-paperclip"></i> Upload
+                                <span class="material-symbols-outlined" style="font-size: 16px;">attach_file</span> Upload
                             </button>
                         </td>
                     </tr>
@@ -172,7 +172,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>
@@ -221,7 +221,7 @@
                         <!-- Date -->
                         <div class="reminder-modal-date-input">
                             <input type="text" value="02/08/26" readonly class="reminder-modal-date-field">
-                            <i class="fa-regular fa-calendar" style="color: #212529;"></i>
+                            <span class="material-symbols-outlined" style="color: #212529; font-size: 18px;">calendar_today</span>
                         </div>
                         <!-- Time -->
                         <div class="reminder-modal-time-input">

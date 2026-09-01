@@ -20,7 +20,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=dashboard" class="sidebar-link <?= ($currentPage === 'dashboard' || $currentPage === '') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-table-cells-large"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">dashboard</span></span>
                 <span>Dashboard</span>
             </a>
         </li>
@@ -31,19 +31,19 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=customer" class="sidebar-link <?= ($currentPage === 'customer') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-user-check"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">person</span></span>
                 <span>Customer</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=forklift" class="sidebar-link <?= ($currentPage === 'forklift') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">forklift</span></span>
                 <span>Forklift</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=jenis_maintenance" class="sidebar-link <?= ($currentPage === 'jenis_maintenance') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-wrench"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">build</span></span>
                 <span>Jenis Maintenance</span>
             </a>
         </li>
@@ -54,19 +54,19 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=input_maintenance" class="sidebar-link <?= ($currentPage === 'input_maintenance') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-regular fa-pen-to-square"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">edit_square</span></span>
                 <span>Input Maintenance</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=unit_forklift" class="sidebar-link <?= ($currentPage === 'unit_forklift') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-truck-ramp-box"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">forklift</span></span>
                 <span>Unit Forklift</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=outstanding" class="sidebar-link <?= ($currentPage === 'outstanding') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-exclamation"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">warning</span></span>
                 <span>Outstanding</span>
             </a>
         </li>
@@ -77,7 +77,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=reminder" class="sidebar-link <?= ($currentPage === 'reminder') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-regular fa-bell"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">notifications</span></span>
                 <span>Reminder</span>
             </a>
         </li>
@@ -88,13 +88,13 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=user" class="sidebar-link <?= ($currentPage === 'user') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-user-group"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">group</span></span>
                 <span>User Management</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=setting" class="sidebar-link <?= ($currentPage === 'setting') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-gear"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">settings</span></span>
                 <span>Setting</span>
             </a>
         </li>
@@ -105,13 +105,13 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=history" class="sidebar-link <?= ($currentPage === 'history') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-solid fa-list-check"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">history</span></span>
                 <span>History</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=activity_log" class="sidebar-link <?= ($currentPage === 'activity_log') ? 'active' : '' ?>">
-                <span class="icon-box"><i class="fa-regular fa-clock"></i></span>
+                <span class="icon-box"><span class="material-symbols-outlined">schedule</span></span>
                 <span>Activity Log</span>
             </a>
         </li>

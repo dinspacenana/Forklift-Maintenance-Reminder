@@ -10,7 +10,7 @@ $activeTab = isset($_GET['tab']) && $_GET['tab'] === 'role' ? 'role' : 'user';
         <h2 class="page-title mb-0">User Management</h2>
         <?php if ($activeTab === 'role'): ?>
             <button type="button" class="btn-add-user" data-bs-toggle="modal" data-bs-target="#addRoleModal">
-                <i class="fa-solid fa-plus"></i> Add Role
+                <span class="material-symbols-outlined">add</span> Add Role
             </button>
         <?php endif; ?>
     </div>

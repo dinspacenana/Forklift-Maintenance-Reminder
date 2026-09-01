@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="page-title mb-0">History</h2>
         <button class="btn fmr-btn-submit d-flex align-items-center" style="gap: 8px;">
-            <i class="fa-solid fa-download"></i> Ekspor Laporan
+            <span class="material-symbols-outlined">download</span> Ekspor Laporan
         </button>
     </div>
 
@@ -13,7 +13,7 @@
         
         <!-- Search Input -->
         <div class="search-input-pill">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Cari Customer" id="searchHistoryInput">
         </div>
 
@@ -22,12 +22,12 @@
             <div class="d-flex align-items-center gap-2">
                 <div class="date-filter-pill-box">
                     <input type="text" value="01/08/26" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
                 <span class="fw-bold" style="color: #94A3B8;">-</span>
                 <div class="date-filter-pill-box">
                     <input type="text" value="02/08/26" readonly>
-                    <i class="fa-regular fa-calendar"></i>
+                    <span class="material-symbols-outlined">calendar_today</span>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
 
             <!-- Reset Button -->
             <button type="button" class="btn-reset-filter" id="btnResetHistory" onclick="document.getElementById('searchHistoryInput').value='';">
-                <i class="fa-solid fa-rotate-right"></i>
+                <span class="material-symbols-outlined">restart_alt</span>
                 <span>Reset</span>
             </button>
         </div>
@@ -90,7 +90,7 @@
                             <div class="text-dark" style="font-size: 0.85rem;">Toyota 8FD30</div>
                             <div class="text-muted" style="font-size: 0.85rem;">8FD30-11029</div>
                         </td>
-                        <td class="fw-bold" style="color: #334155;">Tune Up</td>
+                        <td style="color: #334155; font-size: 0.85rem;">Tune Up</td>
                         <td style="color: #475569; font-size: 0.85rem;">Heavy Duty</td>
                         <td style="color: #475569; font-size: 0.85rem;">2.040 HM</td>
                         <td style="color: #475569; font-size: 0.85rem;">
@@ -109,7 +109,7 @@
                             <div class="text-dark" style="font-size: 0.85rem;">Toyota 8FD30</div>
                             <div class="text-muted" style="font-size: 0.85rem;">8FD30-11029</div>
                         </td>
-                        <td class="fw-bold" style="color: #334155;">Tune Up</td>
+                        <td style="color: #334155; font-size: 0.85rem;">Tune Up</td>
                         <td style="color: #475569; font-size: 0.85rem;">Low Duty</td>
                         <td style="color: #475569; font-size: 0.85rem;">2.040 HM</td>
                         <td style="color: #475569; font-size: 0.85rem;">
@@ -128,7 +128,7 @@
                             <div class="text-dark" style="font-size: 0.85rem;">Toyota 8FD30</div>
                             <div class="text-muted" style="font-size: 0.85rem;">8FD30-11029</div>
                         </td>
-                        <td class="fw-bold" style="color: #334155;">Tune Up</td>
+                        <td style="color: #334155; font-size: 0.85rem;">Tune Up</td>
                         <td style="color: #475569; font-size: 0.85rem;">Medium Duty</td>
                         <td style="color: #475569; font-size: 0.85rem;">2.040 HM</td>
                         <td style="color: #475569; font-size: 0.85rem;">
@@ -147,7 +147,7 @@
                             <div class="text-dark" style="font-size: 0.85rem;">Toyota 8FD30</div>
                             <div class="text-muted" style="font-size: 0.85rem;">8FD30-11029</div>
                         </td>
-                        <td class="fw-bold" style="color: #334155;">Tune Up</td>
+                        <td style="color: #334155; font-size: 0.85rem;">Tune Up</td>
                         <td style="color: #475569; font-size: 0.85rem;">Low Duty</td>
                         <td style="color: #475569; font-size: 0.85rem;">2.040 HM</td>
                         <td style="color: #475569; font-size: 0.85rem;">
@@ -166,7 +166,7 @@
                             <div class="text-dark" style="font-size: 0.85rem;">Toyota 8FD30</div>
                             <div class="text-muted" style="font-size: 0.85rem;">8FD30-11029</div>
                         </td>
-                        <td class="fw-bold" style="color: #334155;">Tune Up</td>
+                        <td style="color: #334155; font-size: 0.85rem;">Tune Up</td>
                         <td style="color: #475569; font-size: 0.85rem;">Medium Duty</td>
                         <td style="color: #475569; font-size: 0.85rem;">2.040 HM</td>
                         <td style="color: #475569; font-size: 0.85rem;">
@@ -180,7 +180,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center" style="padding: 28px 36px 36px; border-top: 1px solid #EEF2F6;">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>
