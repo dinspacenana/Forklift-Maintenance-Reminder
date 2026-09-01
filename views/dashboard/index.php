@@ -232,7 +232,7 @@
                                     08:16
                                 </td>
                                 <td style="width: 14%; text-align: end;">
-                                    <span class="status-badge status-sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Terkirim</span>
                                 </td>
                             </tr>
 
@@ -272,7 +272,7 @@
                                     08:34
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge status-sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Terkirim</span>
                                 </td>
                             </tr>
 
@@ -292,7 +292,7 @@
                                     08:16
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge status-sukses">Sukses</span>
+                                    <span class="status-badge status-sukses">Terkirim</span>
                                 </td>
                             </tr>
                         </tbody>
