@@ -1,6 +1,8 @@
 <?php
 // views/operasional/unit_forklift.php - Operasional Unit Forklift View
 $customerFilter = isset($_GET['customer']) ? trim($_GET['customer']) : '';
+$jenisFilter = isset($_GET['jenis']) ? trim($_GET['jenis']) : '';
+$statusFilter = isset($_GET['status']) ? trim($_GET['status']) : '';
 
 // Data Unit Forklift dengan List Maintenance masing-masing
 $allUnits = [
@@ -13,9 +15,10 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '30 Jul 2026',
         'maintenance' => [
-            ['name' => 'Ganti Oli Mesin', 'last_hm' => '1.000 HM', 'interval_hm' => '750 HM', 'due_date' => '10 Agu 2026', 'status' => 'Over Due'],
-            ['name' => 'Ganti Filter Solar', 'last_hm' => '1.000 HM', 'interval_hm' => '800 HM', 'due_date' => '10 Agu 2026', 'status' => 'Over Due'],
-            ['name' => 'Ganti Filter Udara', 'last_hm' => '760 HM', 'interval_hm' => '1000 HM', 'due_date' => '31 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Oli Mesin', 'kategori' => 'Umum', 'last_hm' => '1.000 HM', 'interval_hm' => '750 HM', 'due_date' => '10 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Ganti Filter Solar', 'kategori' => 'Umum', 'last_hm' => '1.000 HM', 'interval_hm' => '800 HM', 'due_date' => '10 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Overhaul Attachment Clamp', 'kategori' => 'Khusus', 'last_hm' => '1.200 HM', 'interval_hm' => '1500 HM', 'due_date' => '25 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Filter Udara', 'kategori' => 'Umum', 'last_hm' => '760 HM', 'interval_hm' => '1000 HM', 'due_date' => '31 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -27,8 +30,8 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '21 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Filter Udara', 'last_hm' => '760 HM', 'interval_hm' => '1000 HM', 'due_date' => '21 Agu 2026', 'status' => 'Due Soon'],
-            ['name' => 'Pengecekan Baterai', 'last_hm' => '500 HM', 'interval_hm' => '1200 HM', 'due_date' => '28 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Filter Udara', 'kategori' => 'Umum', 'last_hm' => '760 HM', 'interval_hm' => '1000 HM', 'due_date' => '21 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pengecekan Baterai', 'kategori' => 'Umum', 'last_hm' => '500 HM', 'interval_hm' => '1200 HM', 'due_date' => '28 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -40,7 +43,7 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '21 Agu 2026',
         'maintenance' => [
-            ['name' => 'Pengecekan Sistem Hidrolik', 'last_hm' => '850 HM', 'interval_hm' => '1000 HM', 'due_date' => '25 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pengecekan Sistem Hidrolik', 'kategori' => 'Umum', 'last_hm' => '850 HM', 'interval_hm' => '1000 HM', 'due_date' => '25 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -52,7 +55,7 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '21 Agu 2026',
         'maintenance' => [
-            ['name' => 'Greasing Mast & Fork', 'last_hm' => '400 HM', 'interval_hm' => '500 HM', 'due_date' => '29 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Greasing Mast & Fork', 'kategori' => 'Umum', 'last_hm' => '400 HM', 'interval_hm' => '500 HM', 'due_date' => '29 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -64,7 +67,7 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '21 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Oli Transmisi', 'last_hm' => '1200 HM', 'interval_hm' => '1500 HM', 'due_date' => '30 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Oli Transmisi', 'kategori' => 'Umum', 'last_hm' => '1200 HM', 'interval_hm' => '1500 HM', 'due_date' => '30 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -76,7 +79,7 @@ $allUnits = [
         'rate' => '60 HM/Bulan',
         'last_update' => '15 Agu 2026',
         'maintenance' => [
-            ['name' => 'Pengecekan Rem', 'last_hm' => '900 HM', 'interval_hm' => '1000 HM', 'due_date' => '20 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pengecekan Rem', 'kategori' => 'Umum', 'last_hm' => '900 HM', 'interval_hm' => '1000 HM', 'due_date' => '20 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -88,8 +91,9 @@ $allUnits = [
         'rate' => '45 HM/Bulan',
         'last_update' => '11 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Filter Hidrolik', 'last_hm' => '1100 HM', 'interval_hm' => '1000 HM', 'due_date' => '11 Agu 2026', 'status' => 'Over Due'],
-            ['name' => 'Pemeriksaan Rantai Lift', 'last_hm' => '900 HM', 'interval_hm' => '1000 HM', 'due_date' => '24 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Filter Hidrolik', 'kategori' => 'Umum', 'last_hm' => '1100 HM', 'interval_hm' => '1000 HM', 'due_date' => '11 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Servis Mast & Silinder', 'kategori' => 'Khusus', 'last_hm' => '1150 HM', 'interval_hm' => '1000 HM', 'due_date' => '11 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Pemeriksaan Rantai Lift', 'kategori' => 'Umum', 'last_hm' => '900 HM', 'interval_hm' => '1000 HM', 'due_date' => '24 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -101,7 +105,7 @@ $allUnits = [
         'rate' => '40 HM/Bulan',
         'last_update' => '18 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Oli Mesin', 'last_hm' => '800 HM', 'interval_hm' => '1000 HM', 'due_date' => '26 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Oli Mesin', 'kategori' => 'Umum', 'last_hm' => '800 HM', 'interval_hm' => '1000 HM', 'due_date' => '26 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -113,8 +117,8 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '05 Agu 2026',
         'maintenance' => [
-            ['name' => 'Pembersihan Filter Udara', 'last_hm' => '450 HM', 'interval_hm' => '500 HM', 'due_date' => '15 Agu 2026', 'status' => 'Due Soon'],
-            ['name' => 'Pemeriksaan Tekanan Ban', 'last_hm' => '200 HM', 'interval_hm' => '300 HM', 'due_date' => '22 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pembersihan Filter Udara', 'kategori' => 'Umum', 'last_hm' => '450 HM', 'interval_hm' => '500 HM', 'due_date' => '15 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pemeriksaan Tekanan Ban', 'kategori' => 'Umum', 'last_hm' => '200 HM', 'interval_hm' => '300 HM', 'due_date' => '22 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -126,8 +130,9 @@ $allUnits = [
         'rate' => '55 HM/Bulan',
         'last_update' => '12 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Filter Oli', 'last_hm' => '1250 HM', 'interval_hm' => '1000 HM', 'due_date' => '12 Agu 2026', 'status' => 'Over Due'],
-            ['name' => 'Ganti Oli Mesin', 'last_hm' => '1250 HM', 'interval_hm' => '1000 HM', 'due_date' => '12 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Kalibrasi Attachment Side Shift', 'kategori' => 'Khusus', 'last_hm' => '1300 HM', 'interval_hm' => '1000 HM', 'due_date' => '12 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Ganti Filter Oli', 'kategori' => 'Umum', 'last_hm' => '1250 HM', 'interval_hm' => '1000 HM', 'due_date' => '12 Agu 2026', 'status' => 'Over Due'],
+            ['name' => 'Ganti Oli Mesin', 'kategori' => 'Umum', 'last_hm' => '1250 HM', 'interval_hm' => '1000 HM', 'due_date' => '12 Agu 2026', 'status' => 'Over Due'],
         ]
     ],
     [
@@ -139,7 +144,8 @@ $allUnits = [
         'rate' => '50 HM/Bulan',
         'last_update' => '20 Agu 2026',
         'maintenance' => [
-            ['name' => 'Ganti Filter Solar', 'last_hm' => '700 HM', 'interval_hm' => '1000 HM', 'due_date' => '20 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Inspeksi Fork Positioner', 'kategori' => 'Khusus', 'last_hm' => '950 HM', 'interval_hm' => '1000 HM', 'due_date' => '20 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Ganti Filter Solar', 'kategori' => 'Umum', 'last_hm' => '700 HM', 'interval_hm' => '1000 HM', 'due_date' => '20 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -151,7 +157,7 @@ $allUnits = [
         'rate' => '35 HM/Bulan',
         'last_update' => '22 Agu 2026',
         'maintenance' => [
-            ['name' => 'Pengecekan Rem', 'last_hm' => '800 HM', 'interval_hm' => '1000 HM', 'due_date' => '22 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pengecekan Rem', 'kategori' => 'Umum', 'last_hm' => '800 HM', 'interval_hm' => '1000 HM', 'due_date' => '22 Agu 2026', 'status' => 'Due Soon'],
         ]
     ],
     [
@@ -163,15 +169,16 @@ $allUnits = [
         'rate' => '60 HM/Bulan',
         'last_update' => '19 Agu 2026',
         'maintenance' => [
-            ['name' => 'Pengecekan Radiator', 'last_hm' => '750 HM', 'interval_hm' => '1000 HM', 'due_date' => '19 Agu 2026', 'status' => 'Due Soon'],
+            ['name' => 'Pengecekan Radiator Heavy Duty', 'kategori' => 'Khusus', 'last_hm' => '750 HM', 'interval_hm' => '1000 HM', 'due_date' => '19 Agu 2026', 'status' => 'Due Soon'],
         ]
     ]
 ];
 
-// Otomatis tentukan status unit berdasarkan item maintenance yang paling mendesak (Over Due > Due Soon)
+// Evaluasi status dan kategori khusus tiap unit
 foreach ($allUnits as &$u) {
     $hasOverdue = false;
     $hasDueSoon = false;
+    $hasKhusus = false;
     if (!empty($u['maintenance'])) {
         foreach ($u['maintenance'] as $m) {
             if ($m['status'] === 'Over Due' || $m['status'] === 'overdue') {
@@ -179,8 +186,12 @@ foreach ($allUnits as &$u) {
             } elseif ($m['status'] === 'Due Soon' || $m['status'] === 'duesoon') {
                 $hasDueSoon = true;
             }
+            if (($m['kategori'] ?? '') === 'Khusus') {
+                $hasKhusus = true;
+            }
         }
     }
+    $u['has_khusus'] = $hasKhusus;
     if ($hasOverdue) {
         $u['status'] = 'Over Due';
         $u['badge'] = 'badge-unit-overdue';
@@ -197,20 +208,31 @@ foreach ($allUnits as &$u) {
 }
 unset($u);
 
-// Filter sesuai customer (jika parameter customer diberikan)
-if (!empty($customerFilter)) {
-    $displayUnits = array_values(array_filter($allUnits, function($item) use ($customerFilter) {
-        return strcasecmp($item['customer'], $customerFilter) === 0;
-    }));
-    if (empty($displayUnits)) {
-        $displayUnits = array_values(array_filter($allUnits, function($item) use ($customerFilter) {
-            return stripos($item['customer'], $customerFilter) !== false;
-        }));
+// Filter data berdasarkan Customer, Jenis (Khusus / Umum), dan Status
+$displayUnits = array_values(array_filter($allUnits, function($item) use ($customerFilter, $jenisFilter, $statusFilter) {
+    if (!empty($customerFilter)) {
+        if (strcasecmp($item['customer'], $customerFilter) !== 0 && stripos($item['customer'], $customerFilter) === false) {
+            return false;
+        }
     }
-} else {
-    // Default view: seluruh unit
-    $displayUnits = $allUnits;
-}
+    if (!empty($jenisFilter)) {
+        if (strcasecmp($jenisFilter, 'Khusus') === 0 && empty($item['has_khusus'])) {
+            return false;
+        }
+        if (strcasecmp($jenisFilter, 'Umum') === 0 && !empty($item['has_khusus'])) {
+            return false;
+        }
+    }
+    if (!empty($statusFilter)) {
+        if (strcasecmp($statusFilter, 'Overdue') === 0 && $item['status'] !== 'Over Due') {
+            return false;
+        }
+        if (strcasecmp($statusFilter, 'Due soon') === 0 && $item['status'] !== 'Due Soon') {
+            return false;
+        }
+    }
+    return true;
+}));
 
 // URUTKAN: Unit yang memiliki status 'Over Due' (harus dieksekusi terlebih dahulu) selalu muncul paling atas!
 usort($displayUnits, function($a, $b) {
@@ -259,24 +281,26 @@ usort($displayUnits, function($a, $b) {
                 <!-- Dropdown Jenis -->
                 <div class="dropdown">
                     <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterJenisUnit" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>Jenis</span>
+                        <span><?= !empty($jenisFilter) ? htmlspecialchars($jenisFilter) : 'Jenis' ?></span>
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterJenisUnit">
-                        <li><a class="dropdown-item" href="#">Umum</a></li>
-                        <li><a class="dropdown-item" href="#">Khusus</a></li>
+                        <li><a class="dropdown-item <?= empty($jenisFilter) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Semua Jenis</a></li>
+                        <li><a class="dropdown-item <?= ($jenisFilter === 'Khusus') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&jenis=Khusus<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Khusus</a></li>
+                        <li><a class="dropdown-item <?= ($jenisFilter === 'Umum') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&jenis=Umum<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Umum</a></li>
                     </ul>
                 </div>
 
                 <!-- Dropdown Status -->
                 <div class="dropdown">
                     <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatusUnit" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>Status</span>
+                        <span><?= !empty($statusFilter) ? htmlspecialchars($statusFilter) : 'Status' ?></span>
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatusUnit">
-                        <li><a class="dropdown-item" href="#">Due soon</a></li>
-                        <li><a class="dropdown-item" href="#">Overdue</a></li>
+                        <li><a class="dropdown-item <?= empty($statusFilter) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Semua Status</a></li>
+                        <li><a class="dropdown-item <?= ($statusFilter === 'Overdue') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&status=Overdue<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Overdue</a></li>
+                        <li><a class="dropdown-item <?= ($statusFilter === 'Due soon') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&status=Due+soon<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Due soon</a></li>
                     </ul>
                 </div>
 
@@ -314,7 +338,7 @@ usort($displayUnits, function($a, $b) {
                     <?php if (empty($displayUnits)): ?>
                         <tr>
                             <td colspan="7" class="text-center py-4 text-muted">
-                                Tidak ada unit forklift untuk customer ini.
+                                Tidak ada unit forklift yang cocok dengan filter yang dipilih.
                             </td>
                         </tr>
                     <?php else: ?>
@@ -399,10 +423,11 @@ usort($displayUnits, function($a, $b) {
                     <table class="table-modal-maint">
                         <thead>
                             <tr>
-                                <th style="width: 32%;">Jenis Maintenance</th>
-                                <th style="width: 17%;">Last HM</th>
-                                <th style="width: 17%;">Interval HM</th>
-                                <th style="width: 22%;">Jatuh Tempo</th>
+                                <th style="width: 30%;">Jenis Maintenance</th>
+                                <th style="width: 12%; text-align: center;">Kategori</th>
+                                <th style="width: 14%;">Last HM</th>
+                                <th style="width: 14%;">Interval HM</th>
+                                <th style="width: 18%;">Jatuh Tempo</th>
                                 <th style="width: 12%; text-align: center;">Status</th>
                             </tr>
                         </thead>
@@ -410,6 +435,7 @@ usort($displayUnits, function($a, $b) {
                             <!-- Item 1: Overdue -->
                             <tr class="row-maint-overdue">
                                 <td>Ganti Oli Mesin</td>
+                                <td style="text-align: center;"><span class="badge-maint-kategori umum">Umum</span></td>
                                 <td>1.000 HM</td>
                                 <td>750 HM</td>
                                 <td>10 Agu 2026</td>
@@ -420,6 +446,7 @@ usort($displayUnits, function($a, $b) {
                             <!-- Item 2: Overdue -->
                             <tr class="row-maint-overdue">
                                 <td>Ganti Filter Solar</td>
+                                <td style="text-align: center;"><span class="badge-maint-kategori umum">Umum</span></td>
                                 <td>1.000 HM</td>
                                 <td>800 HM</td>
                                 <td>10 Agu 2026</td>
@@ -427,9 +454,21 @@ usort($displayUnits, function($a, $b) {
                                     <span class="material-symbols-outlined text-danger" style="font-variation-settings: 'FILL' 1; font-size: 1.25rem;">warning</span>
                                 </td>
                             </tr>
-                            <!-- Item 3: Due Soon -->
+                            <!-- Item 3: Khusus Due Soon -->
+                            <tr class="row-maint-duesoon">
+                                <td>Overhaul Attachment Clamp</td>
+                                <td style="text-align: center;"><span class="badge-maint-kategori khusus">Khusus</span></td>
+                                <td>1.200 HM</td>
+                                <td>1500 HM</td>
+                                <td>25 Agu 2026</td>
+                                <td>
+                                    <span class="material-symbols-outlined" style="color: #D97706; font-size: 1.25rem;">notifications</span>
+                                </td>
+                            </tr>
+                            <!-- Item 4: Due Soon -->
                             <tr class="row-maint-duesoon">
                                 <td>Ganti Filter Udara</td>
+                                <td style="text-align: center;"><span class="badge-maint-kategori umum">Umum</span></td>
                                 <td>760 HM</td>
                                 <td>1000 HM</td>
                                 <td>31 Agu 2026</td>
@@ -442,7 +481,7 @@ usort($displayUnits, function($a, $b) {
                 </div>
 
                 <!-- Legend -->
-                <div class="modal-unit-legend">
+                <div class="modal-unit-legend d-flex align-items-center gap-4 flex-wrap">
                     <div class="legend-item">
                         <span class="legend-dot dot-red"></span>
                         <span>Over Due - Sudah Lewat Jatuh Tempo</span>
@@ -450,6 +489,14 @@ usort($displayUnits, function($a, $b) {
                     <div class="legend-item">
                         <span class="legend-dot dot-yellow"></span>
                         <span>Due Soon - Akan Jatuh Tempo</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="badge-maint-kategori khusus" style="font-size: 0.68rem;">Khusus</span>
+                        <span>Maintenance Khusus Unit</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="badge-maint-kategori umum" style="font-size: 0.68rem;">Umum</span>
+                        <span>Maintenance Standar / Umum</span>
                     </div>
                 </div>
             </div>
@@ -611,7 +658,12 @@ function openUnitDetail(rowElement, title, cust, serial, lastHm, rate, lastUpdat
                 ? '<span class="material-symbols-outlined text-danger" style="font-variation-settings: \'FILL\' 1; font-size: 1.25rem;">warning</span>'
                 : '<span class="material-symbols-outlined" style="color: #D97706; font-size: 1.25rem;">notifications</span>';
 
+            var kat = item.kategori || 'Umum';
+            var katClass = (kat.toLowerCase() === 'khusus') ? 'khusus' : 'umum';
+            var katBadge = '<span class="badge-maint-kategori ' + katClass + '">' + kat + '</span>';
+
             tr.innerHTML = '<td>' + item.name + '</td>' +
+                           '<td style="text-align: center;">' + katBadge + '</td>' +
                            '<td>' + item.last_hm + '</td>' +
                            '<td>' + item.interval_hm + '</td>' +
                            '<td>' + item.due_date + '</td>' +

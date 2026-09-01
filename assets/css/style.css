@@ -618,12 +618,16 @@ a {
     color: var(--fmr-blue-primary);
 }
 
-.status-badge.sukses {
+.status-badge.sukses,
+.status-badge.terkirim,
+.status-badge.status-sukses,
+.status-badge.status-terkirim {
     background-color: var(--fmr-green-light);
     color: var(--fmr-green-text);
 }
 
-.status-badge.gagal {
+.status-badge.gagal,
+.status-badge.status-gagal {
     background-color: #FCA5A5;
     color: #991B1B;
 }
@@ -3413,7 +3417,7 @@ a {
 
 /* Modal Unit Forklift Detail Popup */
 .modal-unit-detail-dialog {
-    max-width: 680px;
+    max-width: 880px;
 }
 
 .modal-unit-detail-content {
@@ -3540,15 +3544,41 @@ a {
 }
 
 .table-modal-maint tbody td {
-    padding: 13px 18px;
-    font-size: 0.84rem;
+    padding: 14px 18px;
+    font-size: 0.86rem;
     color: #111827;
     vertical-align: middle;
     border: none;
+    white-space: nowrap;
 }
 
 .table-modal-maint tbody tr td:first-child {
     font-weight: 600;
+}
+
+/* Badge Kategori Maintenance (Khusus vs Umum) */
+.badge-maint-kategori {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 9px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+.badge-maint-kategori.khusus {
+    background-color: #F3E8FF;
+    color: #7E22CE;
+    border: 1px solid #E9D5FF;
+}
+
+.badge-maint-kategori.umum {
+    background-color: #F1F5F9;
+    color: #475569;
+    border: 1px solid #CBD5E1;
 }
 
 .table-modal-maint tbody tr td:last-child {
