@@ -259,6 +259,116 @@
                                 </button>
                             </div>
                         </td>
+                    <!-- Row 8 -->
+                    <tr>
+                        <td class="fw-bold">SA-008</td>
+                        <td class="fw-bold">PT. Sentosa Abadi</td>
+                        <td>Medium Duty</td>
+                        <td>26 – 08 – 03, 18.00</td>
+                        <td>Admin Sales</td>
+                        <td>
+                            <span class="status-pill-badge aktif">Aktif</span>
+                        </td>
+                        <td>
+                            <div class="action-icons-group">
+                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Sentosa Abadi') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
+                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 9 -->
+                    <tr>
+                        <td class="fw-bold">CT-009</td>
+                        <td class="fw-bold">PT. Cahaya Terang</td>
+                        <td>Low Duty</td>
+                        <td>26 – 08 – 03, 18.00</td>
+                        <td>Kepala Toko</td>
+                        <td>
+                            <span class="status-pill-badge aktif">Aktif</span>
+                        </td>
+                        <td>
+                            <div class="action-icons-group">
+                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Cahaya Terang') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
+                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 10 -->
+                    <tr>
+                        <td class="fw-bold">MS-010</td>
+                        <td class="fw-bold">PT. Mitra Sejahtera</td>
+                        <td>Heavy Duty</td>
+                        <td>26 – 08 – 03, 18.00</td>
+                        <td>Admin Sales</td>
+                        <td>
+                            <span class="status-pill-badge nonaktif">Nonaktif</span>
+                        </td>
+                        <td>
+                            <div class="action-icons-group">
+                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Mitra Sejahtera') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
+                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 11 -->
+                    <tr>
+                        <td class="fw-bold">PL-011</td>
+                        <td class="fw-bold">PT. Prima Logistik</td>
+                        <td>Medium Duty</td>
+                        <td>26 – 08 – 03, 18.00</td>
+                        <td>Kepala Toko</td>
+                        <td>
+                            <span class="status-pill-badge aktif">Aktif</span>
+                        </td>
+                        <td>
+                            <div class="action-icons-group">
+                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
+                                </button>
+                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Prima Logistik') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
+                                </a>
+                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -70,5 +70,8 @@
 <!-- Bootstrap 5 Bundle JS (Local) -->
 <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<!-- Universal Table Pagination Script -->
+<script src="assets/js/table-pagination.js"></script>
+
 </body>
 </html>

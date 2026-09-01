@@ -229,6 +229,92 @@
                                 </button>
                             </div>
                         </td>
+                    <!-- Row 9 -->
+                    <tr>
+                        <td>Komatsu</td>
+                        <td>FD30T-17</td>
+                        <td>4D94LE</td>
+                        <td>25 – 8 – 2026</td>
+                        <td>Admin Sales</td>
+                        <td class="text-center">
+                            <span class="badge-status-green">Aktif</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="action-icons-group justify-content-center">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 10 -->
+                    <tr>
+                        <td>Doosan</td>
+                        <td>D30S-5</td>
+                        <td>G424I</td>
+                        <td>26 – 8 – 2026</td>
+                        <td>Kepala Toko</td>
+                        <td class="text-center">
+                            <span class="badge-status-green">Aktif</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="action-icons-group justify-content-center">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 11 -->
+                    <tr>
+                        <td>Mitsubishi</td>
+                        <td>FD35</td>
+                        <td>S4S</td>
+                        <td>27 – 8 – 2026</td>
+                        <td>Admin Sales</td>
+                        <td class="text-center">
+                            <span class="badge-status-gray">Nonaktif</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="action-icons-group justify-content-center">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 12 -->
+                    <tr>
+                        <td>TCM</td>
+                        <td>FD30T3Z</td>
+                        <td>Isuzu C240</td>
+                        <td>28 – 8 – 2026</td>
+                        <td>Kepala Toko</td>
+                        <td class="text-center">
+                            <span class="badge-status-green">Aktif</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="action-icons-group justify-content-center">
+                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
+                                </button>
+                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
