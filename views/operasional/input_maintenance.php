@@ -87,11 +87,11 @@
                         <div class="maint-radio-group">
                             <label class="custom-radio-item">
                                 <input type="radio" name="serviceCategory" value="company" id="radioServiceCompany">
-                                <span>Service With Company</span>
+                                <span>Servis Perusahaan</span>
                             </label>
                             <label class="custom-radio-item">
                                 <input type="radio" name="serviceCategory" value="self" id="radioSelfService">
-                                <span>Self-Service</span>
+                                <span>Servis Mandiri</span>
                             </label>
                             <label class="custom-radio-item">
                                 <input type="radio" name="serviceCategory" value="sparepart" id="radioSparepart">
@@ -99,11 +99,11 @@
                             </label>
                         </div>
 
-                        <!-- Dynamic Row: Served By & Sales Order (SO) -->
+                        <!-- Dynamic Row: Dilayani Oleh & Sales Order (SO) -->
                         <div class="row g-3" id="dynamicServiceRow">
-                            <!-- Served By -->
+                            <!-- Dilayani Oleh -->
                             <div class="col-12 col-sm-6" id="servedByContainer" style="display: none;">
-                                <label for="servedBySelect" class="input-maint-label">Served By</label>
+                                <label for="servedBySelect" class="input-maint-label">Dilayani Oleh</label>
                                 <select class="input-maint-select-pill" id="servedBySelect">
                                     <option value="" selected disabled></option>
                                     <option value="Admin Sales">Admin Sales</option>
@@ -136,7 +136,7 @@
                                     <tr>
                                         <th style="width: 25%;">Kode Barang</th>
                                         <th style="width: 32%;">Nama Barang</th>
-                                        <th style="width: 14%;">Qyt</th>
+                                        <th style="width: 14%;">Jumlah</th>
                                         <th style="width: 14%;">Satuan</th>
                                         <th style="width: 15%;">SO</th>
                                     </tr>
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id="hmErrorToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    Error: Nilai HM tidak boleh lebih kecil atau sama dengan Last HM.
+                    Error: Nilai HM tidak boleh lebih kecil atau sama dengan HM Terakhir.
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>

@@ -895,8 +895,8 @@ a {
 }
 
 .login-input-label {
-    color: #2563EB;
-    font-weight: 600;
+    color: #111827;
+    font-weight: 700;
     font-size: 0.88rem;
     margin-bottom: 6px;
     display: block;
@@ -941,6 +941,28 @@ a {
     color: #8E9DAE;
     opacity: 0.85;
     font-size: 0.9rem;
+}
+
+.login-toggle-password {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-left: 8px;
+    color: #94A3B8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+}
+
+.login-toggle-password:hover {
+    color: #475569;
+}
+
+.login-toggle-password .material-symbols-outlined {
+    font-size: 1.25rem;
 }
 
 .btn-login-submit {
@@ -1234,6 +1256,7 @@ a {
     border: none;
     padding: 24px 32px 30px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    position: relative;
 }
 
 .modal-customer-title {
@@ -1621,6 +1644,7 @@ a {
     border: none;
     padding: 28px 36px 36px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    position: relative;
 }
 
 .modal-forklift-title {
@@ -1655,6 +1679,23 @@ a {
 .forklift-form-input:focus {
     border-color: var(--fmr-blue-primary);
     box-shadow: 0 0 0 3px rgba(96, 132, 153, 0.15);
+}
+
+.btn-forklift-batal {
+    background-color: #E5E7EB;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 36px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-forklift-batal:hover {
+    background-color: #D1D5DB;
+    color: #111827;
 }
 
 .btn-forklift-save {
@@ -1971,13 +2012,13 @@ a {
 }
 
 .tab-pill-btn.inactive {
-    background-color: #E2E8F0;
-    color: #334155;
+    background-color: #BAC7D5;
+    color: #1E293B;
 }
 
 .tab-pill-btn.inactive:hover {
-    background-color: #CBD5E1;
-    color: #1E293B;
+    background-color: #A6B8C7;
+    color: #0F172A;
 }
 
 .user-filter-bar {
@@ -2263,6 +2304,7 @@ a {
     border: none;
     padding: 28px 36px 36px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+    position: relative;
 }
 
 .modal-user-title {
@@ -2271,6 +2313,23 @@ a {
     color: #111827;
     text-align: center;
     margin-bottom: 24px;
+}
+
+.btn-user-batal {
+    background-color: #E5E7EB;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 36px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-user-batal:hover {
+    background-color: #D1D5DB;
+    color: #111827;
 }
 
 .user-form-label {
@@ -2829,6 +2888,22 @@ a {
 
 .reminder-modal-footer {
     border-top: none;
+}
+
+.reminder-modal-btn-cancel {
+    background-color: #E5E7EB;
+    color: #111827;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    padding: 8px 26px;
+    border: none;
+    transition: background-color 0.15s ease;
+}
+
+.reminder-modal-btn-cancel:hover {
+    background-color: #D1D5DB;
+    color: #111827;
 }
 
 .reminder-modal-btn-submit {
@@ -3656,6 +3731,22 @@ a {
     padding: 34px 40px 30px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.16);
     background: #FFFFFF;
+    position: relative;
+}
+
+/* Modal Corner Close Button (Silang) */
+.modal-close-corner {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    z-index: 10;
+    opacity: 0.65;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.modal-close-corner:hover {
+    opacity: 1;
+    transform: scale(1.08);
 }
 
 .modal-form-unit-title {

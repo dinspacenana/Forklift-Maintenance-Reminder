@@ -1,7 +1,7 @@
 <!-- views/setting/index.php - Settings View -->
 <main class="dashboard-container">
     <!-- Page Title -->
-    <h2 class="page-title">Settings</h2>
+    <h2 class="page-title">Pengaturan</h2>
 
     <!-- Settings Main Card -->
     <div class="settings-card">
@@ -20,47 +20,47 @@
                             <span id="selectedEmailModeText">Pilih Mode</span>
                         </button>
                         <ul class="dropdown-menu settings-dropdown-menu" aria-labelledby="dropdownEmailMode">
-                            <li><a class="dropdown-item" href="#" data-mode="Semi Automatic">Semi Automatic</a></li>
-                            <li><a class="dropdown-item" href="#" data-mode="Full Automatic">Full Automatic</a></li>
+                            <li><a class="dropdown-item" href="#" data-mode="Semi Otomatis">Semi Otomatis</a></li>
+                            <li><a class="dropdown-item" href="#" data-mode="Otomatis Penuh">Otomatis Penuh</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2: Reminder Generated Date -->
+            <!-- Row 2: Waktu Pembuatan Reminder -->
             <div class="settings-row">
-                <label class="settings-label">Reminder Generated Date</label>
+                <label class="settings-label">Waktu Pembuatan Reminder</label>
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
                         <span class="settings-pill-prefix">H -</span>
                         <input type="number" id="reminderGenDays" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
                     </div>
-                    <span class="settings-trailing-text">From Maintenance Due Date</span>
+                    <span class="settings-trailing-text">Dari Tanggal Jatuh Tempo Maintenance</span>
                 </div>
             </div>
 
-            <!-- Row 3: Due Soon status starts at -->
+            <!-- Row 3: Status Due Soon Dimulai Pada -->
             <div class="settings-row">
-                <label class="settings-label">Due Soon status starts at</label>
+                <label class="settings-label">Status Due Soon Dimulai Pada</label>
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
                         <input type="number" id="dueSoonHm" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
                         <span class="settings-pill-suffix">HM</span>
                     </div>
-                    <span class="settings-trailing-text">Before Maintenance Due Date</span>
+                    <span class="settings-trailing-text">Sebelum Tanggal Jatuh Tempo Maintenance</span>
                 </div>
             </div>
 
-            <!-- Row 4: Last Checked Date Time -->
+            <!-- Row 4: Waktu Terakhir Dicek -->
             <div class="settings-row">
-                <label class="settings-label">Last Checked Date Time</label>
+                <label class="settings-label">Waktu Terakhir Dicek</label>
                 <div class="settings-control-group align-items-start">
                     <div>
                         <div class="settings-datetime-box">
                             2026 - 08 - 05
                         </div>
                         <div class="settings-updated-by">
-                            Updated by : Marsha Dina
+                            Diperbarui oleh : Marsha Dina
                         </div>
                     </div>
                     <div>
@@ -74,7 +74,7 @@
             <!-- Submit Button (Bottom Right) -->
             <div class="d-flex justify-content-end mt-4">
                 <button type="submit" class="btn-setting-save">
-                    Simpan Setting
+                    Simpan Pengaturan
                 </button>
             </div>
         </form>

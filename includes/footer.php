@@ -9,9 +9,8 @@
     <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
         <div class="modal-content fmr-modal-content">
             <!-- Modal Header -->
-            <div class="modal-header fmr-modal-header d-flex justify-content-between align-items-center">
+            <div class="modal-header fmr-modal-header">
                 <h5 class="modal-title fmr-modal-title" id="profileModalLabel">Profil Akun</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Modal Body -->
@@ -32,11 +31,12 @@
                             <input type="text" class="fmr-form-control" id="profileNameInput" value="Andi Wijaya">
                             <span class="material-symbols-outlined fmr-input-edit-icon">edit</span>
                         </div>
-                        <p class="fmr-form-subtext">Logged as Administrator.</p>
+                        <p class="fmr-form-subtext">Masuk sebagai Administrator.</p>
                     </div>
 
                     <!-- Action Button -->
-                    <div class="d-flex justify-content-end mt-4">
+                    <div class="d-flex justify-content-end align-items-center gap-2 mt-4">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="border-radius: 10px; font-weight: 600; padding: 7px 22px;">Batal</button>
                         <button type="button" class="fmr-btn-submit" data-bs-dismiss="modal">Simpan</button>
                     </div>
                 </form>
@@ -51,8 +51,7 @@
         <div class="modal-content fmr-modal-content">
             <!-- Modal Header -->
             <div class="modal-header fmr-modal-header border-0 pb-0">
-                <h5 class="modal-title fmr-modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title fmr-modal-title" id="logoutModalLabel">Konfirmasi Keluar</h5>
             </div>
 
             <!-- Modal Body -->
@@ -60,7 +59,7 @@
                 <p class="mb-4">Apakah Anda yakin ingin keluar dari sistem?</p>
                 <div class="d-flex justify-content-end gap-2">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal" style="border-radius: 10px; font-weight: 600;">Batal</button>
-                    <a href="login.php" class="btn btn-danger" style="border-radius: 10px; font-weight: 600;">Logout</a>
+                    <a href="login.php" class="btn btn-danger" style="border-radius: 10px; font-weight: 600;">Keluar</a>
                 </div>
             </div>
         </div>

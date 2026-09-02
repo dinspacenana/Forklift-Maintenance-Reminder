@@ -44,7 +44,7 @@
 
             <!-- Add Customer Button -->
             <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
-                <span class="material-symbols-outlined">add</span> Add Customer
+                <span class="material-symbols-outlined">add</span> Tambah Customer
             </button>
         </div>
     </div>
@@ -55,11 +55,11 @@
             <table class="table customer-table">
                 <thead>
                     <tr>
-                        <th style="width: 10%;">Code</th>
+                        <th style="width: 10%;">Kode</th>
                         <th style="width: 22%;">Customer</th>
                         <th style="width: 14%;">Tipe Operasi</th>
-                        <th style="width: 18%;">Created Datetime</th>
-                        <th style="width: 14%;">Created By</th>
+                        <th style="width: 18%;">Waktu Dibuat</th>
+                        <th style="width: 14%;">Dibuat Oleh</th>
                         <th style="width: 10%;">Status</th>
                         <th style="width: 12%; text-align: start;">Aksi</th>
                     </tr>
@@ -405,7 +405,7 @@
                     <div class="customer-info-box mb-3">
                         <div class="customer-code-name-row">
                             <div style="flex: 1;">
-                                <div class="info-sub-label">Code Customer</div>
+                                <div class="info-sub-label">Kode Customer</div>
                                 <div class="info-val-large">TM-001</div>
                             </div>
                             <div class="box-vertical-divider"></div>
@@ -480,12 +480,12 @@
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="info-pill-box">
-                        <span>Created : 26 – 08 – 03, 18.00</span>
+                        <span>Dibuat : 26 – 08 – 03, 18.00</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="info-pill-box">
-                        <span>Input By : Administrator</span>
+                        <span>Dibuat Oleh : Administrator</span>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
@@ -498,7 +498,7 @@
             <!-- Action Button -->
             <div class="d-flex justify-content-end">
                 <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
-                    Back
+                    Kembali
                 </button>
             </div>
         </div>
@@ -511,7 +511,7 @@
 <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
         <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="addCustomerModalLabel">Add Customer</h4>
+            <h4 class="modal-customer-title" id="addCustomerModalLabel">Tambah Customer</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3">
@@ -521,7 +521,7 @@
                         <div class="customer-info-box mb-3">
                             <div class="customer-code-name-row">
                                 <div style="flex: 1;">
-                                    <div class="info-sub-label">Code Customer</div>
+                                    <div class="info-sub-label">Kode Customer</div>
                                     <div class="info-val-large">TM-001</div>
                                 </div>
                                 <div class="box-vertical-divider"></div>
@@ -586,7 +586,7 @@
                         Simpan
                     </button>
                     <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
-                        Back
+                        Kembali
                     </button>
                 </div>
             </form>
@@ -600,7 +600,7 @@
 <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
         <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="editCustomerModalLabel">Edit Detail Customer</h4>
+            <h4 class="modal-customer-title" id="editCustomerModalLabel">Ubah Detail Customer</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3">
@@ -608,7 +608,7 @@
                         <div class="customer-info-box mb-3">
                             <div class="customer-code-name-row">
                                 <div style="flex: 1;">
-                                    <div class="info-sub-label">Code Customer</div>
+                                    <div class="info-sub-label">Kode Customer</div>
                                     <div class="info-val-large">TM-001</div>
                                 </div>
                                 <div class="box-vertical-divider"></div>
@@ -668,7 +668,7 @@
                         Simpan
                     </button>
                     <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
-                        Back
+                        Kembali
                     </button>
                 </div>
             </form>

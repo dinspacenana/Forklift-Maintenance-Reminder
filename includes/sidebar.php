@@ -83,36 +83,36 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
         </li>
     </ul>
 
-    <!-- Section: Administration -->
-    <div class="sidebar-section-label">Administration</div>
+    <!-- Section: Administrasi -->
+    <div class="sidebar-section-label">Administrasi</div>
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=user" class="sidebar-link <?= ($currentPage === 'user') ? 'active' : '' ?>">
                 <span class="icon-box"><span class="material-symbols-outlined">group</span></span>
-                <span>User Management</span>
+                <span>Manajemen User</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=setting" class="sidebar-link <?= ($currentPage === 'setting') ? 'active' : '' ?>">
                 <span class="icon-box"><span class="material-symbols-outlined">settings</span></span>
-                <span>Setting</span>
+                <span>Pengaturan</span>
             </a>
         </li>
     </ul>
 
-    <!-- Section: Report -->
-    <div class="sidebar-section-label">Report</div>
+    <!-- Section: Laporan -->
+    <div class="sidebar-section-label">Laporan</div>
     <ul class="sidebar-menu">
         <li class="sidebar-item">
             <a href="index.php?page=history" class="sidebar-link <?= ($currentPage === 'history') ? 'active' : '' ?>">
                 <span class="icon-box"><span class="material-symbols-outlined">history</span></span>
-                <span>History</span>
+                <span>Riwayat</span>
             </a>
         </li>
         <li class="sidebar-item">
             <a href="index.php?page=activity_log" class="sidebar-link <?= ($currentPage === 'activity_log') ? 'active' : '' ?>">
                 <span class="icon-box"><span class="material-symbols-outlined">schedule</span></span>
-                <span>Activity Log</span>
+                <span>Log Aktivitas</span>
             </a>
         </li>
     </ul>

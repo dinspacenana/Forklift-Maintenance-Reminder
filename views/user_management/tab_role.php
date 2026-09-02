@@ -1,7 +1,4 @@
 <!-- tab_role.php - Konten Tab Role & Akses -->
-<!-- Horizontal Tab Divider -->
-<hr class="user-tab-divider">
-
 <!-- Role Cards Grid (2 Columns) -->
 <div class="row g-4 mb-4">
     <!-- Card 1: Administrator -->
@@ -101,10 +98,13 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
-                        Simpan User
+                        Simpan Role
                     </button>
                 </div>
             </form>
@@ -118,7 +118,7 @@
 <div class="modal fade" id="addRoleModal" tabindex="-1" aria-labelledby="addRoleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 540px;">
         <div class="modal-content modal-user-content">
-            <h4 class="modal-user-title" id="addRoleModalLabel">Add Role</h4>
+            <h4 class="modal-user-title" id="addRoleModalLabel">Tambah Role</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
@@ -139,10 +139,10 @@
                 <!-- Permissions Section -->
                 <div class="mb-4">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <label class="user-form-label mb-0">Permissions</label>
+                        <label class="user-form-label mb-0">Hak Akses</label>
                         <div class="d-flex align-items-center gap-2">
-                            <button type="button" class="btn-permission-action" onclick="toggleAllRoleChecks(true)">Select All</button>
-                            <button type="button" class="btn-permission-action" onclick="toggleAllRoleChecks(false)">Clear All</button>
+                            <button type="button" class="btn-permission-action" onclick="toggleAllRoleChecks(true)">Pilih Semua</button>
+                            <button type="button" class="btn-permission-action" onclick="toggleAllRoleChecks(false)">Hapus Semua</button>
                         </div>
                     </div>
 
@@ -175,8 +175,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Buat Role
                     </button>
@@ -198,7 +201,7 @@
                 <div class="mb-4">
                     <div class="hak-akses-box-container">
                         <!-- 1. VIEW PERMISSIONS -->
-                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">View</h6>
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Lihat (View)</h6>
                         <div class="d-flex flex-column gap-2 mb-4">
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_view_dashboard</span>
@@ -251,7 +254,7 @@
                         </div>
 
                         <!-- 2. CREATE PERMISSIONS -->
-                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Create</h6>
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Tambah (Create)</h6>
                         <div class="d-flex flex-column gap-2 mb-4">
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_create_customer</span>
@@ -280,7 +283,7 @@
                         </div>
 
                         <!-- 3. EDIT PERMISSIONS -->
-                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Edit</h6>
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Ubah (Edit)</h6>
                         <div class="d-flex flex-column gap-2 mb-4">
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_edit_customer</span>
@@ -313,7 +316,7 @@
                         </div>
 
                         <!-- 4. DELETE PERMISSIONS -->
-                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Delete</h6>
+                        <h6 class="fw-bold mb-3" style="color: #111827; font-size: 0.95rem;">Hapus (Delete)</h6>
                         <div class="d-flex flex-column gap-2">
                             <div class="hak-akses-pill-item">
                                 <span class="perm-pill-box">can_delete_customer</span>
@@ -339,8 +342,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan
                     </button>

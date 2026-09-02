@@ -60,13 +60,13 @@
                     <li>
                         <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#profileModal">
                             <span class="material-symbols-outlined">person</span>
-                            <span>Profile</span>
+                            <span>Profil</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item text-danger" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutModal">
                             <span class="material-symbols-outlined">logout</span>
-                            <span>Logout</span>
+                            <span>Keluar</span>
                         </a>
                     </li>
                 </ul>

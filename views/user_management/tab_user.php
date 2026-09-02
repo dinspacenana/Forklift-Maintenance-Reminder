@@ -40,7 +40,7 @@
 
     <!-- Add User Button -->
     <button type="button" class="btn-add-user" data-bs-toggle="modal" data-bs-target="#addUserModal">
-        <span class="material-symbols-outlined">add</span> Add User
+        <span class="material-symbols-outlined">add</span> Tambah User
     </button>
 </div>
 
@@ -52,10 +52,10 @@
                 <th style="width: 13%;">Username</th>
                 <th style="width: 17%;">Nama</th>
                 <th style="width: 13%;">Role</th>
-                <th style="width: 15%;">Created Datetime</th>
-                <th style="width: 13%;">Created By</th>
+                <th style="width: 15%;">Waktu Dibuat</th>
+                <th style="width: 13%;">Dibuat Oleh</th>
                 <th style="width: 10%;">Status</th>
-                <th style="width: 13%;">Last Online At</th>
+                <th style="width: 13%;">Terakhir Online</th>
                 <th style="width: 8%; text-align: center;">Aksi</th>
             </tr>
         </thead>
@@ -251,7 +251,7 @@
 <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 540px;">
         <div class="modal-content modal-user-content">
-            <h4 class="modal-user-title" id="addUserModalLabel">Add New User</h4>
+            <h4 class="modal-user-title" id="addUserModalLabel">Tambah User Baru</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
@@ -273,11 +273,11 @@
 
                         <!-- Expiration Date -->
                         <div>
-                            <label class="user-form-label">Expiration Date</label>
+                            <label class="user-form-label">Tanggal Kedaluwarsa</label>
                             <div class="mb-2">
                                 <label class="custom-checkbox-item">
                                     <input type="checkbox" id="addForever" checked>
-                                    <span>Forever</span>
+                                    <span>Selamanya</span>
                                 </label>
                             </div>
                             <div class="user-date-input-group" id="addGroupWrapper">
@@ -311,8 +311,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end mt-4">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan User
                     </button>
@@ -348,11 +351,11 @@
 
                         <!-- Expiration Date -->
                         <div>
-                            <label class="user-form-label">Expiration Date</label>
+                            <label class="user-form-label">Tanggal Kedaluwarsa</label>
                             <div class="mb-2">
                                 <label class="custom-checkbox-item">
                                     <input type="checkbox" id="editForever" checked>
-                                    <span>Forever</span>
+                                    <span>Selamanya</span>
                                 </label>
                             </div>
                             <div class="user-date-input-group" id="editGroupWrapper">
@@ -385,8 +388,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end mt-4">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan User
                     </button>

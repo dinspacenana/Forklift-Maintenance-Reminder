@@ -2,7 +2,7 @@
 <main class="dashboard-container">
     <!-- Header with Title and Export Button -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="page-title mb-0">History</h2>
+        <h2 class="page-title mb-0">Riwayat</h2>
         <button class="btn fmr-btn-submit d-flex align-items-center" style="gap: 8px;">
             <span class="material-symbols-outlined">download</span> Ekspor Laporan
         </button>
@@ -75,7 +75,7 @@
                         <th style="width: 12%;">Maintenance</th>
                         <th style="width: 12%;">Tipe Operasi</th>
                         <th style="width: 10%;">HM</th>
-                        <th style="width: 12%;">So No</th>
+                        <th style="width: 12%;">No. SO</th>
                         <th style="width: 12%;">Sumber</th>
                     </tr>
                 </thead>
@@ -307,7 +307,7 @@
                         <div class="customer-info-box">
                             <div class="contact-info-grid" style="grid-template-columns: 1fr; gap: 16px;">
                                 <div class="contact-info-item" id="detailServedByContainer" style="display: none;">
-                                    <div class="contact-label">Served By</div>
+                                    <div class="contact-label">Dilayani Oleh</div>
                                     <div class="contact-val" id="detailServedBy">-</div>
                                 </div>
                                 <div class="contact-info-item" id="detailSOContainer" style="display: none;">
@@ -315,7 +315,7 @@
                                     <div class="contact-val" id="detailSO">-</div>
                                 </div>
                                 <div class="contact-info-item">
-                                    <div class="contact-label">List Sparepart</div>
+                                    <div class="contact-label">Daftar Sparepart</div>
                                     <div class="contact-val" id="detailSpareparts">-</div>
                                 </div>
                             </div>

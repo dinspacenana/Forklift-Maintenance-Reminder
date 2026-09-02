@@ -30,7 +30,7 @@
             <!-- Dropdown Reminder Type -->
             <div class="dropdown">
                 <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterReminderType" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Reminder Type</span>
+                    <span>Tipe Reminder</span>
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
                     <li><a class="dropdown-item" href="#">Email</a></li>
@@ -67,11 +67,11 @@
                     <tr>
                         <th style="width: 20%;">Customer / Unit</th>
                         <th style="width: 15%;">Maintenance</th>
-                        <th style="width: 15%;">Due Date</th>
-                        <th style="width: 15%;">Sent Datetime</th>
-                        <th style="width: 12%; text-align: center;">Reminder Type</th>
+                        <th style="width: 15%;">Jatuh Tempo</th>
+                        <th style="width: 15%;">Waktu Pengiriman</th>
+                        <th style="width: 12%; text-align: center;">Tipe Reminder</th>
                         <th style="width: 10%;">Status</th>
-                        <th style="width: 13%;">Attachment</th>
+                        <th style="width: 13%;">Lampiran</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -218,7 +218,7 @@
 
                 <!-- Input Datetime -->
                 <div class="mb-4">
-                    <label class="reminder-modal-datetime-label">Sent Datetime</label>
+                    <label class="reminder-modal-datetime-label">Waktu Pengiriman</label>
                     <div class="reminder-modal-datetime-group">
                         <!-- Date -->
                         <div class="reminder-modal-date-input">
@@ -232,8 +232,9 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-footer reminder-modal-footer">
-                <button type="button" class="btn reminder-modal-btn-submit">Kirim</button>
+            <div class="modal-footer reminder-modal-footer d-flex justify-content-end gap-2">
+                <button type="button" class="btn reminder-modal-btn-cancel" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn reminder-modal-btn-submit" data-bs-dismiss="modal">Kirim</button>
             </div>
         </div>
     </div>

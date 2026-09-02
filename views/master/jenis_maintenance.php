@@ -32,7 +32,7 @@
 
             <!-- Add Jenis Maintenance Button -->
             <button type="button" class="btn-add-jenis-maint" data-bs-toggle="modal" data-bs-target="#addJenisMaintModal">
-                <span class="material-symbols-outlined">add</span> Jenis Maintenance
+                <span class="material-symbols-outlined">add</span> Tambah Jenis Maintenance
             </button>
         </div>
     </div>
@@ -45,10 +45,10 @@
                     <tr>
                         <th style="width: 14%;">Nama Maintenance</th>
                         <th style="width: 10%;">Interval HM</th>
-                        <th style="width: 11%;">Interval Month</th>
-                        <th style="width: 23%;">List Sparepart</th>
-                        <th style="width: 11%;">Created</th>
-                        <th style="width: 11%;">Input By</th>
+                        <th style="width: 11%;">Interval Bulan</th>
+                        <th style="width: 23%;">Daftar Sparepart</th>
+                        <th style="width: 11%;">Waktu Dibuat</th>
+                        <th style="width: 11%;">Dibuat Oleh</th>
                         <th style="width: 8%;">Jenis</th>
                         <th style="width: 9%;">Tipe Operasi</th>
                         <th style="width: 8%; text-align: center;">Aksi</th>
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <label class="maint-form-label">Interval Month</label>
+                        <label class="maint-form-label">Interval Bulan</label>
                         <input type="text" class="maint-form-input" placeholder="">
                     </div>
                 </div>
@@ -242,9 +242,9 @@
                 <!-- List Sparepart yang diganti -->
                 <div class="mb-4">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <label class="maint-form-label mb-0">List Sparepart yang di ganti</label>
+                        <label class="maint-form-label mb-0">Daftar Sparepart yang Diganti</label>
                         <button type="button" class="btn-add-row" onclick="addSparepartRow('addSparepartContainer')">
-                            <span class="material-symbols-outlined">add</span> Add a Row
+                            <span class="material-symbols-outlined">add</span> Tambah Baris
                         </button>
                     </div>
 
@@ -316,7 +316,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <label class="maint-form-label">Interval Month</label>
+                        <label class="maint-form-label">Interval Bulan</label>
                         <input type="text" class="maint-form-input" value="1 Bulan">
                     </div>
                 </div>
@@ -334,9 +334,9 @@
                 <!-- List Sparepart yang diganti -->
                 <div class="mb-4">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <label class="maint-form-label mb-0">List Sparepart yang di ganti</label>
+                        <label class="maint-form-label mb-0">Daftar Sparepart yang Diganti</label>
                         <button type="button" class="btn-add-row" onclick="addSparepartRow('editSparepartContainer')">
-                            <span class="material-symbols-outlined">add</span> Add a Row
+                            <span class="material-symbols-outlined">add</span> Tambah Baris
                         </button>
                     </div>
 
@@ -373,9 +373,9 @@
      ========================================================= -->
 <div class="modal fade" id="deleteJenisMaintModal" tabindex="-1" aria-labelledby="deleteJenisMaintModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;">
-        <div class="modal-content modal-delete-content" style="border-radius: 24px; padding: 32px 28px; text-align: center; border: none; box-shadow: 0 20px 45px rgba(0,0,0,0.15);">
-            <h4 class="modal-delete-title" id="deleteJenisMaintModalLabel" style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 8px;">Yakin ingin mengapus?</h4>
-            <p class="modal-delete-subtext" style="color: #64748B; font-size: 0.85rem; margin-bottom: 24px;">Data akan hilang permanen</p>
+        <div class="modal-content modal-delete-content" style="border-radius: 20px; border: none; padding: 24px 20px; text-align: center;">
+            <h4 class="modal-delete-title" id="deleteJenisMaintModalLabel" style="font-weight: 800; font-size: 1.25rem; color: #111827; margin-bottom: 8px;">Yakin ingin menghapus?</h4>
+            <p class="modal-delete-subtext" style="color: #64748B; font-size: 0.88rem; margin-bottom: 24px;">Data akan hilang permanen</p>
 
             <div class="d-flex justify-content-center align-items-center gap-3">
                 <button type="button" class="btn-delete-cancel" data-bs-dismiss="modal" style="background-color: #FBBA16; color: #111827; font-weight: 700; font-size: 0.88rem; border-radius: 10px; padding: 8px 30px; border: none;">

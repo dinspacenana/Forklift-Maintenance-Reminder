@@ -34,7 +34,7 @@
 
             <!-- Add Forklift Button -->
             <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addForkliftModal">
-                <span class="material-symbols-outlined">add</span> Add Forklift
+                <span class="material-symbols-outlined">add</span> Tambah Forklift
             </button>
         </div>
     </div>
@@ -46,10 +46,10 @@
                 <thead>
                     <tr>
                         <th style="width: 22%;">Nama Forklift</th>
-                        <th style="width: 16%;">Type</th>
+                        <th style="width: 16%;">Tipe</th>
                         <th style="width: 16%;">Engine</th>
-                        <th style="width: 16%;">Created</th>
-                        <th style="width: 16%;">Input By</th>
+                        <th style="width: 16%;">Waktu Dibuat</th>
+                        <th style="width: 16%;">Dibuat Oleh</th>
                         <th style="width: 14%; text-align: center;">Status</th>
                         <th style="width: 10%; text-align: center;">Aksi</th>
                     </tr>
@@ -342,7 +342,7 @@
 <div class="modal fade" id="addForkliftModal" tabindex="-1" aria-labelledby="addForkliftModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
         <div class="modal-content modal-forklift-content">
-            <h4 class="modal-forklift-title" id="addForkliftModalLabel">Add Forklift</h4>
+            <h4 class="modal-forklift-title" id="addForkliftModalLabel">Tambah Forklift</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
@@ -378,8 +378,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn-forklift-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan Unit
                     </button>
@@ -431,8 +434,11 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
-                <div class="d-flex justify-content-end">
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end align-items-center gap-3">
+                    <button type="button" class="btn-forklift-batal" data-bs-dismiss="modal">
+                        Batal
+                    </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan Unit
                     </button>
@@ -448,7 +454,7 @@
 <div class="modal fade" id="deleteForkliftModal" tabindex="-1" aria-labelledby="deleteForkliftModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
         <div class="modal-content modal-delete-content">
-            <h4 class="modal-delete-title" id="deleteForkliftModalLabel">Yakin ingin mengapus?</h4>
+            <h4 class="modal-delete-title" id="deleteForkliftModalLabel">Yakin ingin menghapus?</h4>
             <p class="modal-delete-subtext">Data akan hilang permanen</p>
 
             <div class="d-flex justify-content-center align-items-center gap-3">

@@ -328,8 +328,8 @@ usort($displayUnits, function($a, $b) {
                         <th style="width: 20%;">Unit</th>
                         <th style="width: 20%;">Customer</th>
                         <th style="width: 18%;">Serial Number</th>
-                        <th style="width: 13%;">Current HM</th>
-                        <th style="width: 13%;">Last Update</th>
+                        <th style="width: 13%;">HM Saat Ini</th>
+                        <th style="width: 13%;">Pembaruan Terakhir</th>
                         <th style="width: 10%;">Status</th>
                         <th style="width: 6%; text-align: center;"></th>
                     </tr>
@@ -401,7 +401,7 @@ usort($displayUnits, function($a, $b) {
                         <div class="stat-val" id="detailUnitSerial">8FD30-12345</div>
                     </div>
                     <div class="modal-unit-stat-item">
-                        <div class="stat-label">Last HM</div>
+                        <div class="stat-label">HM Terakhir</div>
                         <div class="stat-val" id="detailUnitLastHM">4.850</div>
                     </div>
                     <div class="modal-unit-stat-item">
@@ -417,7 +417,7 @@ usort($displayUnits, function($a, $b) {
 
             <!-- Modal Body: List Maintenance -->
             <div class="modal-unit-detail-body">
-                <h4 class="modal-unit-section-title">List Maintenance</h4>
+                <h4 class="modal-unit-section-title">Daftar Maintenance</h4>
 
                 <div class="table-modal-maint-wrapper">
                     <table class="table-modal-maint">
@@ -425,7 +425,7 @@ usort($displayUnits, function($a, $b) {
                             <tr>
                                 <th style="width: 30%;">Jenis Maintenance</th>
                                 <th style="width: 12%; text-align: center;">Kategori</th>
-                                <th style="width: 14%;">Last HM</th>
+                                <th style="width: 14%;">HM Terakhir</th>
                                 <th style="width: 14%;">Interval HM</th>
                                 <th style="width: 18%;">Jatuh Tempo</th>
                                 <th style="width: 12%; text-align: center;">Status</th>
@@ -535,7 +535,7 @@ usort($displayUnits, function($a, $b) {
                     <input type="text" class="form-unit-input" id="assignSerialInput" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Hour Meter Ahkir</label>
+                    <label class="form-unit-label">Hour Meter Akhir</label>
                     <div class="hm-input-container">
                         <input type="text" class="hm-input-field" id="assignHMInput" placeholder="">
                         <span class="hm-input-divider"></span>
@@ -589,7 +589,7 @@ usort($displayUnits, function($a, $b) {
                     <input type="text" class="form-unit-input" id="editSerialInput" value="8FD30-12345">
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Hour Meter Ahkir</label>
+                    <label class="form-unit-label">Hour Meter Akhir</label>
                     <div class="hm-input-container">
                         <input type="text" class="hm-input-field" id="editHMInput" value="4850">
                         <span class="hm-input-divider"></span>
@@ -618,7 +618,7 @@ usort($displayUnits, function($a, $b) {
 <div class="modal fade" id="deleteUnitModal" tabindex="-1" aria-labelledby="deleteUnitModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-delete-unit-dialog">
         <div class="modal-content modal-delete-unit-content">
-            <h4 class="modal-delete-unit-title">Yakin ingin mengapus?</h4>
+            <h4 class="modal-delete-unit-title">Yakin ingin menghapus?</h4>
             <div class="modal-delete-unit-desc">Data akan hilang permanen</div>
             <div class="d-flex justify-content-center gap-3">
                 <button type="button" class="btn-modal-delete-batal" data-bs-dismiss="modal">Batal</button>

@@ -64,9 +64,12 @@
                         id="password" 
                         name="password" 
                         class="login-text-input" 
-                        placeholder="Masukkan password" 
+                        placeholder="Masukkan Password" 
                         autocomplete="current-password" 
                         required>
+                    <button type="button" class="login-toggle-password" id="togglePasswordBtn" title="Tampilkan Password" aria-label="Toggle password visibility">
+                        <span class="material-symbols-outlined" id="togglePasswordIcon">visibility</span>
+                    </button>
                 </div>
             </div>
 
@@ -77,5 +80,21 @@
 
     <!-- Bootstrap 5 Bundle JS (Local) -->
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Password Visibility Toggle Script -->
+    <script>
+        const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+        const passwordInput = document.getElementById('password');
+        const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+
+        if (togglePasswordBtn && passwordInput && togglePasswordIcon) {
+            togglePasswordBtn.addEventListener('click', function() {
+                const isPassword = passwordInput.type === 'password';
+                passwordInput.type = isPassword ? 'text' : 'password';
+                togglePasswordIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+                togglePasswordBtn.title = isPassword ? 'Sembunyikan Password' : 'Tampilkan Password';
+            });
+        }
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <main class="dashboard-container">
     <!-- Header with Title and Export Button -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="page-title mb-0">Activity Log</h2>
+        <h2 class="page-title mb-0">Log Aktivitas</h2>
         <button class="btn fmr-btn-submit d-flex align-items-center" style="gap: 8px;">
             <span class="material-symbols-outlined">download</span> Ekspor Laporan
         </button>
@@ -46,10 +46,10 @@
                     <li><a class="dropdown-item" href="#">Jadwal Maintenance</a></li>
                     <li><a class="dropdown-item" href="#">Outstanding</a></li>
                     <li><a class="dropdown-item" href="#">Reminder</a></li>
-                    <li><a class="dropdown-item" href="#">User Management</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">History</a></li>
-                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                    <li><a class="dropdown-item" href="#">Manajemen User</a></li>
+                    <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+                    <li><a class="dropdown-item" href="#">Riwayat</a></li>
+                    <li><a class="dropdown-item" href="#">Log Aktivitas</a></li>
                 </ul>
             </div>
 
@@ -60,9 +60,9 @@
                 </button>
                 <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterAktivitas">
                     <li><a class="dropdown-item" href="#">Login</a></li>
-                    <li><a class="dropdown-item" href="#">Add</a></li>
-                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                    <li><a class="dropdown-item" href="#">Tambah</a></li>
+                    <li><a class="dropdown-item" href="#">Ubah</a></li>
+                    <li><a class="dropdown-item" href="#">Hapus</a></li>
                     <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
             </div>
