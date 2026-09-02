@@ -1,9 +1,3 @@
-<style>
-.user-date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-}
-</style>
 <!-- tab_user.php - Konten Tab User -->
 <!-- Filter Bar -->
 <div class="user-filter-bar">
@@ -286,9 +280,9 @@
                                     <span>Forever</span>
                                 </label>
                             </div>
-                            <div class="user-date-input-group">
-                                <input type="text" id="addExpDate" disabled>
-                                <span class="material-symbols-outlined">calendar_today</span>
+                            <div class="user-date-input-group" id="addGroupWrapper">
+                                <input type="text" id="addExpDate" disabled style="background-color: transparent; cursor: not-allowed; color: #6b7280; width: 100%; border: none; outline: none; padding-left: 18px;">
+                                <span class="material-symbols-outlined" style="cursor: pointer;">calendar_today</span>
                             </div>
                         </div>
                     </div>
@@ -361,9 +355,9 @@
                                     <span>Forever</span>
                                 </label>
                             </div>
-                            <div class="user-date-input-group">
-                                <input type="text" id="editExpDate" disabled>
-                                <span class="material-symbols-outlined">calendar_today</span>
+                            <div class="user-date-input-group" id="editGroupWrapper">
+                                <input type="text" id="editExpDate" disabled style="background-color: transparent; cursor: not-allowed; color: #6b7280; width: 100%; border: none; outline: none; padding-left: 18px;">
+                                <span class="material-symbols-outlined" style="cursor: pointer;">calendar_today</span>
                             </div>
                         </div>
                     </div>
@@ -422,6 +416,16 @@
         </div>
     </div>
 </div>
+
+<style>
+.user-date-input-group input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+.user-date-input-group input::placeholder {
+    color: #6b7280;
+}
+</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -485,51 +489,75 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Expiration date toggle logic
-    function handleExpDateToggle(checkboxId, dateInputId) {
+    function handleExpDateToggle(checkboxId, dateInputId, wrapperId) {
         const cb = document.getElementById(checkboxId);
         const dt = document.getElementById(dateInputId);
-        if (!cb || !dt) return;
-        
-        const group = dt.closest('.user-date-input-group');
-        const icon = group.querySelector('.material-symbols-outlined');
+        const wrap = document.getElementById(wrapperId);
+        if (!cb || !dt || !wrap) return;
+
+        dt.placeholder = 'dd/mm/yyyy';
+
+        // Create a hidden date input to act as the native picker
+        const hiddenPicker = document.createElement('input');
+        hiddenPicker.type = 'date';
+        hiddenPicker.style.position = 'absolute';
+        hiddenPicker.style.opacity = '0';
+        hiddenPicker.style.width = '1px';
+        hiddenPicker.style.height = '1px';
+        hiddenPicker.style.bottom = '0';
+        hiddenPicker.style.right = '0';
+        hiddenPicker.style.pointerEvents = 'none';
+        hiddenPicker.tabIndex = -1;
+        wrap.style.position = 'relative';
+        wrap.appendChild(hiddenPicker);
+
+        hiddenPicker.addEventListener('change', function() {
+            if (this.value) {
+                const parts = this.value.split('-'); // YYYY-MM-DD
+                if (parts.length === 3) {
+                    dt.value = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                }
+            }
+        });
+
+        // Trigger picker when clicking the calendar icon
+        const icon = wrap.querySelector('.material-symbols-outlined');
+        if (icon) {
+            icon.onclick = function() {
+                if (!dt.disabled) {
+                    try { hiddenPicker.showPicker(); } catch (e) {}
+                }
+            };
+        }
 
         function update() {
             if (cb.checked) {
-                dt.type = 'text';
                 dt.disabled = true;
-                group.style.backgroundColor = '#e9ecef';
-                group.style.cursor = 'not-allowed';
-                dt.style.backgroundColor = 'transparent';
+                wrap.style.backgroundColor = '#e9ecef';
                 dt.style.cursor = 'not-allowed';
                 dt.style.color = '#6b7280';
-                dt.value = 'dd/mm/yyyy';
-                if (icon) icon.style.cursor = 'not-allowed';
+                
+                if (dt.value) {
+                    dt.dataset.oldValue = dt.value;
+                }
+                dt.value = '';
             } else {
-                dt.type = 'date';
                 dt.disabled = false;
-                group.style.backgroundColor = '#FFFFFF';
-                group.style.cursor = 'text';
-                dt.style.backgroundColor = 'transparent';
+                wrap.style.backgroundColor = '#FFFFFF';
                 dt.style.cursor = 'text';
                 dt.style.color = '#111827';
-                if (dt.value === 'dd/mm/yyyy') dt.value = '';
-                if (icon) icon.style.cursor = 'pointer';
-            }
-        }
-
-        if (icon) {
-            icon.addEventListener('click', function() {
-                if (!dt.disabled && dt.type === 'date' && typeof dt.showPicker === 'function') {
-                    dt.showPicker();
+                
+                if (dt.dataset.oldValue) {
+                    dt.value = dt.dataset.oldValue;
                 }
-            });
+            }
         }
 
         cb.addEventListener('change', update);
         update();
     }
 
-    handleExpDateToggle('addForever', 'addExpDate');
-    handleExpDateToggle('editForever', 'editExpDate');
+    handleExpDateToggle('addForever', 'addExpDate', 'addGroupWrapper');
+    handleExpDateToggle('editForever', 'editExpDate', 'editGroupWrapper');
 });
 </script>
