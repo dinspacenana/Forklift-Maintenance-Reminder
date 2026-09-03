@@ -3,36 +3,40 @@
 <div class="user-filter-bar">
     <div class="d-flex align-items-center gap-3 flex-wrap">
         <!-- Search Input -->
-        <div class="search-input-pill" style="min-width: 280px;">
+        <div class="unit-search-pill" style="min-width: 280px;">
             <span class="material-symbols-outlined">search</span>
             <input type="text" placeholder="Cari Username atau Nama" id="searchUserInput">
         </div>
 
         <!-- Filter Dropdown: Role -->
         <div class="dropdown">
-            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserRole" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px;">
-                <span>Role</span>
+            <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterUserRole" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="selectedUserRoleText">Role</span>
+                <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
             </button>
             <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserRole">
-                <li><a class="dropdown-item" href="#">Administrator</a></li>
-                <li><a class="dropdown-item" href="#">Kepala Toko</a></li>
-                <li><a class="dropdown-item" href="#">Admin Sales</a></li>
+                <li><a class="dropdown-item active" href="#" data-role="semua">Semua Role</a></li>
+                <li><a class="dropdown-item" href="#" data-role="Administrator">Administrator</a></li>
+                <li><a class="dropdown-item" href="#" data-role="Kepala Toko">Kepala Toko</a></li>
+                <li><a class="dropdown-item" href="#" data-role="Admin Sales">Admin Sales</a></li>
             </ul>
         </div>
 
         <!-- Filter Dropdown: Status -->
         <div class="dropdown">
-            <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterUserStatus" data-bs-toggle="dropdown" aria-expanded="false" style="min-width: 110px;">
-                <span>Status</span>
+            <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterUserStatus" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="selectedUserStatusText">Status</span>
+                <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
             </button>
             <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserStatus">
-                <li><a class="dropdown-item" href="#">Aktif</a></li>
-                <li><a class="dropdown-item" href="#">Nonaktif</a></li>
+                <li><a class="dropdown-item active" href="#" data-status="semua">Semua Status</a></li>
+                <li><a class="dropdown-item" href="#" data-status="Aktif">Aktif</a></li>
+                <li><a class="dropdown-item" href="#" data-status="Nonaktif">Nonaktif</a></li>
             </ul>
         </div>
 
         <!-- Reset Button -->
-        <button type="button" class="btn-reset-filter" onclick="document.getElementById('searchUserInput').value='';">
+        <button type="button" class="btn-reset-filter" id="btnResetUser">
             <span class="material-symbols-outlined">restart_alt</span>
             <span>Reset</span>
         </button>
@@ -61,7 +65,7 @@
         </thead>
         <tbody>
             <!-- Row 1 -->
-            <tr>
+            <tr data-role="Administrator" data-status="Aktif">
                 <td class="fw-bold">marsha</td>
                 <td>Marsha Thalita</td>
                 <td><span class="badge-role">Administrator</span></td>
@@ -82,7 +86,7 @@
             </tr>
 
             <!-- Row 2 -->
-            <tr>
+            <tr data-role="Administrator" data-status="Aktif">
                 <td class="fw-bold">dina</td>
                 <td>Dina Ayu</td>
                 <td><span class="badge-role">Administrator</span></td>
@@ -103,7 +107,7 @@
             </tr>
 
             <!-- Row 3 -->
-            <tr>
+            <tr data-role="Kepala Toko" data-status="Nonaktif">
                 <td class="fw-bold">lita</td>
                 <td>Arqueeny Zahra</td>
                 <td><span class="badge-role">Kepala Toko</span></td>
@@ -124,7 +128,7 @@
             </tr>
 
             <!-- Row 4 -->
-            <tr>
+            <tr data-role="Admin Sales" data-status="Aktif">
                 <td class="fw-bold">caca</td>
                 <td>Navyza Marcha</td>
                 <td><span class="badge-role">Admin Sales</span></td>
@@ -145,7 +149,7 @@
             </tr>
 
             <!-- Row 5 -->
-            <tr>
+            <tr data-role="Administrator" data-status="Nonaktif">
                 <td class="fw-bold">salman</td>
                 <td>Salman Alfarizqi</td>
                 <td><span class="badge-role">Administrator</span></td>
@@ -166,7 +170,7 @@
             </tr>
 
             <!-- Row 6 -->
-            <tr>
+            <tr data-role="Kepala Toko" data-status="Aktif">
                 <td class="fw-bold">reza</td>
                 <td>Reza Ardiansyah</td>
                 <td><span class="badge-role">Kepala Toko</span></td>
@@ -187,7 +191,7 @@
             </tr>
 
             <!-- Row 7 -->
-            <tr>
+            <tr data-role="Admin Sales" data-status="Aktif">
                 <td class="fw-bold">rio</td>
                 <td>Andhika Lingga</td>
                 <td><span class="badge-role">Admin Sales</span></td>
@@ -208,7 +212,7 @@
             </tr>
 
             <!-- Row 8 -->
-            <tr>
+            <tr data-role="Admin Sales" data-status="Aktif">
                 <td class="fw-bold">aldy</td>
                 <td>Aldy</td>
                 <td><span class="badge-role">Admin Sales</span></td>
@@ -565,5 +569,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
     handleExpDateToggle('addForever', 'addExpDate', 'addGroupWrapper');
     handleExpDateToggle('editForever', 'editExpDate', 'editGroupWrapper');
+
+    // Filter Table User (Search, Role, Status)
+    const searchUserInput = document.getElementById('searchUserInput');
+    const roleItems = document.querySelectorAll('#filterUserRole + .dropdown-menu .dropdown-item');
+    const statusItems = document.querySelectorAll('#filterUserStatus + .dropdown-menu .dropdown-item');
+    const selectedUserRoleText = document.getElementById('selectedUserRoleText');
+    const selectedUserStatusText = document.getElementById('selectedUserStatusText');
+    const btnResetUser = document.getElementById('btnResetUser');
+    const userRows = document.querySelectorAll('.user-table tbody tr');
+
+    let currentUserRole = 'semua';
+    let currentUserStatus = 'semua';
+
+    function filterUserTable() {
+        const query = searchUserInput ? searchUserInput.value.toLowerCase().trim() : '';
+        userRows.forEach(row => {
+            const role = (row.dataset.role || '').toLowerCase();
+            const status = (row.dataset.status || '').toLowerCase();
+            const textContent = row.textContent.toLowerCase();
+
+            const matchSearch = !query || textContent.includes(query);
+            const matchRole = (currentUserRole === 'semua') || (role === currentUserRole.toLowerCase());
+            const matchStatus = (currentUserStatus === 'semua') || (status === currentUserStatus.toLowerCase());
+
+            if (matchSearch && matchRole && matchStatus) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    if (searchUserInput) {
+        searchUserInput.addEventListener('input', filterUserTable);
+    }
+
+    roleItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            roleItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            currentUserRole = this.dataset.role || this.textContent.trim();
+            if (selectedUserRoleText) {
+                selectedUserRoleText.textContent = this.textContent.trim() === 'Semua Role' ? 'Role' : this.textContent.trim();
+            }
+            filterUserTable();
+        });
+    });
+
+    statusItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            statusItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            currentUserStatus = this.dataset.status || this.textContent.trim();
+            if (selectedUserStatusText) {
+                selectedUserStatusText.textContent = this.textContent.trim() === 'Semua Status' ? 'Status' : this.textContent.trim();
+            }
+            filterUserTable();
+        });
+    });
+
+    if (btnResetUser) {
+        btnResetUser.addEventListener('click', function() {
+            if (searchUserInput) searchUserInput.value = '';
+            currentUserRole = 'semua';
+            currentUserStatus = 'semua';
+            if (selectedUserRoleText) selectedUserRoleText.textContent = 'Role';
+            if (selectedUserStatusText) selectedUserStatusText.textContent = 'Status';
+            roleItems.forEach(i => i.classList.toggle('active', i.dataset.role === 'semua'));
+            statusItems.forEach(i => i.classList.toggle('active', i.dataset.status === 'semua'));
+            filterUserTable();
+        });
+    }
 });
 </script>

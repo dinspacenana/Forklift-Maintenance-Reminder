@@ -122,9 +122,9 @@ $outstandingList = [
                 <tbody>
                     <?php foreach ($outstandingList as $row): ?>
                     <tr>
-                        <td><?= htmlspecialchars($row['date']) ?></td>
-                        <td class="fw-bold" style="color: #111827;"><?= htmlspecialchars($row['customer']) ?></td>
-                        <td class="fw-bold" style="color: #111827;"><?= htmlspecialchars($row['unit']) ?></td>
+                        <td class="fw-bold" style="color: #111827;"><?= htmlspecialchars($row['date']) ?></td>
+                        <td><?= htmlspecialchars($row['customer']) ?></td>
+                        <td><?= htmlspecialchars($row['unit']) ?></td>
                         <td><?= htmlspecialchars($row['serial']) ?></td>
                         <td><?= htmlspecialchars($row['maint']) ?></td>
                     </tr>
@@ -140,3 +140,20 @@ $outstandingList = [
         </div>
     </div>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchOutstandingInput');
+    const rows = document.querySelectorAll('.unit-forklift-table-v2 tbody tr');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = (!query || text.includes(query)) ? '' : 'none';
+            });
+        });
+    }
+});
+</script>

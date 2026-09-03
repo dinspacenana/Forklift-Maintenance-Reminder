@@ -528,12 +528,12 @@
                             <div class="customer-code-name-row">
                                 <div style="flex: 1;">
                                     <div class="info-sub-label">Kode Customer</div>
-                                    <div class="info-val-large">TM-001</div>
+                                    <div class="info-val-large" id="addKodeCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
                                 </div>
                                 <div class="box-vertical-divider"></div>
                                 <div style="flex: 1.5;">
                                     <div class="info-sub-label">Nama Customer</div>
-                                    <div class="info-val-large">PT. Toyo Matsu</div>
+                                    <div class="info-val-large" id="addNamaCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
                                 </div>
                             </div>
                         </div>
@@ -541,15 +541,15 @@
                         <!-- Address, Phone, Email Box -->
                         <div class="customer-info-box">
                             <div class="address-title">Alamat</div>
-                            <div class="address-desc">JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia</div>
+                            <div class="address-desc" id="addAlamatCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
                             <div class="contact-info-grid">
                                 <div class="contact-info-item">
                                     <div class="contact-label">No. Telp</div>
-                                    <div class="contact-val">081-2345678</div>
+                                    <div class="contact-val" id="addTelpCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
                                 </div>
                                 <div class="contact-info-item">
                                     <div class="contact-label">Email</div>
-                                    <div class="contact-val">Toyomatsu@gmail.com</div>
+                                    <div class="contact-val" id="addEmailCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
                                 </div>
                             </div>
                         </div>
@@ -560,7 +560,8 @@
                         <!-- Tipe Operasi Select Box -->
                         <div class="select-box-wrapper mb-3">
                             <select class="user-form-select" id="addTipeOperasi">
-                                <option value="Heavy Duty" selected>Heavy Duty</option>
+                                <option value="" selected disabled>Pilih Tipe Operasi</option>
+                                <option value="Heavy Duty">Heavy Duty</option>
                                 <option value="Medium Duty">Medium Duty</option>
                                 <option value="Low Duty">Low Duty</option>
                             </select>
@@ -585,7 +586,7 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
-                    <button type="button" class="btn-modal-sync">
+                    <button type="button" class="btn-modal-sync" id="btnSyncAddCustomer">
                         <span class="material-symbols-outlined">sync</span> Sinkronisasi
                     </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
@@ -702,3 +703,120 @@
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Sinkronisasi Tambah Customer
+    const btnSync = document.getElementById('btnSyncAddCustomer');
+    const addModal = document.getElementById('addCustomerModal');
+
+    if (btnSync) {
+        btnSync.addEventListener('click', function() {
+            const icon = this.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.style.transition = 'transform 0.6s ease';
+                icon.style.transform = 'rotate(360deg)';
+            }
+
+            // Munculkan data customer hasil sinkronisasi
+            const kode = document.getElementById('addKodeCustomer');
+            const nama = document.getElementById('addNamaCustomer');
+            const alamat = document.getElementById('addAlamatCustomer');
+            const telp = document.getElementById('addTelpCustomer');
+            const email = document.getElementById('addEmailCustomer');
+            const tipe = document.getElementById('addTipeOperasi');
+
+            if (kode) {
+                kode.textContent = 'TM-001';
+                kode.style.color = '#111827';
+                kode.style.fontWeight = '700';
+            }
+            if (nama) {
+                nama.textContent = 'PT. Toyo Matsu';
+                nama.style.color = '#111827';
+                nama.style.fontWeight = '700';
+            }
+            if (alamat) {
+                alamat.textContent = 'JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia';
+                alamat.style.color = '#334155';
+                alamat.style.fontWeight = '500';
+            }
+            if (telp) {
+                telp.textContent = '081-2345678';
+                telp.style.color = '#111827';
+                telp.style.fontWeight = '600';
+            }
+            if (email) {
+                email.textContent = 'Toyomatsu@gmail.com';
+                email.style.color = '#111827';
+                email.style.fontWeight = '600';
+            }
+            if (tipe && (!tipe.value || tipe.value === '')) {
+                tipe.value = 'Heavy Duty';
+            }
+
+            setTimeout(() => {
+                if (icon) {
+                    icon.style.transition = 'none';
+                    icon.style.transform = 'none';
+                }
+            }, 600);
+        });
+    }
+
+    // Reset kembali ke keadaan kosong saat modal ditutup
+    if (addModal) {
+        addModal.addEventListener('hidden.bs.modal', function() {
+            const kode = document.getElementById('addKodeCustomer');
+            const nama = document.getElementById('addNamaCustomer');
+            const alamat = document.getElementById('addAlamatCustomer');
+            const telp = document.getElementById('addTelpCustomer');
+            const email = document.getElementById('addEmailCustomer');
+            const tipe = document.getElementById('addTipeOperasi');
+
+            if (kode) {
+                kode.textContent = '-';
+                kode.style.color = '#94A3B8';
+                kode.style.fontWeight = '500';
+            }
+            if (nama) {
+                nama.textContent = '-';
+                nama.style.color = '#94A3B8';
+                nama.style.fontWeight = '500';
+            }
+            if (alamat) {
+                alamat.textContent = '-';
+                alamat.style.color = '#94A3B8';
+                alamat.style.fontWeight = '500';
+            }
+            if (telp) {
+                telp.textContent = '-';
+                telp.style.color = '#94A3B8';
+                telp.style.fontWeight = '500';
+            }
+            if (email) {
+                email.textContent = '-';
+                email.style.color = '#94A3B8';
+                email.style.fontWeight = '500';
+            }
+            if (tipe) {
+                tipe.value = '';
+            }
+        });
+    }
+
+    // Pencarian Tabel Customer
+    const searchInput = document.getElementById('searchCustomerInput');
+    const tableRows = document.querySelectorAll('.unit-forklift-table-v2 tbody tr');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            tableRows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = (!query || text.includes(query)) ? '' : 'none';
+            });
+        });
+    }
+});
+</script>

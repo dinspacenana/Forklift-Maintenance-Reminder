@@ -216,14 +216,14 @@
                 <!-- Nama Maintenance -->
                 <div class="mb-3">
                     <label class="user-form-label">Nama Maintenance</label>
-                    <input type="text" class="user-form-input" placeholder="">
+                    <input type="text" class="user-form-input" placeholder="Contoh: Overhaul / Tune Up">
                 </div>
 
                 <!-- Tipe Operasi & Jenis -->
                 <div class="row g-3 mb-3">
                     <div class="col-6">
                         <label class="user-form-label">Tipe Operasi</label>
-                        <input type="text" class="user-form-input" placeholder="">
+                        <input type="text" class="user-form-input" placeholder="Contoh: Low Duty / Heavy Duty">
                     </div>
                     <div class="col-6">
                         <label class="user-form-label">Jenis</label>
@@ -239,13 +239,13 @@
                     <div class="col-6">
                         <label class="user-form-label">Interval HM</label>
                         <div class="maint-hm-input-group">
-                            <input type="number" placeholder="">
+                            <input type="number" placeholder="Contoh: 250">
                             <span class="maint-hm-badge">HM</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <label class="user-form-label">Interval Bulan</label>
-                        <input type="text" class="user-form-input" placeholder="">
+                        <input type="text" class="user-form-input" placeholder="Contoh: 1 Bulan">
                     </div>
                 </div>
 
@@ -272,12 +272,12 @@
                         <!-- Item 1 -->
                         <div class="sparepart-row-item">
                             <div class="sparepart-badge-num">1</div>
-                            <input type="text" class="user-form-input" placeholder="Filter Oli">
+                            <input type="text" class="user-form-input" placeholder="Contoh: Filter Oli">
                         </div>
                         <!-- Item 2 -->
                         <div class="sparepart-row-item">
                             <div class="sparepart-badge-num">2</div>
-                            <input type="text" class="user-form-input" placeholder="Oli Mesin">
+                            <input type="text" class="user-form-input" placeholder="Contoh: Oli Mesin">
                         </div>
                     </div>
                 </div>
@@ -427,7 +427,7 @@ function addSparepartRow(containerId) {
     row.className = 'sparepart-row-item';
     row.innerHTML = `
         <div class="sparepart-badge-num">${currentCount}</div>
-        <input type="text" class="user-form-input" placeholder="Nama sparepart">
+        <input type="text" class="user-form-input" placeholder="Contoh: Filter Oli / Oli Mesin">
     `;
     container.appendChild(row);
 }

@@ -22,14 +22,14 @@
 
                 <!-- Date Range Picker -->
                 <div class="d-flex align-items-center gap-2">
-                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
-                        <input type="text" value="01/08/26" readonly style="border: none; outline: none; background: transparent; width: 70px; font-size: 0.85rem; color: #475569;">
-                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    <div class="date-filter-pill-box">
+                        <input type="text" value="01/08/2026" readonly>
+                        <span class="material-symbols-outlined">calendar_today</span>
                     </div>
-                    <span class="fw-bold" style="color: #94A3B8;">-</span>
-                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
-                        <input type="text" value="02/08/26" readonly style="border: none; outline: none; background: transparent; width: 70px; font-size: 0.85rem; color: #475569;">
-                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    <span class="date-range-separator">-</span>
+                    <div class="date-filter-pill-box">
+                        <input type="text" value="02/08/2026" readonly>
+                        <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                 </div>
 
@@ -94,72 +94,60 @@
                 <tbody>
                     <!-- Row 1 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="badge-status-aktif-blue" style="border-radius: 20px;">Berhasil</span>
                         </td>
                     </tr>
                     <!-- Row 2 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="badge-status-aktif-blue" style="border-radius: 20px;">Berhasil</span>
                         </td>
                     </tr>
                     <!-- Row 3 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="badge-status-aktif-blue" style="border-radius: 20px;">Berhasil</span>
                         </td>
                     </tr>
                     <!-- Row 4 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="badge-status-aktif-blue" style="border-radius: 20px;">Berhasil</span>
                         </td>
                     </tr>
                     <!-- Row 5 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="status-badge over-due" style="min-width: 60px;">Error</span>
                         </td>
                     </tr>
                     <!-- Row 6 -->
                     <tr>
-                        <td style="color: #475569; font-weight: 500;">26 - 08 - 19, 18.00</td>
-                        <td>
-                            <div class="fw-bold" style="color: #334155; font-size: 0.85rem;">Marsha Thalita</div>
-                        </td>
-                        <td style="color: #334155; font-weight: 600;">Update</td>
-                        <td style="color: #475569; font-size: 0.85rem;">Reminder</td>
+                        <td class="fw-bold" style="color: #111827;">26 – 08 – 19, 18.00</td>
+                        <td class="fw-bold" style="color: #111827;">Marsha Thalita</td>
+                        <td>Update</td>
+                        <td>Reminder</td>
                         <td class="text-center">
                             <span class="status-badge over-due" style="min-width: 60px;">Error</span>
                         </td>

@@ -18,14 +18,14 @@
 
                 <!-- Date Range Picker -->
                 <div class="d-flex align-items-center gap-2">
-                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
-                        <input type="text" value="01/08/2026" readonly style="border: none; outline: none; background: transparent; width: 80px; font-size: 0.85rem; color: #475569;">
-                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    <div class="date-filter-pill-box">
+                        <input type="text" value="01/08/2026" readonly>
+                        <span class="material-symbols-outlined">calendar_today</span>
                     </div>
-                    <span class="fw-bold" style="color: #94A3B8;">-</span>
-                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
-                        <input type="text" value="02/08/2026" readonly style="border: none; outline: none; background: transparent; width: 80px; font-size: 0.85rem; color: #475569;">
-                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    <span class="date-range-separator">-</span>
+                    <div class="date-filter-pill-box">
+                        <input type="text" value="02/08/2026" readonly>
+                        <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                 </div>
 

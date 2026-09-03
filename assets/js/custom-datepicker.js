@@ -1,5 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     function setupHiddenDatePickers() {
+        function triggerPicker(picker) {
+            if (!picker) return;
+            if (typeof picker.showPicker === 'function') {
+                try {
+                    picker.showPicker();
+                } catch (err) {
+                    picker.focus();
+                }
+            } else {
+                picker.focus();
+            }
+        }
+
         // 1. Tangani wrapper seperti .date-filter-pill-box yang punya input type text read-only
         const textWrappers = document.querySelectorAll('.date-filter-pill-box');
         textWrappers.forEach(wrap => {
@@ -7,13 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
             wrap.dataset.customPickerInit = 'true';
 
             const txtInput = wrap.querySelector('input[type="text"]');
-            const icon = wrap.querySelector('.material-symbols-outlined');
+            const icon = wrap.querySelector('.material-symbols-outlined') || wrap.querySelector('i');
             if (!txtInput) return;
 
             wrap.style.position = 'relative';
 
             const hiddenPicker = document.createElement('input');
             hiddenPicker.type = 'date';
+            hiddenPicker.className = 'custom-date-native-input';
             hiddenPicker.style.position = 'absolute';
             hiddenPicker.style.opacity = '0';
             hiddenPicker.style.width = '100%';
@@ -21,13 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
             hiddenPicker.style.top = '0';
             hiddenPicker.style.left = '0';
             hiddenPicker.style.cursor = 'pointer';
-            hiddenPicker.style.zIndex = '2';
+            hiddenPicker.style.zIndex = '3';
 
-            // Jika ada initial value DD/MM/YYYY
+            // Jika ada initial value DD/MM/YYYY atau DD/MM/YY
             if (txtInput.value && txtInput.value.includes('/')) {
                 const parts = txtInput.value.split('/');
                 if (parts.length === 3) {
-                    hiddenPicker.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                    let year = parts[2].trim();
+                    if (year.length === 2) year = '20' + year;
+                    const month = parts[1].trim().padStart(2, '0');
+                    const day = parts[0].trim().padStart(2, '0');
+                    hiddenPicker.value = `${year}-${month}-${day}`;
                 }
             }
 
@@ -40,16 +58,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     txtInput.value = '';
                 }
+                txtInput.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+
+            // Klik di area wrap, txtInput, atau icon akan memicu kalender muncul
+            wrap.addEventListener('click', function(e) {
+                triggerPicker(hiddenPicker);
+            });
+
+            txtInput.addEventListener('click', function(e) {
+                e.stopPropagation();
+                triggerPicker(hiddenPicker);
             });
 
             if (icon) {
-                icon.style.position = 'relative';
-                icon.style.zIndex = '1';
+                icon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    triggerPicker(hiddenPicker);
+                });
             }
-            
-            txtInput.style.position = 'relative';
-            txtInput.style.zIndex = '1';
-            
+
+            hiddenPicker.addEventListener('click', function(e) {
+                triggerPicker(hiddenPicker);
+            });
+
             wrap.appendChild(hiddenPicker);
         });
 
@@ -57,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dateInputs = document.querySelectorAll('input[type="date"]');
         dateInputs.forEach(dt => {
             // Jangan jadikan hidden picker jika ini adalah picker tersembunyi kita
-            if (dt.style.opacity === '0') return;
+            if (dt.style.opacity === '0' || dt.classList.contains('custom-date-native-input')) return;
             if (dt.dataset.customPickerInit) return;
             dt.dataset.customPickerInit = 'true';
 
@@ -87,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const hiddenPicker = document.createElement('input');
             hiddenPicker.type = 'date';
+            hiddenPicker.className = 'custom-date-native-input';
             hiddenPicker.style.position = 'absolute';
             hiddenPicker.style.opacity = '0';
             hiddenPicker.style.width = '100%';
@@ -94,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hiddenPicker.style.top = '0';
             hiddenPicker.style.left = '0';
             hiddenPicker.style.cursor = 'pointer';
-            hiddenPicker.style.zIndex = '2';
+            hiddenPicker.style.zIndex = '3';
 
             if (dt.value) {
                 hiddenPicker.value = dt.value;
@@ -113,6 +146,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     visibleInput.value = '';
                 }
+                visibleInput.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+
+            wrap.addEventListener('click', function() {
+                triggerPicker(hiddenPicker);
+            });
+            visibleInput.addEventListener('click', function(e) {
+                e.stopPropagation();
+                triggerPicker(hiddenPicker);
+            });
+            hiddenPicker.addEventListener('click', function() {
+                triggerPicker(hiddenPicker);
             });
 
             dt.parentNode.insertBefore(wrap, dt);

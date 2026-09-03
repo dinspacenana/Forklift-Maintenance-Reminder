@@ -515,7 +515,7 @@ usort($displayUnits, function($a, $b) {
                 <div class="mb-3">
                     <label class="user-form-label">Customer</label>
                     <select class="user-form-select" id="assignCustomerSelect">
-                        <option value="" selected disabled></option>
+                        <option value="" selected disabled>Pilih Customer</option>
                         <option value="PT. Maju Jaya">PT. Maju Jaya</option>
                         <option value="PT. Mentari Pagi">PT. Mentari Pagi</option>
                         <option value="PT. Nusantara Logistik">PT. Nusantara Logistik</option>
@@ -524,7 +524,7 @@ usort($displayUnits, function($a, $b) {
                 <div class="mb-3">
                     <label class="user-form-label">Forklift</label>
                     <select class="user-form-select" id="assignForkliftSelect">
-                        <option value="" selected disabled></option>
+                        <option value="" selected disabled>Pilih Forklift</option>
                         <option value="Toyota 8FD30">Toyota 8FD30</option>
                         <option value="Mitsubishi FD30">Mitsubishi FD30</option>
                         <option value="Doosan D30S">Doosan D30S</option>
@@ -532,12 +532,12 @@ usort($displayUnits, function($a, $b) {
                 </div>
                 <div class="mb-3">
                     <label class="user-form-label">Serial Number</label>
-                    <input type="text" class="user-form-input" id="assignSerialInput" placeholder="">
+                    <input type="text" class="user-form-input" id="assignSerialInput" placeholder="Contoh: 8FD30-12345">
                 </div>
                 <div class="mb-3">
                     <label class="user-form-label">Hour Meter Akhir</label>
                     <div class="hm-input-container">
-                        <input type="text" class="hm-input-field" id="assignHMInput" placeholder="">
+                        <input type="text" class="hm-input-field" id="assignHMInput" placeholder="Contoh: 4850">
                         <span class="hm-input-divider"></span>
                         <span class="hm-input-suffix">HM</span>
                     </div>
