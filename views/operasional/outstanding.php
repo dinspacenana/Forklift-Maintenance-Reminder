@@ -93,9 +93,9 @@ $outstandingList = [
     <h2 class="page-title" style="margin-bottom: 8px;">Outstanding</h2>
     <div style="font-size: 0.95rem; font-weight: 500; color: #64748B; margin-bottom: 24px;">Terakhir Dicek : 23 Agustus 2026 &nbsp;08:00 WIB</div>
 
-    <!-- Action & Search Bar -->
-    <div class="customer-action-bar mb-4">
-        <div class="d-flex align-items-center gap-3 flex-wrap">
+    <div class="unit-forklift-main-card">
+        <!-- Action & Search Bar -->
+        <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
             <button type="button" class="btn-assign-unit" style="border-radius: 10px;">
                 <span class="material-symbols-outlined" style="font-size: 1.25rem;">sync</span>
                 <span>Cek Data Terkini</span>
@@ -106,12 +106,10 @@ $outstandingList = [
                 <input type="text" placeholder="Cari Customer" id="searchOutstandingInput">
             </div>
         </div>
-    </div>
 
-    <!-- Outstanding Table Card (Konsisten dengan tabel lainnya) -->
-    <div class="customer-table-card">
-        <div class="table-responsive">
-            <table class="table customer-table">
+        <!-- Outstanding Table Card (Konsisten dengan tabel lainnya) -->
+        <div class="unit-table-wrapper">
+            <table class="unit-forklift-table-v2">
                 <thead>
                     <tr>
                         <th style="width: 18%;">Tanggal Maintenance</th>
@@ -136,7 +134,7 @@ $outstandingList = [
         </div>
 
         <!-- Pagination Footer (Otomatis muncul jika baris > 10, sembunyi jika <= 10) -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center mt-3">
             <div class="pagination-custom ms-auto">
             </div>
         </div>

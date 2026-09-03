@@ -4,45 +4,50 @@
     <!-- Page Title -->
     <h2 class="page-title">Forklift</h2>
 
-    <!-- Search, Filters, and Add Button Bar -->
-    <div class="customer-filter-bar">
-        <!-- Search Input -->
-        <div class="search-input-pill">
-            <span class="material-symbols-outlined">search</span>
-            <input type="text" placeholder="Search" id="searchForkliftInput">
-        </div>
+    <!-- Main Container Card -->
+    <div class="unit-forklift-main-card">
+        <!-- Search, Filters, and Add Button Bar -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div class="d-flex align-items-center flex-wrap gap-3">
+                <!-- Search Input -->
+                <div class="unit-search-pill">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search" id="searchForkliftInput">
+                </div>
 
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-            <!-- Filter: Semua Dropdown -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterForklift" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Semua</span>
+                <!-- Filter: Semua Dropdown -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterForklift" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Semua</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterForklift">
+                        <li><a class="dropdown-item" href="#">Semua</a></li>
+                        <li><a class="dropdown-item" href="#">Toyota</a></li>
+                        <li><a class="dropdown-item" href="#">Mitsubishi</a></li>
+                        <li><a class="dropdown-item" href="#">Komatsu</a></li>
+                    </ul>
+                </div>
+
+                <!-- Reset Button -->
+                <button type="button" class="btn-reset-filter" id="btnResetForklift" onclick="document.getElementById('searchForkliftInput').value='';">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    <span>Reset</span>
                 </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterForklift">
-                    <li><a class="dropdown-item" href="#">Semua</a></li>
-                    <li><a class="dropdown-item" href="#">Toyota</a></li>
-                    <li><a class="dropdown-item" href="#">Mitsubishi</a></li>
-                    <li><a class="dropdown-item" href="#">Komatsu</a></li>
-                </ul>
             </div>
 
-            <!-- Reset Button -->
-            <button type="button" class="btn-reset-filter" id="btnResetForklift" onclick="document.getElementById('searchForkliftInput').value='';">
-                <span class="material-symbols-outlined">restart_alt</span>
-                <span>Reset</span>
-            </button>
-
             <!-- Add Forklift Button -->
-            <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addForkliftModal">
-                <span class="material-symbols-outlined">add</span> Tambah Forklift
-            </button>
+            <div>
+                <button type="button" class="btn-assign-unit" data-bs-toggle="modal" data-bs-target="#addForkliftModal" style="background-color: #FBBA16; color: #111827;">
+                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">add</span>
+                    <span>Tambah Forklift</span>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <!-- Forklift Data Table Card -->
-    <div class="forklift-table-card">
-        <div class="table-responsive">
-            <table class="table forklift-table">
+        <!-- Forklift Data Table Card -->
+        <div class="unit-table-wrapper">
+            <table class="unit-forklift-table-v2">
                 <thead>
                     <tr>
                         <th style="width: 22%;">Nama Forklift</th>
@@ -57,7 +62,7 @@
                 <tbody>
                     <!-- Row 1 -->
                     <tr>
-                        <td>Toyota</td>
+                        <td style="color: #111827;">Toyota</td>
                         <td>8FD30</td>
                         <td>4Y</td>
                         <td>24 – 8 – 2026</td>
@@ -67,11 +72,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -79,7 +84,7 @@
 
                     <!-- Row 2 -->
                     <tr>
-                        <td>Mitsubishi</td>
+                        <td style="color: #111827;">Mitsubishi</td>
                         <td>FD25N</td>
                         <td>S4S</td>
                         <td>24 – 8 – 2026</td>
@@ -89,11 +94,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -101,7 +106,7 @@
 
                     <!-- Row 3 -->
                     <tr>
-                        <td>Komatsu</td>
+                        <td style="color: #111827;">Komatsu</td>
                         <td>FG25N</td>
                         <td>K21</td>
                         <td>24 – 8 – 2026</td>
@@ -111,11 +116,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -123,7 +128,7 @@
 
                     <!-- Row 4 -->
                     <tr>
-                        <td>Komatsu</td>
+                        <td style="color: #111827;">Komatsu</td>
                         <td>FD25T-17</td>
                         <td>4D94E</td>
                         <td>24 – 8 – 2026</td>
@@ -133,11 +138,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -145,7 +150,7 @@
 
                     <!-- Row 5 -->
                     <tr>
-                        <td>Toyota</td>
+                        <td style="color: #111827;">Toyota</td>
                         <td>8FD15</td>
                         <td>1DZ-II</td>
                         <td>24 – 8 – 2026</td>
@@ -155,33 +160,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <!-- Row 6 -->
-                    <tr>
-                        <td>Toyota</td>
-                        <td>8FD25</td>
-                        <td>1DZ-II</td>
-                        <td>24 – 8 – 2026</td>
-                        <td>Kepala Toko</td>
-                        <td class="text-center">
-                            <span class="badge-status-green">Aktif</span>
-                        </td>
-                        <td class="text-center">
-                            <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
-                                </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -189,7 +172,7 @@
 
                     <!-- Row 7 -->
                     <tr>
-                        <td>Toyota</td>
+                        <td style="color: #111827;">Toyota</td>
                         <td>8FD35</td>
                         <td>3Z</td>
                         <td>24 – 8 – 2026</td>
@@ -199,11 +182,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -211,7 +194,7 @@
 
                     <!-- Row 8 -->
                     <tr>
-                        <td>Toyota</td>
+                        <td style="color: #111827;">Toyota</td>
                         <td>FD50</td>
                         <td>14Z-II</td>
                         <td>24 – 8 – 2026</td>
@@ -221,17 +204,17 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
                     <!-- Row 9 -->
                     <tr>
-                        <td>Komatsu</td>
+                        <td style="color: #111827;">Komatsu</td>
                         <td>FD30T-17</td>
                         <td>4D94LE</td>
                         <td>25 – 8 – 2026</td>
@@ -241,11 +224,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -253,7 +236,7 @@
 
                     <!-- Row 10 -->
                     <tr>
-                        <td>Doosan</td>
+                        <td style="color: #111827;">Doosan</td>
                         <td>D30S-5</td>
                         <td>G424I</td>
                         <td>26 – 8 – 2026</td>
@@ -263,11 +246,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -275,7 +258,7 @@
 
                     <!-- Row 11 -->
                     <tr>
-                        <td>Mitsubishi</td>
+                        <td style="color: #111827;">Mitsubishi</td>
                         <td>FD35</td>
                         <td>S4S</td>
                         <td>27 – 8 – 2026</td>
@@ -285,11 +268,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -297,7 +280,7 @@
 
                     <!-- Row 12 -->
                     <tr>
-                        <td>TCM</td>
+                        <td style="color: #111827;">TCM</td>
                         <td>FD30T3Z</td>
                         <td>Isuzu C240</td>
                         <td>28 – 8 – 2026</td>
@@ -307,11 +290,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <button class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -341,34 +324,34 @@
      ========================================================= -->
 <div class="modal fade" id="addForkliftModal" tabindex="-1" aria-labelledby="addForkliftModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
-        <div class="modal-content modal-forklift-content">
-            <h4 class="modal-forklift-title" id="addForkliftModalLabel">Tambah Forklift</h4>
+        <div class="modal-content modal-user-content">
+            <h4 class="modal-user-title" id="addForkliftModalLabel">Tambah Forklift</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
                     <!-- Nama Forklift Field -->
                     <div class="col-6">
-                        <label for="addNamaForklift" class="forklift-form-label">Nama Forklift</label>
-                        <input type="text" class="forklift-form-input" id="addNamaForklift">
+                        <label for="addNamaForklift" class="user-form-label">Nama Forklift</label>
+                        <input type="text" class="user-form-input" id="addNamaForklift">
                     </div>
 
                     <!-- Engine Field -->
                     <div class="col-6">
-                        <label for="addEngine" class="forklift-form-label">Engine</label>
-                        <input type="text" class="forklift-form-input" id="addEngine">
+                        <label for="addEngine" class="user-form-label">Engine</label>
+                        <input type="text" class="user-form-input" id="addEngine">
                     </div>
                 </div>
 
                 <div class="row g-3 mb-4">
                     <!-- Tipe Field -->
                     <div class="col-6">
-                        <label for="addType" class="forklift-form-label">Tipe</label>
-                        <input type="text" class="forklift-form-input" id="addType">
+                        <label for="addType" class="user-form-label">Tipe</label>
+                        <input type="text" class="user-form-input" id="addType">
                     </div>
 
                     <!-- Status Checkbox -->
                     <div class="col-6">
-                        <label class="forklift-form-label">Status</label>
+                        <label class="user-form-label">Status</label>
                         <div class="mt-2">
                             <label class="custom-checkbox-item">
                                 <input type="checkbox" id="addForkliftStatus" checked>
@@ -380,7 +363,7 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-3">
-                    <button type="button" class="btn-forklift-batal" data-bs-dismiss="modal">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
                         Batal
                     </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
@@ -397,34 +380,34 @@
      ========================================================= -->
 <div class="modal fade" id="editForkliftModal" tabindex="-1" aria-labelledby="editForkliftModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 520px;">
-        <div class="modal-content modal-forklift-content">
-            <h4 class="modal-forklift-title" id="editForkliftModalLabel">Edit Forklift</h4>
+        <div class="modal-content modal-user-content">
+            <h4 class="modal-user-title" id="editForkliftModalLabel">Edit Forklift</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3 mb-3">
                     <!-- Nama Forklift Field -->
                     <div class="col-6">
-                        <label for="editNamaForklift" class="forklift-form-label">Nama Forklift</label>
-                        <input type="text" class="forklift-form-input" id="editNamaForklift" value="Toyota">
+                        <label for="editNamaForklift" class="user-form-label">Nama Forklift</label>
+                        <input type="text" class="user-form-input" id="editNamaForklift" value="Toyota">
                     </div>
 
                     <!-- Engine Field -->
                     <div class="col-6">
-                        <label for="editEngine" class="forklift-form-label">Engine</label>
-                        <input type="text" class="forklift-form-input" id="editEngine" value="4Y">
+                        <label for="editEngine" class="user-form-label">Engine</label>
+                        <input type="text" class="user-form-input" id="editEngine" value="4Y">
                     </div>
                 </div>
 
                 <div class="row g-3 mb-4">
                     <!-- Tipe Field -->
                     <div class="col-6">
-                        <label for="editType" class="forklift-form-label">Tipe</label>
-                        <input type="text" class="forklift-form-input" id="editType" value="8FD30">
+                        <label for="editType" class="user-form-label">Tipe</label>
+                        <input type="text" class="user-form-input" id="editType" value="8FD30">
                     </div>
 
                     <!-- Status Checkbox -->
                     <div class="col-6">
-                        <label class="forklift-form-label">Status</label>
+                        <label class="user-form-label">Status</label>
                         <div class="mt-2">
                             <label class="custom-checkbox-item">
                                 <input type="checkbox" id="editForkliftStatus" checked>
@@ -436,7 +419,7 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-3">
-                    <button type="button" class="btn-forklift-batal" data-bs-dismiss="modal">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
                         Batal
                     </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">

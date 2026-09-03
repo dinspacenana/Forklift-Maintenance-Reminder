@@ -4,65 +4,68 @@
     <!-- Page Title -->
     <h2 class="page-title">Reminder</h2>
 
-    <!-- Search, Filters, and Reset Button Bar -->
-    <div class="customer-filter-bar">
+    <!-- Main Container Card -->
+    <div class="unit-forklift-main-card">
         
-        <!-- Search Input -->
-        <div class="search-input-pill">
-            <span class="material-symbols-outlined">search</span>
-            <input type="text" placeholder="Masukkan Customer / Unit" id="searchReminderInput">
+        <!-- Search, Filters, and Reset Button Bar -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div class="d-flex align-items-center flex-wrap gap-3">
+                <!-- Search Input -->
+                <div class="unit-search-pill">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Masukkan Customer / Unit" id="searchReminderInput">
+                </div>
+
+                <!-- Date Range Picker -->
+                <div class="d-flex align-items-center gap-2">
+                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
+                        <input type="text" value="01/08/2026" readonly style="border: none; outline: none; background: transparent; width: 80px; font-size: 0.85rem; color: #475569;">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    </div>
+                    <span class="fw-bold" style="color: #94A3B8;">-</span>
+                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
+                        <input type="text" value="02/08/2026" readonly style="border: none; outline: none; background: transparent; width: 80px; font-size: 0.85rem; color: #475569;">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    </div>
+                </div>
+
+                <!-- Dropdown Reminder Type -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterReminderType" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Tipe Reminder</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
+                        <li><a class="dropdown-item" href="#">Email</a></li>
+                        <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                    </ul>
+                </div>
+
+                <!-- Dropdown Status -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Menunggu</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
+                        <li><a class="dropdown-item" href="#">Semua Status</a></li>
+                        <li><a class="dropdown-item" href="#">Menunggu</a></li>
+                        <li><a class="dropdown-item" href="#">Terkirim</a></li>
+                        <li><a class="dropdown-item" href="#">Gagal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Reset Button -->
+                <button type="button" class="btn-reset-filter" id="btnResetReminder" onclick="document.getElementById('searchReminderInput').value='';">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    <span>Reset</span>
+                </button>
+            </div>
         </div>
 
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-            <!-- Date Range Picker -->
-            <div class="d-flex align-items-center gap-2">
-                <div class="date-filter-pill-box">
-                    <input type="text" value="01/08/2026" readonly>
-                    <span class="material-symbols-outlined">calendar_today</span>
-                </div>
-                <span class="fw-bold" style="color: #94A3B8;">-</span>
-                <div class="date-filter-pill-box">
-                    <input type="text" value="02/08/2026" readonly>
-                    <span class="material-symbols-outlined">calendar_today</span>
-                </div>
-            </div>
-
-            <!-- Dropdown Reminder Type -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterReminderType" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Tipe Reminder</span>
-                </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
-                    <li><a class="dropdown-item" href="#">Email</a></li>
-                    <li><a class="dropdown-item" href="#">WhatsApp</a></li>
-                </ul>
-            </div>
-
-            <!-- Dropdown Status -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Menunggu</span>
-                </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item" href="#">Semua Status</a></li>
-                    <li><a class="dropdown-item" href="#">Menunggu</a></li>
-                    <li><a class="dropdown-item" href="#">Terkirim</a></li>
-                    <li><a class="dropdown-item" href="#">Gagal</a></li>
-                </ul>
-            </div>
-
-            <!-- Reset Button -->
-            <button type="button" class="btn-reset-filter" id="btnResetReminder" onclick="document.getElementById('searchReminderInput').value='';">
-                <span class="material-symbols-outlined">restart_alt</span>
-                <span>Reset</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Reminder Data Table Card -->
-    <div class="customer-table-card">
-        <div class="table-responsive">
-            <table class="table customer-table">
+        <!-- Reminder Data Table Card -->
+        <div class="unit-table-wrapper">
+            <table class="unit-forklift-table-v2" id="reminderTable">
                 <thead>
                     <tr>
                         <th style="width: 20%;">Customer / Unit</th>
@@ -174,7 +177,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center mt-3">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>

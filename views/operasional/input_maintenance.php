@@ -15,10 +15,10 @@
 
                         <!-- Nama Customer (Search from Portal) -->
                         <div class="mb-3 position-relative">
-                            <label for="namaCustomerInput" class="input-maint-label">
+                            <label for="namaCustomerInput" class="user-form-label">
                                 Nama Customer <span class="text-muted fw-normal" style="font-size: 0.8rem; margin-left: 4px;">(Cari dari portal)</span>
                             </label>
-                            <input type="text" class="input-maint-pill" id="namaCustomerInput" placeholder="" autocomplete="off">
+                            <input type="text" class="user-form-input" id="namaCustomerInput" placeholder="Masukkan Customer" autocomplete="off">
                             <div class="text-muted" style="font-size: 0.76rem; margin-top: 5px; color: #64748B;">
                                 Ketik minimal 1 karakter untuk mencari customer yang sudah terdaftar di portal
                             </div>
@@ -29,21 +29,16 @@
 
                         <!-- Unit Forklift -->
                         <div class="mb-3">
-                            <label for="unitForkliftSelect" class="input-maint-label">Unit Forklift</label>
-                            <select class="input-maint-select-pill" id="unitForkliftSelect">
-                                <option value="" selected disabled></option>
-                                <option value="FL-101 (Toyota - 8FD30)">FL-101 (Toyota - 8FD30)</option>
-                                <option value="FL-102 (Mitsubishi - FD25N)">FL-102 (Mitsubishi - FD25N)</option>
-                                <option value="FL-103 (Komatsu - FG25N)">FL-103 (Komatsu - FG25N)</option>
-                                <option value="FL-104 (Komatsu - FD25T-17)">FL-104 (Komatsu - FD25T-17)</option>
-                                <option value="FL-105 (Toyota - 8FD15)">FL-105 (Toyota - 8FD15)</option>
+                            <label for="unitForkliftSelect" class="user-form-label">Unit Forklift</label>
+                            <select class="user-form-select" id="unitForkliftSelect" disabled style="background-color: transparent; cursor: not-allowed; color: #6b7280;">
+                                <option value="" selected disabled>Pilih Unit Forklift</option>
                             </select>
                         </div>
 
                         <!-- Tipe Operasi -->
                         <div>
-                            <label for="tipeOperasiInput" class="input-maint-label">Tipe Operasi</label>
-                            <input type="text" class="input-maint-pill" id="tipeOperasiInput" style="max-width: 180px;">
+                            <label for="tipeOperasiInput" class="user-form-label">Tipe Operasi</label>
+                            <input type="text" class="user-form-input" id="tipeOperasiInput" placeholder="Tipe Operasi" style="max-width: 180px; background-color: transparent; cursor: not-allowed; color: #6b7280;" readonly>
                         </div>
                     </div>
                 </div>
@@ -56,9 +51,9 @@
                         <div class="row g-3 mb-3">
                             <!-- Jenis Maintenance -->
                             <div class="col-12 col-sm-6">
-                                <label for="jenisMaintSelect" class="input-maint-label">Jenis Maintenance</label>
-                                <select class="input-maint-select-pill" id="jenisMaintSelect">
-                                    <option value="" selected disabled></option>
+                                <label for="jenisMaintSelect" class="user-form-label">Jenis Maintenance</label>
+                                <select class="user-form-select" id="jenisMaintSelect">
+                                    <option value="" selected disabled>Pilih Jenis Maintenance</option>
                                     <option value="Overhaul">Overhaul</option>
                                     <option value="Tune Up">Tune Up</option>
                                     <option value="Preventive Service">Preventive Service</option>
@@ -67,19 +62,19 @@
 
                             <!-- Tanggal Maintenance -->
                             <div class="col-12 col-sm-6">
-                                <label for="tanggalMaintInput" class="input-maint-label">Tanggal Maintenance</label>
-                                <div class="date-input-group">
-                                    <input type="date" id="tanggalMaintInput">
+                                <label for="tanggalMaintInput" class="user-form-label">Tanggal Maintenance</label>
+                                <div class="user-date-input-group">
+                                    <input type="date" id="tanggalMaintInput" style="width: 100%; border: none; outline: none; background: transparent;">
                                 </div>
                             </div>
                         </div>
 
                         <!-- Hour Meter Terakhir -->
                         <div class="mb-3">
-                            <label for="hourMeterInput" class="input-maint-label">Hour Meter Terakhir</label>
-                            <div class="hour-meter-group">
-                                <input type="number" id="hourMeterInput" placeholder="">
-                                <span class="hm-badge">HM</span>
+                            <label for="hourMeterInput" class="user-form-label">Hour Meter Terakhir</label>
+                            <div class="user-date-input-group">
+                                <input type="number" id="hourMeterInput" placeholder="Masukkan HM" min="0" step="250" style="width: 100%; border: none; outline: none; background: transparent;">
+                                <span class="hm-badge" style="margin-left: auto;">HM</span>
                             </div>
                         </div>
 
@@ -103,9 +98,9 @@
                         <div class="row g-3" id="dynamicServiceRow">
                             <!-- Dilayani Oleh -->
                             <div class="col-12 col-sm-6" id="servedByContainer" style="display: none;">
-                                <label for="servedBySelect" class="input-maint-label">Dilayani Oleh</label>
-                                <select class="input-maint-select-pill" id="servedBySelect">
-                                    <option value="" selected disabled></option>
+                                <label for="servedBySelect" class="user-form-label">Dilayani Oleh</label>
+                                <select class="user-form-select" id="servedBySelect">
+                                    <option value="" selected disabled>Pilih PIC Service</option>
                                     <option value="Admin Sales">Admin Sales</option>
                                     <option value="Kepala Toko">Kepala Toko</option>
                                     <option value="Teknisi Lapangan">Teknisi Lapangan</option>
@@ -114,8 +109,8 @@
 
                             <!-- Sales Order (SO) -->
                             <div class="col-12 col-sm-6" id="salesOrderContainer">
-                                <label for="salesOrderInput" class="input-maint-label">Sales Order (SO)</label>
-                                <input type="text" class="input-maint-pill" id="salesOrderInput">
+                                <label for="salesOrderInput" class="user-form-label">Sales Order (SO)</label>
+                                <input type="text" class="user-form-input" id="salesOrderInput" placeholder="Masukkan No. SO">
                             </div>
                         </div>
                     </div>
@@ -127,6 +122,12 @@
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h4 class="input-maint-card-title mb-0">Cek Sparepart</h4>
                             <button type="button" class="btn-maint-cek" id="btnCekSparepart" disabled style="background-color: #d1d5db; border-color: #d1d5db; cursor: not-allowed; color: #6b7280;">Cek</button>
+                        </div>
+                        
+                        <!-- Hint text for Sparepart -->
+                        <div id="cekSparepartHint" style="padding: 20px; text-align: center; color: #64748B; font-size: 0.88rem; background-color: #F8FAFC; border: 1px dashed #CBD5E1; border-radius: 12px;">
+                            <span class="material-symbols-outlined align-middle me-1" style="font-size: 1.1rem; color: #94A3B8;">info</span>
+                            Pilih Unit Forklift terlebih dahulu untuk memunculkan daftar sparepart.
                         </div>
 
                         <!-- Sparepart Table -->
@@ -225,6 +226,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (custInput && suggestionsBox) {
         custInput.addEventListener('input', function() {
+            if (unitSelect) {
+                unitSelect.innerHTML = `<option value="" selected disabled>Pilih Customer Dahulu</option>`;
+                unitSelect.disabled = true;
+                unitSelect.style.backgroundColor = 'transparent';
+                unitSelect.style.cursor = 'not-allowed';
+                unitSelect.style.color = '#6b7280';
+            }
+            if (tipeOperasiInput) tipeOperasiInput.value = '';
+            if (typeof checkEnableCekButton === 'function') checkEnableCekButton();
+
             const query = this.value.trim().toLowerCase();
             if (query.length < 1) {
                 suggestionsBox.style.display = 'none';
@@ -243,11 +254,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         custInput.value = this.dataset.name;
                         if (tipeOperasiInput) tipeOperasiInput.value = this.dataset.duty;
                         
-                        // Optionally update unit forklift select
+                        // Populate and enable unit forklift select
                         const custObj = customerList.find(c => c.name === this.dataset.name);
                         if (custObj && unitSelect) {
-                            unitSelect.innerHTML = `<option value="" selected disabled></option>` + 
+                            unitSelect.innerHTML = `<option value="" selected disabled>Pilih Unit Forklift</option>` + 
                                 custObj.units.map(u => `<option value="${u}">${u}</option>`).join('');
+                            unitSelect.disabled = false;
+                            unitSelect.style.backgroundColor = '#FFFFFF';
+                            unitSelect.style.cursor = 'pointer';
+                            unitSelect.style.color = '#111827';
                         }
                         
                         suggestionsBox.style.display = 'none';
@@ -271,44 +286,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnCekSparepart = document.getElementById('btnCekSparepart');
     const sparepartTableContainer = document.getElementById('sparepartTableContainer');
     const jenisMaintSelect = document.getElementById('jenisMaintSelect');
+    const cekSparepartHint = document.getElementById('cekSparepartHint');
 
     function checkEnableCekButton() {
-        if (custInput && jenisMaintSelect && custInput.value.trim() !== '' && jenisMaintSelect.value !== '') {
+        if (custInput && unitSelect && 
+            custInput.value.trim() !== '' && 
+            unitSelect.value !== '') {
             btnCekSparepart.disabled = false;
             btnCekSparepart.style.backgroundColor = '';
             btnCekSparepart.style.borderColor = '';
             btnCekSparepart.style.cursor = 'pointer';
             btnCekSparepart.style.color = '';
+            if (cekSparepartHint) cekSparepartHint.innerHTML = '<span class="material-symbols-outlined align-middle me-1" style="font-size: 1.1rem; color: #3B82F6;">info</span> Klik tombol Cek untuk menampilkan daftar sparepart.';
         } else {
             btnCekSparepart.disabled = true;
             btnCekSparepart.style.backgroundColor = '#d1d5db';
             btnCekSparepart.style.borderColor = '#d1d5db';
             btnCekSparepart.style.cursor = 'not-allowed';
             btnCekSparepart.style.color = '#6b7280';
+            if (cekSparepartHint) {
+                cekSparepartHint.innerHTML = '<span class="material-symbols-outlined align-middle me-1" style="font-size: 1.1rem; color: #94A3B8;">info</span> Pilih Unit Forklift terlebih dahulu untuk memunculkan daftar sparepart.';
+                cekSparepartHint.style.display = 'block';
+            }
             if (sparepartTableContainer) sparepartTableContainer.style.display = 'none';
         }
     }
 
     if (custInput) custInput.addEventListener('input', checkEnableCekButton);
+    if (unitSelect) unitSelect.addEventListener('change', checkEnableCekButton);
     if (jenisMaintSelect) jenisMaintSelect.addEventListener('change', checkEnableCekButton);
 
     if (btnCekSparepart) {
         btnCekSparepart.addEventListener('click', function() {
             if (!this.disabled && sparepartTableContainer) {
                 sparepartTableContainer.style.display = 'block';
+                if (cekSparepartHint) cekSparepartHint.style.display = 'none';
             }
         });
     }
 
     // HM Validation Logic
     const toastHTML = `
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
-        <div id="hmErrorToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="position-fixed p-3" style="z-index: 1050; top: 20px; right: 20px;">
+        <div id="hmErrorToast" class="toast align-items-center border-0 shadow-sm" role="alert" aria-live="assertive" aria-atomic="true" style="background-color: #FEF2F2; border-left: 4px solid #EF4444 !important; border-radius: 8px;">
             <div class="d-flex">
-                <div class="toast-body">
-                    Error: Nilai HM tidak boleh lebih kecil atau sama dengan HM Terakhir.
+                <div class="toast-body" style="color: #991B1B; font-weight: 500; font-size: 0.88rem; font-family: 'Inter', sans-serif;">
+                    <span class="material-symbols-outlined align-middle me-2" style="font-size: 1.2rem; color: #EF4444;">error</span>
+                    Nilai HM tidak boleh lebih kecil atau sama dengan HM Terakhir.
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" style="filter: none; opacity: 0.8;"></button>
             </div>
         </div>
     </div>`;

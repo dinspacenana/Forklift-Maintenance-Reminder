@@ -4,55 +4,61 @@
     <!-- Page Title -->
     <h2 class="page-title">Customer</h2>
 
-    <!-- Search, Filters, and Add Button Bar -->
-    <div class="customer-filter-bar">
-        <!-- Search Input -->
-        <div class="search-input-pill">
-            <span class="material-symbols-outlined">search</span>
-            <input type="text" placeholder="Cari Customer" id="searchCustomerInput">
-        </div>
+    <!-- Main Container Card -->
+    <div class="unit-forklift-main-card">
+        <!-- Search, Filters, and Add Button Bar -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div class="d-flex align-items-center flex-wrap gap-3">
+                <!-- Search Input -->
+                <div class="unit-search-pill">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Cari Customer" id="searchCustomerInput">
+                </div>
 
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-            <!-- Filter: Tipe Operasi -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Tipe Operasi</span>
+                <!-- Filter: Tipe Operasi -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Tipe Operasi</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
+                        <li><a class="dropdown-item" href="#">Low Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Medium Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
+                    </ul>
+                </div>
+
+                <!-- Filter: Status -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Status</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
+                        <li><a class="dropdown-item" href="#">Aktif</a></li>
+                        <li><a class="dropdown-item" href="#">Nonaktif</a></li>
+                    </ul>
+                </div>
+
+                <!-- Reset Button -->
+                <button type="button" class="btn-reset-filter" id="btnResetCustomer" onclick="document.getElementById('searchCustomerInput').value='';">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    <span>Reset</span>
                 </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                    <li><a class="dropdown-item" href="#">Low Duty</a></li>
-                    <li><a class="dropdown-item" href="#">Medium Duty</a></li>
-                    <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
-                </ul>
             </div>
-
-            <!-- Filter: Status -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Status</span>
-                </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                    <li><a class="dropdown-item" href="#">Aktif</a></li>
-                    <li><a class="dropdown-item" href="#">Nonaktif</a></li>
-                </ul>
-            </div>
-
-            <!-- Reset Button -->
-            <button type="button" class="btn-reset-filter" id="btnResetCustomer" onclick="document.getElementById('searchCustomerInput').value='';">
-                <span class="material-symbols-outlined">restart_alt</span>
-                <span>Reset</span>
-            </button>
 
             <!-- Add Customer Button -->
-            <button type="button" class="btn-add-customer" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
-                <span class="material-symbols-outlined">add</span> Tambah Customer
-            </button>
+            <div>
+                <button type="button" class="btn-assign-unit" data-bs-toggle="modal" data-bs-target="#addCustomerModal" style="background-color: #FBBA16; color: #111827;">
+                    <span class="material-symbols-outlined" style="font-size: 1.2rem;">add</span>
+                    <span>Customer</span>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <!-- Customer Data Table Card -->
-    <div class="customer-table-card">
-        <div class="table-responsive">
-            <table class="table customer-table">
+        <!-- Customer Data Table Card -->
+        <div class="unit-table-wrapper">
+            <table class="unit-forklift-table-v2">
                 <thead>
                     <tr>
                         <th style="width: 10%;">Kode</th>
@@ -67,8 +73,8 @@
                 <tbody>
                     <!-- Row 1 -->
                     <tr>
-                        <td class="fw-bold">TM-001</td>
-                        <td class="fw-bold">PT. Toyo Matsu</td>
+                        <td class="fw-bold" style="color: #111827;">TM-001</td>
+                        <td class="fw-bold" style="color: #111827;">PT. Toyo Matsu</td>
                         <td>Heavy Duty</td>
                         <td>26 – 08 – 03, 18.00</td>
                         <td>Admin Sales</td>
@@ -77,17 +83,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined">visibility</span>
+                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
                                 </button>
-                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Toyo Matsu') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Toyo Matsu') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
                                 </a>
-                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -95,8 +101,8 @@
 
                     <!-- Row 2 -->
                     <tr>
-                        <td class="fw-bold">NL-002</td>
-                        <td class="fw-bold">PT. Nusantara Logistik</td>
+                        <td class="fw-bold" style="color: #111827;">NL-002</td>
+                        <td class="fw-bold" style="color: #111827;">PT. Nusantara Logistik</td>
                         <td>Low Duty</td>
                         <td>26 – 08 – 03, 18.00</td>
                         <td>Kepala Toko</td>
@@ -105,17 +111,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined">visibility</span>
+                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
                                 </button>
-                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Nusantara Logistik') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Nusantara Logistik') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
                                 </a>
-                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -123,8 +129,8 @@
 
                     <!-- Row 3 -->
                     <tr>
-                        <td class="fw-bold">RJ-003</td>
-                        <td class="fw-bold">PT. Robin Jaya</td>
+                        <td class="fw-bold" style="color: #111827;">RJ-003</td>
+                        <td class="fw-bold" style="color: #111827;">PT. Robin Jaya</td>
                         <td>Medium Duty</td>
                         <td>26 – 08 – 03, 18.00</td>
                         <td>Kepala Toko</td>
@@ -133,17 +139,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined">visibility</span>
+                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
                                 </button>
-                                <button class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined">edit</span>
+                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Robin Jaya') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Robin Jaya') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
                                 </a>
-                                <button class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined">delete</span>
+                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -395,8 +401,8 @@
      ========================================================= -->
 <div class="modal fade" id="detailCustomerModal" tabindex="-1" aria-labelledby="detailCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 820px;">
-        <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="detailCustomerModalLabel">Informasi Detail Customer</h4>
+        <div class="modal-content modal-user-content">
+            <h4 class="modal-user-title" id="detailCustomerModalLabel">Informasi Detail Customer</h4>
 
             <div class="row g-3 mb-3">
                 <!-- Left Column (Customer Code, Name, Address) -->
@@ -497,7 +503,7 @@
 
             <!-- Action Button -->
             <div class="d-flex justify-content-end">
-                <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
+                <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
                     Kembali
                 </button>
             </div>
@@ -510,8 +516,8 @@
      ========================================================= -->
 <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
-        <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="addCustomerModalLabel">Tambah Customer</h4>
+        <div class="modal-content modal-user-content">
+            <h4 class="modal-user-title" id="addCustomerModalLabel">Tambah Customer</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3">
@@ -553,7 +559,7 @@
                     <div class="col-12 col-md-5">
                         <!-- Tipe Operasi Select Box -->
                         <div class="select-box-wrapper mb-3">
-                            <select class="custom-modal-select" id="addTipeOperasi">
+                            <select class="user-form-select" id="addTipeOperasi">
                                 <option value="Heavy Duty" selected>Heavy Duty</option>
                                 <option value="Medium Duty">Medium Duty</option>
                                 <option value="Low Duty">Low Duty</option>
@@ -582,10 +588,10 @@
                     <button type="button" class="btn-modal-sync">
                         <span class="material-symbols-outlined">sync</span> Sinkronisasi
                     </button>
-                    <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
+                    <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan
                     </button>
-                    <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
                         Kembali
                     </button>
                 </div>
@@ -599,8 +605,8 @@
      ========================================================= -->
 <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 780px;">
-        <div class="modal-content modal-customer-content">
-            <h4 class="modal-customer-title" id="editCustomerModalLabel">Ubah Detail Customer</h4>
+        <div class="modal-content modal-user-content">
+            <h4 class="modal-user-title" id="editCustomerModalLabel">Ubah Detail Customer</h4>
 
             <form onsubmit="event.preventDefault();">
                 <div class="row g-3">
@@ -637,7 +643,7 @@
 
                     <div class="col-12 col-md-5">
                         <div class="select-box-wrapper mb-3">
-                            <select class="custom-modal-select" id="editTipeOperasi">
+                            <select class="user-form-select" id="editTipeOperasi">
                                 <option value="Heavy Duty" selected>Heavy Duty</option>
                                 <option value="Medium Duty">Medium Duty</option>
                                 <option value="Low Duty">Low Duty</option>
@@ -664,10 +670,10 @@
                     <button type="button" class="btn-modal-sync">
                         <span class="material-symbols-outlined">sync</span> Sinkronisasi
                     </button>
-                    <button type="button" class="btn-modal-save" data-bs-dismiss="modal">
+                    <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan
                     </button>
-                    <button type="button" class="btn-modal-back" data-bs-dismiss="modal">
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">
                         Kembali
                     </button>
                 </div>

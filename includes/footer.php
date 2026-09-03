@@ -72,5 +72,8 @@
 <!-- Universal Table Pagination Script -->
 <script src="assets/js/table-pagination.js"></script>
 
+<!-- Custom Datepicker Script for dd/mm/yyyy consistency -->
+<script src="assets/js/custom-datepicker.js"></script>
+
 </body>
 </html>

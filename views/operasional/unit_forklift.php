@@ -509,12 +509,12 @@ usort($displayUnits, function($a, $b) {
      ========================================================= -->
 <div class="modal fade" id="assignUnitModal" tabindex="-1" aria-labelledby="assignUnitModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-form-unit-dialog">
-        <div class="modal-content modal-form-unit-content">
-            <h3 class="modal-form-unit-title" id="assignUnitModalLabel">Assignment Unit Forklift</h3>
+        <div class="modal-content modal-user-content">
+            <h3 class="modal-user-title" id="assignUnitModalLabel">Assignment Unit Forklift</h3>
             <form onsubmit="event.preventDefault();">
                 <div class="mb-3">
-                    <label class="form-unit-label">Customer</label>
-                    <select class="form-unit-select" id="assignCustomerSelect">
+                    <label class="user-form-label">Customer</label>
+                    <select class="user-form-select" id="assignCustomerSelect">
                         <option value="" selected disabled></option>
                         <option value="PT. Maju Jaya">PT. Maju Jaya</option>
                         <option value="PT. Mentari Pagi">PT. Mentari Pagi</option>
@@ -522,8 +522,8 @@ usort($displayUnits, function($a, $b) {
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Forklift</label>
-                    <select class="form-unit-select" id="assignForkliftSelect">
+                    <label class="user-form-label">Forklift</label>
+                    <select class="user-form-select" id="assignForkliftSelect">
                         <option value="" selected disabled></option>
                         <option value="Toyota 8FD30">Toyota 8FD30</option>
                         <option value="Mitsubishi FD30">Mitsubishi FD30</option>
@@ -531,11 +531,11 @@ usort($displayUnits, function($a, $b) {
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Serial Number</label>
-                    <input type="text" class="form-unit-input" id="assignSerialInput" placeholder="">
+                    <label class="user-form-label">Serial Number</label>
+                    <input type="text" class="user-form-input" id="assignSerialInput" placeholder="">
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Hour Meter Akhir</label>
+                    <label class="user-form-label">Hour Meter Akhir</label>
                     <div class="hm-input-container">
                         <input type="text" class="hm-input-field" id="assignHMInput" placeholder="">
                         <span class="hm-input-divider"></span>
@@ -543,14 +543,14 @@ usort($displayUnits, function($a, $b) {
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label class="form-unit-label">Status Unit</label>
+                    <label class="user-form-label">Status Unit</label>
                     <div class="form-check form-check-custom-blue d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" id="assignStatusAktif" checked>
                         <label class="form-check-label" for="assignStatusAktif">Aktif</label>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end gap-3">
-                    <button type="button" class="btn-modal-unit-batal" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">Batal</button>
                     <button type="button" class="btn-modal-unit-simpan" data-bs-dismiss="modal">Simpan</button>
                 </div>
             </form>
@@ -563,12 +563,12 @@ usort($displayUnits, function($a, $b) {
      ========================================================= -->
 <div class="modal fade" id="editUnitModal" tabindex="-1" aria-labelledby="editUnitModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-form-unit-dialog">
-        <div class="modal-content modal-form-unit-content">
-            <h3 class="modal-form-unit-title" id="editUnitModalLabel">Edit Unit Forklift</h3>
+        <div class="modal-content modal-user-content">
+            <h3 class="modal-user-title" id="editUnitModalLabel">Edit Unit Forklift</h3>
             <form onsubmit="event.preventDefault();">
                 <div class="mb-3">
-                    <label class="form-unit-label">Customer</label>
-                    <select class="form-unit-select" id="editCustomerSelect">
+                    <label class="user-form-label">Customer</label>
+                    <select class="user-form-select" id="editCustomerSelect">
                         <option value="">Pilih Customer</option>
                         <option value="PT. Maju Jaya" selected>PT. Maju Jaya</option>
                         <option value="PT. Mentari Pagi">PT. Mentari Pagi</option>
@@ -576,8 +576,8 @@ usort($displayUnits, function($a, $b) {
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Forklift</label>
-                    <select class="form-unit-select" id="editForkliftSelect">
+                    <label class="user-form-label">Forklift</label>
+                    <select class="user-form-select" id="editForkliftSelect">
                         <option value="">Pilih Forklift</option>
                         <option value="Toyota 8FD30" selected>Toyota 8FD30</option>
                         <option value="Mitsubishi FD30">Mitsubishi FD30</option>
@@ -585,11 +585,11 @@ usort($displayUnits, function($a, $b) {
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Serial Number</label>
-                    <input type="text" class="form-unit-input" id="editSerialInput" value="8FD30-12345">
+                    <label class="user-form-label">Serial Number</label>
+                    <input type="text" class="user-form-input" id="editSerialInput" value="8FD30-12345">
                 </div>
                 <div class="mb-3">
-                    <label class="form-unit-label">Hour Meter Akhir</label>
+                    <label class="user-form-label">Hour Meter Akhir</label>
                     <div class="hm-input-container">
                         <input type="text" class="hm-input-field" id="editHMInput" value="4850">
                         <span class="hm-input-divider"></span>
@@ -597,14 +597,14 @@ usort($displayUnits, function($a, $b) {
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label class="form-unit-label">Status Unit</label>
+                    <label class="user-form-label">Status Unit</label>
                     <div class="form-check form-check-custom-blue d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" id="editStatusAktif" checked>
                         <label class="form-check-label" for="editStatusAktif">Aktif</label>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end gap-3">
-                    <button type="button" class="btn-modal-unit-batal" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn-user-batal" data-bs-dismiss="modal">Batal</button>
                     <button type="button" class="btn-modal-unit-simpan" data-bs-dismiss="modal">Simpan</button>
                 </div>
             </form>
@@ -617,12 +617,12 @@ usort($displayUnits, function($a, $b) {
      ========================================================= -->
 <div class="modal fade" id="deleteUnitModal" tabindex="-1" aria-labelledby="deleteUnitModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-delete-unit-dialog">
-        <div class="modal-content modal-delete-unit-content">
-            <h4 class="modal-delete-unit-title">Yakin ingin menghapus?</h4>
-            <div class="modal-delete-unit-desc">Data akan hilang permanen</div>
+        <div class="modal-content modal-delete-content">
+            <h4 class="modal-delete-title">Yakin ingin menghapus?</h4>
+            <div class="modal-delete-subtext">Data akan hilang permanen</div>
             <div class="d-flex justify-content-center gap-3">
-                <button type="button" class="btn-modal-delete-batal" data-bs-dismiss="modal">Batal</button>
-                <button type="button" class="btn-modal-delete-yakin" data-bs-dismiss="modal">Yakin</button>
+                <button type="button" class="btn-delete-cancel" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn-delete-confirm" data-bs-dismiss="modal">Yakin</button>
             </div>
         </div>
     </div>

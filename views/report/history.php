@@ -8,65 +8,68 @@
         </button>
     </div>
 
-    <!-- Search, Filters, and Reset Button Bar -->
-    <div class="customer-filter-bar">
+    <!-- Main Container Card -->
+    <div class="unit-forklift-main-card">
         
-        <!-- Search Input -->
-        <div class="search-input-pill">
-            <span class="material-symbols-outlined">search</span>
-            <input type="text" placeholder="Cari Customer" id="searchHistoryInput">
+        <!-- Search, Filters, and Reset Button Bar -->
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div class="d-flex align-items-center flex-wrap gap-3">
+                <!-- Search Input -->
+                <div class="unit-search-pill">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Cari Customer" id="searchHistoryInput">
+                </div>
+
+                <!-- Date Range Picker -->
+                <div class="d-flex align-items-center gap-2">
+                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
+                        <input type="text" value="01/08/26" readonly style="border: none; outline: none; background: transparent; width: 70px; font-size: 0.85rem; color: #475569;">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    </div>
+                    <span class="fw-bold" style="color: #94A3B8;">-</span>
+                    <div class="date-filter-pill-box" style="padding: 0.35rem 0.75rem; border-radius: 50px; border: 1px solid #E2E8F0; background: #fff; display: flex; align-items: center; gap: 8px;">
+                        <input type="text" value="02/08/26" readonly style="border: none; outline: none; background: transparent; width: 70px; font-size: 0.85rem; color: #475569;">
+                        <span class="material-symbols-outlined" style="font-size: 1rem; color: #94A3B8;">calendar_today</span>
+                    </div>
+                </div>
+
+                <!-- Dropdown Maintenance -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterMaintenance" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Maintenance</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterMaintenance">
+                        <li><a class="dropdown-item" href="#">Tune-Up</a></li>
+                        <li><a class="dropdown-item" href="#">Overhaul</a></li>
+                        <li><a class="dropdown-item" href="#">Break System</a></li>
+                    </ul>
+                </div>
+
+                <!-- Dropdown Tipe Operasi -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Tipe Operasi</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
+                        <li><a class="dropdown-item" href="#">Low Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Medium Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
+                    </ul>
+                </div>
+
+                <!-- Reset Button -->
+                <button type="button" class="btn-reset-filter" id="btnResetHistory" onclick="document.getElementById('searchHistoryInput').value='';">
+                    <span class="material-symbols-outlined">restart_alt</span>
+                    <span>Reset</span>
+                </button>
+            </div>
         </div>
 
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-            <!-- Date Range Picker -->
-            <div class="d-flex align-items-center gap-2">
-                <div class="date-filter-pill-box">
-                    <input type="text" value="01/08/26" readonly>
-                    <span class="material-symbols-outlined">calendar_today</span>
-                </div>
-                <span class="fw-bold" style="color: #94A3B8;">-</span>
-                <div class="date-filter-pill-box">
-                    <input type="text" value="02/08/26" readonly>
-                    <span class="material-symbols-outlined">calendar_today</span>
-                </div>
-            </div>
-
-            <!-- Dropdown Maintenance -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterMaintenance" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Maintenance</span>
-                </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterMaintenance">
-                    <li><a class="dropdown-item" href="#">Tune-Up</a></li>
-                    <li><a class="dropdown-item" href="#">Overhaul</a></li>
-                    <li><a class="dropdown-item" href="#">Break System</a></li>
-                </ul>
-            </div>
-
-            <!-- Dropdown Tipe Operasi -->
-            <div class="dropdown">
-                <button class="filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span>Tipe Operasi</span>
-                </button>
-                <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                    <li><a class="dropdown-item" href="#">Low Duty</a></li>
-                    <li><a class="dropdown-item" href="#">Medium Duty</a></li>
-                    <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
-                </ul>
-            </div>
-
-            <!-- Reset Button -->
-            <button type="button" class="btn-reset-filter" id="btnResetHistory" onclick="document.getElementById('searchHistoryInput').value='';">
-                <span class="material-symbols-outlined">restart_alt</span>
-                <span>Reset</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- History Data Table Card -->
-    <div class="customer-table-card">
-        <div class="table-responsive">
-            <table class="table customer-table" style="min-width: 900px;">
+        <!-- History Data Table Card -->
+        <div class="unit-table-wrapper">
+            <table class="unit-forklift-table-v2" style="min-width: 900px;">
                 <thead>
                     <tr>
                         <th style="width: 12%;">Tanggal</th>
@@ -229,7 +232,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="table-pagination-footer d-flex justify-content-end align-items-center">
+        <div class="table-pagination-footer d-flex justify-content-end align-items-center mt-3">
             <div class="pagination-custom ms-auto">
                 <a href="#" class="page-arrow">&lt;</a>
                 <a href="#" class="page-num active">1</a>
