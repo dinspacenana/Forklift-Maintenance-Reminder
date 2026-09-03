@@ -13,15 +13,12 @@
                     <div class="input-maint-sub-card">
                         <h4 class="input-maint-card-title">Informasi Unit & Forklift</h4>
 
-                        <!-- Nama Customer (Search from Portal) -->
+                        <!-- Nama Customer -->
                         <div class="mb-3 position-relative">
                             <label for="namaCustomerInput" class="user-form-label">
-                                Nama Customer <span class="text-muted fw-normal" style="font-size: 0.8rem; margin-left: 4px;">(Cari dari portal)</span>
+                                Nama Customer
                             </label>
                             <input type="text" class="user-form-input" id="namaCustomerInput" placeholder="Masukkan Customer" autocomplete="off">
-                            <div class="text-muted" style="font-size: 0.76rem; margin-top: 5px; color: #64748B;">
-                                Ketik minimal 1 karakter untuk mencari customer yang sudah terdaftar di portal
-                            </div>
 
                             <!-- Autocomplete Suggestions List -->
                             <div id="customerSuggestions" class="autocomplete-suggestions" style="display: none;"></div>

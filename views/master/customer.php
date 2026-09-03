@@ -523,17 +523,17 @@
                 <div class="row g-3">
                     <!-- Left Column -->
                     <div class="col-12 col-md-7">
-                        <!-- Code & Name Box -->
+                        <!-- Code & Name Box (Inputs for either Kode or Nama) -->
                         <div class="customer-info-box mb-3">
-                            <div class="customer-code-name-row">
-                                <div style="flex: 1;">
-                                    <div class="info-sub-label">Kode Customer</div>
-                                    <div class="info-val-large" id="addKodeCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
+                            <div class="customer-code-name-row" style="align-items: flex-start;">
+                                <div style="flex: 0 0 115px;">
+                                    <label for="inputKodeCustomer" class="info-sub-label mb-1" style="display: block; cursor: pointer;">Kode Customer</label>
+                                    <input type="text" class="customer-info-input" id="inputKodeCustomer" placeholder="Contoh: TM-001" autocomplete="off">
                                 </div>
-                                <div class="box-vertical-divider"></div>
-                                <div style="flex: 1.5;">
-                                    <div class="info-sub-label">Nama Customer</div>
-                                    <div class="info-val-large" id="addNamaCustomer" style="color: #94A3B8; font-weight: 500;">-</div>
+                                <div class="box-vertical-divider" id="customerBoxDivider" style="height: 38px; margin: 0 16px;"></div>
+                                <div style="flex: 1; min-width: 0;">
+                                    <label for="inputNamaCustomer" class="info-sub-label mb-1" style="display: block; cursor: pointer;">Nama Customer</label>
+                                    <textarea class="customer-info-input" id="inputNamaCustomer" rows="1" placeholder="Contoh: PT. Toyo Matsu" autocomplete="off" style="resize: none; overflow: hidden; height: 26px; display: block;"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -586,8 +586,8 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-3 mt-4">
-                    <button type="button" class="btn-modal-sync" id="btnSyncAddCustomer">
-                        <span class="material-symbols-outlined">sync</span> Sinkronisasi
+                    <button type="button" class="btn-modal-sync" id="btnCekCustomer" disabled>
+                        <span class="material-symbols-outlined">search</span> Cek
                     </button>
                     <button type="button" class="btn-forklift-save" data-bs-dismiss="modal">
                         Simpan
@@ -706,53 +706,149 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Sinkronisasi Tambah Customer
-    const btnSync = document.getElementById('btnSyncAddCustomer');
+    // Database Referensi Customer untuk Simulasi Pengecekan
+    const customerData = [
+        {
+            kode: 'TM-001',
+            nama: 'PT. Toyo Matsu',
+            alamat: 'JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia',
+            telp: '081-2345678',
+            email: 'Toyomatsu@gmail.com',
+            tipe: 'Heavy Duty'
+        },
+        {
+            kode: 'NL-002',
+            nama: 'PT. Nusantara Logistik',
+            alamat: 'Kawasan Industri Rungkut Blok A-12, Surabaya',
+            telp: '031-8987654',
+            email: 'nusantara.logistik@gmail.com',
+            tipe: 'Low Duty'
+        },
+        {
+            kode: 'RJ-003',
+            nama: 'PT. Robin Jaya',
+            alamat: 'Jl. Margomulyo Indah Kav. 18, Surabaya',
+            telp: '031-7489012',
+            email: 'info@robinjaya.co.id',
+            tipe: 'Medium Duty'
+        },
+        {
+            kode: 'MP-004',
+            nama: 'PT. Mentari Pagi',
+            alamat: 'Jl. Raya Darmo Permai III No. 8, Surabaya',
+            telp: '081-3345567',
+            email: 'mentari.pagi@gmail.com',
+            tipe: 'Medium Duty'
+        },
+        {
+            kode: 'MJ-005',
+            nama: 'PT. Maju Jaya',
+            alamat: 'Jl. Industri SIER No. 25, Surabaya',
+            telp: '031-8432190',
+            email: 'contact@majujaya.com',
+            tipe: 'Heavy Duty'
+        }
+    ];
+
+    const inputKode = document.getElementById('inputKodeCustomer');
+    const inputNama = document.getElementById('inputNamaCustomer');
+    const btnCek = document.getElementById('btnCekCustomer');
     const addModal = document.getElementById('addCustomerModal');
 
-    if (btnSync) {
-        btnSync.addEventListener('click', function() {
+    // Cek status input untuk mengaktifkan/menonaktifkan tombol Cek
+    function updateCekButtonState() {
+        if (!btnCek) return;
+        const hasKode = inputKode && inputKode.value.trim().length > 0;
+        const hasNama = inputNama && inputNama.value.trim().length > 0;
+
+        btnCek.disabled = !(hasKode || hasNama);
+    }
+
+    // Auto-adjust tinggi textarea Nama Customer agar nama panjang tidak terpotong
+    function adjustNamaTextareaHeight() {
+        if (!inputNama) return;
+        inputNama.style.height = 'auto';
+        const newHeight = Math.max(26, inputNama.scrollHeight);
+        inputNama.style.height = newHeight + 'px';
+        const divider = document.getElementById('customerBoxDivider');
+        if (divider) {
+            divider.style.height = Math.max(38, newHeight + 8) + 'px';
+        }
+    }
+
+    if (inputKode) {
+        inputKode.addEventListener('input', updateCekButtonState);
+    }
+    if (inputNama) {
+        inputNama.addEventListener('input', function() {
+            updateCekButtonState();
+            adjustNamaTextareaHeight();
+        });
+    }
+
+    // Klik Tombol Cek
+    if (btnCek) {
+        btnCek.addEventListener('click', function() {
+            if (this.disabled) return;
+
             const icon = this.querySelector('.material-symbols-outlined');
             if (icon) {
-                icon.style.transition = 'transform 0.6s ease';
-                icon.style.transform = 'rotate(360deg)';
+                icon.style.transition = 'transform 0.4s ease';
+                icon.style.transform = 'scale(1.25)';
             }
 
-            // Munculkan data customer hasil sinkronisasi
-            const kode = document.getElementById('addKodeCustomer');
-            const nama = document.getElementById('addNamaCustomer');
+            const qKode = inputKode ? inputKode.value.trim().toLowerCase() : '';
+            const qNama = inputNama ? inputNama.value.trim().toLowerCase() : '';
+
+            // Cari kecocokan data
+            let matched = customerData.find(c => {
+                const matchKode = qKode && c.kode.toLowerCase().includes(qKode);
+                const matchNama = qNama && c.nama.toLowerCase().includes(qNama);
+                return matchKode || matchNama;
+            });
+
+            // Fallback cerdas jika user memasukkan kode/nama baru
+            if (!matched) {
+                matched = {
+                    kode: inputKode && inputKode.value.trim() ? inputKode.value.trim().toUpperCase() : 'TM-001',
+                    nama: inputNama && inputNama.value.trim() ? inputNama.value.trim() : 'PT. Toyo Matsu',
+                    alamat: 'JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia',
+                    telp: '081-2345678',
+                    email: 'Toyomatsu@gmail.com',
+                    tipe: 'Heavy Duty'
+                };
+            }
+
+            // Lengkapi input jika salah satunya kosong
+            if (inputKode) inputKode.value = matched.kode;
+            if (inputNama) {
+                inputNama.value = matched.nama;
+                adjustNamaTextareaHeight();
+            }
+
+            // Munculkan detail informasi customer
             const alamat = document.getElementById('addAlamatCustomer');
             const telp = document.getElementById('addTelpCustomer');
             const email = document.getElementById('addEmailCustomer');
             const tipe = document.getElementById('addTipeOperasi');
 
-            if (kode) {
-                kode.textContent = 'TM-001';
-                kode.style.color = '#111827';
-                kode.style.fontWeight = '700';
-            }
-            if (nama) {
-                nama.textContent = 'PT. Toyo Matsu';
-                nama.style.color = '#111827';
-                nama.style.fontWeight = '700';
-            }
             if (alamat) {
-                alamat.textContent = 'JL. Raden Saleh No.4 6, Surabaya, Jawa Timur, Indonesia';
+                alamat.textContent = matched.alamat;
                 alamat.style.color = '#334155';
                 alamat.style.fontWeight = '500';
             }
             if (telp) {
-                telp.textContent = '081-2345678';
+                telp.textContent = matched.telp;
                 telp.style.color = '#111827';
                 telp.style.fontWeight = '600';
             }
             if (email) {
-                email.textContent = 'Toyomatsu@gmail.com';
+                email.textContent = matched.email;
                 email.style.color = '#111827';
                 email.style.fontWeight = '600';
             }
-            if (tipe && (!tipe.value || tipe.value === '')) {
-                tipe.value = 'Heavy Duty';
+            if (tipe && matched.tipe) {
+                tipe.value = matched.tipe;
             }
 
             setTimeout(() => {
@@ -760,30 +856,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon.style.transition = 'none';
                     icon.style.transform = 'none';
                 }
-            }, 600);
+            }, 400);
         });
     }
 
     // Reset kembali ke keadaan kosong saat modal ditutup
     if (addModal) {
         addModal.addEventListener('hidden.bs.modal', function() {
-            const kode = document.getElementById('addKodeCustomer');
-            const nama = document.getElementById('addNamaCustomer');
+            if (inputKode) inputKode.value = '';
+            if (inputNama) {
+                inputNama.value = '';
+                inputNama.style.height = '26px';
+            }
+            const divider = document.getElementById('customerBoxDivider');
+            if (divider) divider.style.height = '38px';
+
+            if (btnCek) btnCek.disabled = true;
+
             const alamat = document.getElementById('addAlamatCustomer');
             const telp = document.getElementById('addTelpCustomer');
             const email = document.getElementById('addEmailCustomer');
             const tipe = document.getElementById('addTipeOperasi');
 
-            if (kode) {
-                kode.textContent = '-';
-                kode.style.color = '#94A3B8';
-                kode.style.fontWeight = '500';
-            }
-            if (nama) {
-                nama.textContent = '-';
-                nama.style.color = '#94A3B8';
-                nama.style.fontWeight = '500';
-            }
             if (alamat) {
                 alamat.textContent = '-';
                 alamat.style.color = '#94A3B8';

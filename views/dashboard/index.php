@@ -26,6 +26,7 @@
                     <span class="stat-title">Total Forklift</span>
                 </div>
                 <div class="stat-value">14</div>
+                <div class="stat-desc">Unit forklift aktif terdaftar</div>
             </div>
         </div>
 
@@ -39,6 +40,7 @@
                     <span class="stat-title">Due Soon</span>
                 </div>
                 <div class="stat-value">25</div>
+                <div class="stat-desc">Mendekati jadwal servis (H-7)</div>
             </div>
         </div>
 
@@ -52,6 +54,7 @@
                     <span class="stat-title">Overdue</span>
                 </div>
                 <div class="stat-value">03</div>
+                <div class="stat-desc">Melewati batas jadwal servis</div>
             </div>
         </div>
 
@@ -65,6 +68,7 @@
                     <span class="stat-title">Outstanding</span>
                 </div>
                 <div class="stat-value">01</div>
+                <div class="stat-desc">Servis belum ditindaklanjuti</div>
             </div>
         </div>
     </section>
@@ -104,7 +108,7 @@
                                     <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge due-soon">Due Soon</span>
+                                    <span class="status-badge due-soon">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -124,7 +128,7 @@
                                     <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge over-due">Over Due</span>
+                                    <span class="status-badge due-soon">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -144,7 +148,7 @@
                                     <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge over-due">Over Due</span>
+                                    <span class="status-badge due-soon">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -164,7 +168,7 @@
                                     <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge h-7">H - 7</span>
+                                    <span class="status-badge due-soon">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -184,7 +188,7 @@
                                     <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge h-7">H - 7</span>
+                                    <span class="status-badge due-soon">Menunggu</span>
                                 </td>
                             </tr>
                         </tbody>

@@ -556,6 +556,14 @@ a {
     line-height: 1;
 }
 
+.stat-desc {
+    font-size: 0.78rem;
+    color: #64748B;
+    font-weight: 500;
+    margin: 6px 0 0 4px;
+    line-height: 1.3;
+}
+
 /* =========================================================
    BOTTOM CARDS & TABLES
    ========================================================= */
@@ -641,14 +649,18 @@ a {
     text-align: center;
 }
 
-.status-badge.due-soon {
-    background-color: var(--fmr-yellow-light);
-    color: var(--fmr-yellow-text);
+.status-badge.due-soon,
+.status-badge.menunggu,
+.status-badge.status-menunggu {
+    background-color: var(--fmr-yellow-light) !important;
+    color: var(--fmr-yellow-text) !important;
 }
 
-.status-badge.over-due {
-    background-color: var(--fmr-red-light);
-    color: var(--fmr-red-text);
+.status-badge.over-due,
+.status-badge.gagal,
+.status-badge.status-gagal {
+    background-color: #FEE2E2 !important;
+    color: #EF4444 !important;
 }
 
 .status-badge.h-7 {
@@ -660,14 +672,8 @@ a {
 .status-badge.terkirim,
 .status-badge.status-sukses,
 .status-badge.status-terkirim {
-    background-color: var(--fmr-green-light);
-    color: var(--fmr-green-text);
-}
-
-.status-badge.gagal,
-.status-badge.status-gagal {
-    background-color: #FCA5A5;
-    color: #991B1B;
+    background-color: var(--fmr-green-light) !important;
+    color: var(--fmr-green-text) !important;
 }
 
 /* Reminder Type Icons */
@@ -841,20 +847,27 @@ a {
 }
 
 .fmr-btn-submit {
-    background-color: #F59E0B;
-    color: #1E293B;
+    background-color: #FBBA16;
+    color: #111827;
     font-weight: 700;
     font-size: 0.92rem;
     border: none;
     border-radius: 10px;
-    padding: 10px 32px;
+    padding: 10px 24px;
     cursor: pointer;
     transition: background-color 0.15s ease;
 }
 
 .fmr-btn-submit:hover {
-    background-color: #D97706;
-    color: #FFFFFF;
+    background-color: #E5A50A;
+    color: #111827;
+}
+
+.fmr-btn-submit:focus,
+.fmr-btn-submit:active {
+    background-color: #D49808;
+    color: #111827;
+    box-shadow: none;
 }
 
 /* =========================================================
@@ -1279,13 +1292,13 @@ a {
 }
 
 .status-pill-badge.aktif {
-    background-color: #DDEBF3;
-    color: #4B6E85;
+    background-color: #A7F3D0 !important;
+    color: #15803D !important;
 }
 
 .status-pill-badge.nonaktif {
-    background-color: #E5E7EB;
-    color: #6B7280;
+    background-color: #FEE2E2 !important;
+    color: #EF4444 !important;
 }
 
 .action-icons-group {
@@ -1353,10 +1366,12 @@ a {
 }
 
 .info-val-large {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: #111827;
     margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .box-vertical-divider {
@@ -1457,24 +1472,62 @@ a {
     cursor: pointer;
 }
 
+.customer-info-input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #111827;
+    padding: 0;
+    line-height: 1.35;
+    transition: color 0.15s ease;
+    word-break: break-word;
+}
+
+.customer-info-input::placeholder {
+    color: #94A3B8;
+    font-weight: 500;
+    font-size: 0.92rem;
+}
+
+.customer-info-input:focus {
+    color: #111827;
+}
+
 .btn-modal-sync {
     background-color: #6897B0;
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     border: none;
     border-radius: 10px;
-    padding: 9px 20px;
+    padding: 10px 36px;
+    min-width: 120px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: all 0.2s ease;
 }
 
-.btn-modal-sync:hover {
+.btn-modal-sync .material-symbols-outlined {
+    font-size: 1.15rem;
+}
+
+.btn-modal-sync:hover:not(:disabled) {
     background-color: #558199;
     color: #FFFFFF;
+}
+
+.btn-modal-sync:disabled {
+    background-color: #CBD5E1 !important;
+    color: #94A3B8 !important;
+    cursor: not-allowed !important;
+    opacity: 0.85;
 }
 
 .btn-modal-save {
@@ -1695,8 +1748,20 @@ a {
 }
 
 .badge-status-green {
-    background-color: #A7F3D0;
-    color: #15803D;
+    background-color: #A7F3D0 !important;
+    color: #15803D !important;
+    font-weight: 700;
+    font-size: 0.76rem;
+    padding: 5px 18px;
+    border-radius: 14px;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-status-gray,
+.badge-status-red {
+    background-color: #FEE2E2 !important;
+    color: #EF4444 !important;
     font-weight: 700;
     font-size: 0.76rem;
     padding: 5px 18px;
@@ -2191,8 +2256,8 @@ a {
 }
 
 .badge-status-aktif-blue {
-    background-color: #E0F0FA;
-    color: #0284C7;
+    background-color: #A7F3D0 !important;
+    color: #15803D !important;
     font-weight: 600;
     font-size: 0.76rem;
     padding: 4px 14px;
@@ -2201,8 +2266,8 @@ a {
 }
 
 .badge-status-nonaktif-gray {
-    background-color: #F1F5F9;
-    color: #64748B;
+    background-color: #FEE2E2 !important;
+    color: #EF4444 !important;
     font-weight: 600;
     font-size: 0.76rem;
     padding: 4px 14px;
@@ -3425,7 +3490,7 @@ a {
 }
 
 .btn-assign-unit {
-    background-color: #F59E0B;
+    background-color: #FBBA16;
     color: #111827;
     font-weight: 700;
     font-size: 0.88rem;
@@ -3442,7 +3507,7 @@ a {
 }
 
 .btn-assign-unit:hover {
-    background-color: #D97706;
+    background-color: #E5A50A;
     color: #111827;
 }
 
@@ -3518,8 +3583,8 @@ a {
 }
 
 .badge-unit-overdue {
-    background-color: #FEE2E2;
-    color: #EF4444;
+    background-color: #FEE2E2 !important;
+    color: #EF4444 !important;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 4px 14px;
@@ -3531,8 +3596,8 @@ a {
 }
 
 .badge-unit-duesoon {
-    background-color: #FEF08A;
-    color: #CA8A04;
+    background-color: #FEF3C7 !important;
+    color: #B45309 !important;
     font-size: 0.78rem;
     font-weight: 600;
     padding: 4px 14px;
@@ -3551,11 +3616,11 @@ a {
 }
 
 .badge-unit-dot.dot-red {
-    background-color: #DC2626;
+    background-color: #EF4444 !important;
 }
 
 .badge-unit-dot.dot-yellow {
-    background-color: #EAB308;
+    background-color: #D97706 !important;
 }
 
 .unit-divider-bottom {
@@ -3566,7 +3631,7 @@ a {
 }
 
 .pagination-custom-gold .page-num.active {
-    background-color: #F59E0B;
+    background-color: #FBBA16;
     color: #111827;
     font-weight: 700;
     border-radius: 4px;
