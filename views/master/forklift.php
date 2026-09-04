@@ -15,22 +15,6 @@
                     <input type="text" placeholder="Cari Forklift" id="searchForkliftInput">
                 </div>
 
-                <!-- Filter: Merek Dropdown -->
-                <div class="dropdown">
-                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterForklift" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span id="selectedMerekText">Semua</span>
-                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
-                    </button>
-                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterForklift">
-                        <li><a class="dropdown-item active" href="#" data-merek="semua">Semua</a></li>
-                        <li><a class="dropdown-item" href="#" data-merek="Toyota">Toyota</a></li>
-                        <li><a class="dropdown-item" href="#" data-merek="Mitsubishi">Mitsubishi</a></li>
-                        <li><a class="dropdown-item" href="#" data-merek="Komatsu">Komatsu</a></li>
-                        <li><a class="dropdown-item" href="#" data-merek="Doosan">Doosan</a></li>
-                        <li><a class="dropdown-item" href="#" data-merek="TCM">TCM</a></li>
-                    </ul>
-                </div>
-
                 <!-- Filter: Tipe Operasi -->
                 <div class="dropdown">
                     <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterTipeOperasi" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,10 +22,21 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                        <li><a class="dropdown-item active" href="#" data-tipe="semua">Semua Tipe Operasi</a></li>
                         <li><a class="dropdown-item" href="#" data-tipe="Heavy Duty">Heavy Duty</a></li>
                         <li><a class="dropdown-item" href="#" data-tipe="Medium Duty">Medium Duty</a></li>
                         <li><a class="dropdown-item" href="#" data-tipe="Low Duty">Low Duty</a></li>
+                    </ul>
+                </div>
+
+                <!-- Filter: Status -->
+                <div class="dropdown">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span id="selectedStatusText">Status</span>
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
+                    </button>
+                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
+                        <li><a class="dropdown-item" href="#" data-status="Aktif">Aktif</a></li>
+                        <li><a class="dropdown-item" href="#" data-status="Nonaktif">Nonaktif</a></li>
                     </ul>
                 </div>
 
@@ -509,28 +504,29 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchForkliftInput');
-    const merekItems = document.querySelectorAll('#filterForklift + .dropdown-menu .dropdown-item');
     const tipeItems = document.querySelectorAll('#filterTipeOperasi + .dropdown-menu .dropdown-item');
-    const selectedMerekText = document.getElementById('selectedMerekText');
+    const statusItems = document.querySelectorAll('#filterStatus + .dropdown-menu .dropdown-item');
     const selectedTipeText = document.getElementById('selectedTipeOperasiText');
+    const selectedStatusText = document.getElementById('selectedStatusText');
     const btnReset = document.getElementById('btnResetForklift');
     const rows = document.querySelectorAll('.unit-forklift-table-v2 tbody tr');
 
-    let currentMerek = 'semua';
     let currentTipe = 'semua';
+    let currentStatus = 'semua';
 
     function filterTable() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         rows.forEach(row => {
-            const merek = (row.dataset.merek || '').toLowerCase();
             const tipe = (row.dataset.tipeOperasi || '').toLowerCase();
+            const statusEl = row.querySelector('[class^="badge-status-"]');
+            const status = statusEl ? statusEl.textContent.trim().toLowerCase() : '';
             const textContent = row.textContent.toLowerCase();
 
             const matchSearch = !query || textContent.includes(query);
-            const matchMerek = (currentMerek === 'semua') || (merek === currentMerek.toLowerCase());
             const matchTipe = (currentTipe === 'semua') || (tipe === currentTipe.toLowerCase());
+            const matchStatus = (currentStatus === 'semua') || (status === currentStatus.toLowerCase());
 
-            if (matchSearch && matchMerek && matchTipe) {
+            if (matchSearch && matchTipe && matchStatus) {
                 row.style.display = '';
             } else {
                 row.style.display = 'none';
@@ -542,16 +538,17 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', filterTable);
     }
 
-    merekItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-            merekItems.forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-            currentMerek = this.dataset.merek || this.textContent.trim();
-            if (selectedMerekText) selectedMerekText.textContent = this.textContent.trim();
-            filterTable();
-        });
-    });
+    const btnFilterTipe = document.getElementById('filterTipeOperasi');
+    const btnFilterStatus = document.getElementById('filterStatus');
+
+    function updateButtonColors() {
+        if (btnFilterTipe) {
+            btnFilterTipe.classList.toggle('filter-active', currentTipe !== 'semua');
+        }
+        if (btnFilterStatus) {
+            btnFilterStatus.classList.toggle('filter-active', currentStatus !== 'semua');
+        }
+    }
 
     tipeItems.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -560,6 +557,19 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             currentTipe = this.dataset.tipe || this.textContent.trim();
             if (selectedTipeText) selectedTipeText.textContent = this.textContent.trim() === 'Semua Tipe Operasi' ? 'Tipe Operasi' : this.textContent.trim();
+            updateButtonColors();
+            filterTable();
+        });
+    });
+
+    statusItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            statusItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            currentStatus = this.dataset.status || this.textContent.trim();
+            if (selectedStatusText) selectedStatusText.textContent = this.textContent.trim() === 'Semua Status' ? 'Status' : this.textContent.trim();
+            updateButtonColors();
             filterTable();
         });
     });
@@ -567,12 +577,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnReset) {
         btnReset.addEventListener('click', function() {
             if (searchInput) searchInput.value = '';
-            currentMerek = 'semua';
             currentTipe = 'semua';
-            if (selectedMerekText) selectedMerekText.textContent = 'Semua';
+            currentStatus = 'semua';
             if (selectedTipeText) selectedTipeText.textContent = 'Tipe Operasi';
-            merekItems.forEach(i => i.classList.toggle('active', i.dataset.merek === 'semua'));
+            if (selectedStatusText) selectedStatusText.textContent = 'Status';
             tipeItems.forEach(i => i.classList.toggle('active', i.dataset.tipe === 'semua'));
+            statusItems.forEach(i => i.classList.toggle('active', i.dataset.status === 'semua'));
+            updateButtonColors();
             filterTable();
         });
     }

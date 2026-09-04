@@ -22,7 +22,6 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                        <li><a class="dropdown-item fw-bold" href="#">Semua Tipe Operasi</a></li>
                         <li><a class="dropdown-item" href="#">Low Duty</a></li>
                         <li><a class="dropdown-item" href="#">Medium Duty</a></li>
                         <li><a class="dropdown-item" href="#">High Duty</a></li>
@@ -36,7 +35,6 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterJenis">
-                        <li><a class="dropdown-item fw-bold" href="#">Semua Jenis</a></li>
                         <li><a class="dropdown-item" href="#">Umum</a></li>
                         <li><a class="dropdown-item" href="#">Khusus</a></li>
                     </ul>
@@ -431,4 +429,33 @@ function addSparepartRow(containerId) {
     `;
     container.appendChild(row);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const filterTipeBtn = document.getElementById('filterTipeOperasi');
+    const filterJenisBtn = document.getElementById('filterJenis');
+    const tipeItems = document.querySelectorAll('#filterTipeOperasi + .dropdown-menu .dropdown-item');
+    const jenisItems = document.querySelectorAll('#filterJenis + .dropdown-menu .dropdown-item');
+
+    tipeItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const val = this.textContent.trim();
+            if (filterTipeBtn) {
+                filterTipeBtn.querySelector('span').textContent = val;
+                filterTipeBtn.classList.add('filter-active');
+            }
+        });
+    });
+
+    jenisItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const val = this.textContent.trim();
+            if (filterJenisBtn) {
+                filterJenisBtn.querySelector('span').textContent = val;
+                filterJenisBtn.classList.add('filter-active');
+            }
+        });
+    });
+});
 </script>

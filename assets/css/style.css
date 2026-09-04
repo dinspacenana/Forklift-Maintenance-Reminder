@@ -1279,18 +1279,32 @@ a {
     border: none !important;
     outline: none !important;
     background: transparent !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     font-size: 0.86rem !important;
-    color: #111827 !important;
+    color: #94A3B8 !important;
     width: 82px !important;
     cursor: pointer !important;
     padding: 0 !important;
 }
 
+.date-filter-pill-box input::placeholder {
+    color: #94A3B8 !important;
+    font-weight: 400 !important;
+}
+
 .date-filter-pill-box .material-symbols-outlined {
-    color: #1E293B !important;
+    color: #94A3B8 !important;
     font-size: 1.1rem !important;
     cursor: pointer !important;
+}
+
+.date-filter-pill-box.filter-active input[type="text"] {
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+.date-filter-pill-box.filter-active .material-symbols-outlined {
+    color: #111827 !important;
 }
 
 .date-range-separator {
@@ -3685,8 +3699,8 @@ a {
     padding: 6px 18px !important;
     background: #FFFFFF !important;
     font-size: 0.86rem !important;
-    font-weight: 600 !important;
-    color: #111827 !important;
+    font-weight: 400 !important;
+    color: #94A3B8 !important;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -3697,6 +3711,16 @@ a {
 
 .unit-filter-dropdown-btn .material-symbols-outlined {
     transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #94A3B8 !important;
+}
+
+.unit-filter-dropdown-btn.filter-active {
+    color: #111827 !important;
+    font-weight: 600 !important;
+}
+
+.unit-filter-dropdown-btn.filter-active .material-symbols-outlined {
+    color: #111827 !important;
 }
 
 .unit-filter-dropdown-btn[aria-expanded="true"] .material-symbols-outlined {

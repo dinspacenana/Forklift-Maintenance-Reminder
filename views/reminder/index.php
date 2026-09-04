@@ -19,12 +19,12 @@
                 <!-- Date Range Picker -->
                 <div class="d-flex align-items-center gap-2">
                     <div class="date-filter-pill-box">
-                        <input type="text" value="01/08/2026" readonly>
+                        <input type="text" value="" placeholder="dd/mm/yyyy" readonly>
                         <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                     <span class="date-range-separator">-</span>
                     <div class="date-filter-pill-box">
-                        <input type="text" value="02/08/2026" readonly>
+                        <input type="text" value="" placeholder="dd/mm/yyyy" readonly>
                         <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                 </div>
@@ -36,7 +36,6 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterReminderType">
-                        <li><a class="dropdown-item" href="#">Semua Tipe</a></li>
                         <li><a class="dropdown-item" href="#">Email</a></li>
                         <li><a class="dropdown-item" href="#">WhatsApp</a></li>
                     </ul>
@@ -45,11 +44,10 @@
                 <!-- Dropdown Status -->
                 <div class="dropdown">
                     <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatus" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>Semua Status</span>
+                        <span>Status</span>
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                        <li><a class="dropdown-item" href="#">Semua Status</a></li>
                         <li><a class="dropdown-item" href="#">Menunggu</a></li>
                         <li><a class="dropdown-item" href="#">Terkirim</a></li>
                         <li><a class="dropdown-item" href="#">Gagal</a></li>
@@ -441,13 +439,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const btnFilterType = document.getElementById('filterReminderType');
+    const btnFilterStatus = document.getElementById('filterStatus');
+
+    function updateButtonColors() {
+        if (btnFilterType) btnFilterType.classList.toggle('filter-active', currentType !== 'Semua Tipe');
+        if (btnFilterStatus) btnFilterStatus.classList.toggle('filter-active', currentStatus !== 'Semua Status');
+    }
+
     // Status filter dropdown
     filterStatusItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             const status = this.textContent.trim();
             currentStatus = status;
-            if (filterStatusBtn) filterStatusBtn.textContent = status;
+            if (filterStatusBtn) filterStatusBtn.textContent = (status === 'Semua Status' ? 'Status' : status);
+            updateButtonColors();
             runFilter();
         });
     });
@@ -459,6 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const type = this.textContent.trim();
             currentType = type;
             if (filterTypeBtn) filterTypeBtn.textContent = (type === 'Semua Tipe' ? 'Tipe Reminder' : type);
+            updateButtonColors();
             runFilter();
         });
     });
@@ -468,6 +476,20 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', runFilter);
     }
 
+    // Date filter mockup toggle (untuk melihat efek warna hitam saat dipilih)
+    const dateFilters = document.querySelectorAll('.date-filter-pill-box');
+    dateFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            this.classList.toggle('filter-active');
+            const input = this.querySelector('input');
+            if (this.classList.contains('filter-active')) {
+                input.value = '15/08/2026'; // Simulasi tanggal terpilih
+            } else {
+                input.value = ''; // Kembali ke placeholder
+            }
+        });
+    });
+
     // Reset button
     if (btnReset) {
         btnReset.addEventListener('click', function(e) {
@@ -475,8 +497,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (searchInput) searchInput.value = '';
             currentStatus = 'Semua Status';
             currentType = 'Semua Tipe';
-            if (filterStatusBtn) filterStatusBtn.textContent = 'Semua Status';
+            if (filterStatusBtn) filterStatusBtn.textContent = 'Status';
             if (filterTypeBtn) filterTypeBtn.textContent = 'Tipe Reminder';
+            updateButtonColors();
+            
+            // Reset mockup date filters
+            dateFilters.forEach(filter => {
+                filter.classList.remove('filter-active');
+                filter.querySelector('input').value = '';
+            });
+
             runFilter();
         });
     }

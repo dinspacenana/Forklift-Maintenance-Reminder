@@ -22,10 +22,9 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
-                        <li><a class="dropdown-item" href="#">Semua Tipe</a></li>
-                        <li><a class="dropdown-item" href="#">Low Duty</a></li>
-                        <li><a class="dropdown-item" href="#">Medium Duty</a></li>
                         <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Medium Duty</a></li>
+                        <li><a class="dropdown-item" href="#">Low Duty</a></li>
                     </ul>
                 </div>
 
@@ -36,7 +35,6 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
-                        <li><a class="dropdown-item" href="#">Semua Status</a></li>
                         <li><a class="dropdown-item" href="#">Aktif</a></li>
                         <li><a class="dropdown-item" href="#">Nonaktif</a></li>
                     </ul>
@@ -949,11 +947,24 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', applyCustomerFilter);
     }
 
+    const btnFilterTipe = document.getElementById('filterTipeOperasi');
+    const btnFilterStatus = document.getElementById('filterStatus');
+
+    function updateButtonColors() {
+        if (btnFilterTipe) {
+            btnFilterTipe.classList.toggle('filter-active', selectedTipe !== 'Semua Tipe');
+        }
+        if (btnFilterStatus) {
+            btnFilterStatus.classList.toggle('filter-active', selectedStatus !== 'Semua Status');
+        }
+    }
+
     filterTipeItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             selectedTipe = this.textContent.trim();
             if (filterTipeBtn) filterTipeBtn.textContent = (selectedTipe === 'Semua Tipe' ? 'Tipe Operasi' : selectedTipe);
+            updateButtonColors();
             applyCustomerFilter();
         });
     });
@@ -963,6 +974,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             selectedStatus = this.textContent.trim();
             if (filterStatusBtn) filterStatusBtn.textContent = (selectedStatus === 'Semua Status' ? 'Status' : selectedStatus);
+            updateButtonColors();
             applyCustomerFilter();
         });
     });
@@ -975,6 +987,7 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedStatus = 'Semua Status';
             if (filterTipeBtn) filterTipeBtn.textContent = 'Tipe Operasi';
             if (filterStatusBtn) filterStatusBtn.textContent = 'Status';
+            updateButtonColors();
             applyCustomerFilter();
         });
     }

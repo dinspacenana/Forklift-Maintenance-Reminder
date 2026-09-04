@@ -260,45 +260,29 @@ usort($displayUnits, function($a, $b) {
                     <input type="text" placeholder="Cari Customer atau Unit" id="searchUnitInput" value="">
                 </div>
 
-                <!-- Dropdown Customer -->
-                <div class="dropdown">
-                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterCustomerUnit" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span><?= !empty($customerFilter) ? htmlspecialchars($customerFilter) : 'Customer' ?></span>
-                        <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
-                    </button>
-                    <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterCustomerUnit" style="max-height: 250px; overflow-y: auto;">
-                        <li><a class="dropdown-item <?= empty($customerFilter) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift">Semua Customer</a></li>
-                        <?php
-                        $uniqueCustomers = array_values(array_unique(array_column($allUnits, 'customer')));
-                        sort($uniqueCustomers);
-                        foreach ($uniqueCustomers as $c):
-                        ?>
-                            <li><a class="dropdown-item <?= ($customerFilter === $c) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&customer=<?= urlencode($c) ?>"><?= htmlspecialchars($c) ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
 
-                <!-- Dropdown Jenis -->
+
+                <!-- Filter: Jenis -->
                 <div class="dropdown">
-                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterJenisUnit" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle <?= !empty($jenisFilter) ? 'filter-active' : '' ?>" type="button" id="filterJenisUnit" data-bs-toggle="dropdown" aria-expanded="false">
                         <span><?= !empty($jenisFilter) ? htmlspecialchars($jenisFilter) : 'Jenis' ?></span>
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterJenisUnit">
-                        <li><a class="dropdown-item <?= empty($jenisFilter) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Semua Jenis</a></li>
+                        <!-- Options below -->
                         <li><a class="dropdown-item <?= ($jenisFilter === 'Khusus') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&jenis=Khusus<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Khusus</a></li>
                         <li><a class="dropdown-item <?= ($jenisFilter === 'Umum') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&jenis=Umum<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($statusFilter) ? '&status=' . urlencode($statusFilter) : '' ?>">Umum</a></li>
                     </ul>
                 </div>
 
-                <!-- Dropdown Status -->
+                <!-- Filter: Status -->
                 <div class="dropdown">
-                    <button class="unit-filter-dropdown-btn dropdown-toggle" type="button" id="filterStatusUnit" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="unit-filter-dropdown-btn dropdown-toggle <?= !empty($statusFilter) ? 'filter-active' : '' ?>" type="button" id="filterStatusUnit" data-bs-toggle="dropdown" aria-expanded="false">
                         <span><?= !empty($statusFilter) ? htmlspecialchars($statusFilter) : 'Status' ?></span>
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatusUnit">
-                        <li><a class="dropdown-item <?= empty($statusFilter) ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Semua Status</a></li>
+                        <!-- Options below -->
                         <li><a class="dropdown-item <?= ($statusFilter === 'Overdue') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&status=Overdue<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Overdue</a></li>
                         <li><a class="dropdown-item <?= ($statusFilter === 'Due soon') ? 'fw-bold' : '' ?>" href="index.php?page=unit_forklift&status=Due+soon<?= !empty($customerFilter) ? '&customer=' . urlencode($customerFilter) : '' ?><?= !empty($jenisFilter) ? '&jenis=' . urlencode($jenisFilter) : '' ?>">Due soon</a></li>
                     </ul>

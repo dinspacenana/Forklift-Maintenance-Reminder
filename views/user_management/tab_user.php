@@ -15,7 +15,6 @@
                 <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
             </button>
             <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserRole">
-                <li><a class="dropdown-item active" href="#" data-role="semua">Semua Role</a></li>
                 <li><a class="dropdown-item" href="#" data-role="Administrator">Administrator</a></li>
                 <li><a class="dropdown-item" href="#" data-role="Kepala Toko">Kepala Toko</a></li>
                 <li><a class="dropdown-item" href="#" data-role="Admin Sales">Admin Sales</a></li>
@@ -29,7 +28,6 @@
                 <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
             </button>
             <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterUserStatus">
-                <li><a class="dropdown-item active" href="#" data-status="semua">Semua Status</a></li>
                 <li><a class="dropdown-item" href="#" data-status="Aktif">Aktif</a></li>
                 <li><a class="dropdown-item" href="#" data-status="Nonaktif">Nonaktif</a></li>
             </ul>
@@ -601,6 +599,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const btnFilterRole = document.getElementById('filterUserRole');
+    const btnFilterStatus = document.getElementById('filterUserStatus');
+
+    function updateButtonColors() {
+        if (btnFilterRole) btnFilterRole.classList.toggle('filter-active', currentUserRole !== 'semua');
+        if (btnFilterStatus) btnFilterStatus.classList.toggle('filter-active', currentUserStatus !== 'semua');
+    }
+
     if (searchUserInput) {
         searchUserInput.addEventListener('input', filterUserTable);
     }
@@ -614,6 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectedUserRoleText) {
                 selectedUserRoleText.textContent = this.textContent.trim() === 'Semua Role' ? 'Role' : this.textContent.trim();
             }
+            updateButtonColors();
             filterUserTable();
         });
     });
@@ -627,6 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectedUserStatusText) {
                 selectedUserStatusText.textContent = this.textContent.trim() === 'Semua Status' ? 'Status' : this.textContent.trim();
             }
+            updateButtonColors();
             filterUserTable();
         });
     });
@@ -640,6 +648,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (selectedUserStatusText) selectedUserStatusText.textContent = 'Status';
             roleItems.forEach(i => i.classList.toggle('active', i.dataset.role === 'semua'));
             statusItems.forEach(i => i.classList.toggle('active', i.dataset.status === 'semua'));
+            updateButtonColors();
             filterUserTable();
         });
     }

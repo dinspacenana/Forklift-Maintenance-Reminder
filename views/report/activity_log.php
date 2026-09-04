@@ -23,12 +23,12 @@
                 <!-- Date Range Picker -->
                 <div class="d-flex align-items-center gap-2">
                     <div class="date-filter-pill-box">
-                        <input type="text" value="01/08/2026" readonly>
+                        <input type="text" value="" placeholder="dd/mm/yyyy" readonly>
                         <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                     <span class="date-range-separator">-</span>
                     <div class="date-filter-pill-box">
-                        <input type="text" value="02/08/2026" readonly>
+                        <input type="text" value="" placeholder="dd/mm/yyyy" readonly>
                         <span class="material-symbols-outlined">calendar_today</span>
                     </div>
                 </div>
