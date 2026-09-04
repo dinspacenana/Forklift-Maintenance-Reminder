@@ -43,6 +43,46 @@
 
         let currentFilteredRows = originalRows;
         let currentPage = 1;
+        let activeFilterFn = null;
+
+        function applyCustomFilter(filterFn) {
+            activeFilterFn = (typeof filterFn === 'function') ? filterFn : null;
+            if (activeFilterFn) {
+                currentFilteredRows = originalRows.filter(activeFilterFn);
+            } else {
+                currentFilteredRows = originalRows;
+            }
+            currentPage = 1;
+            refreshPagination();
+        }
+
+        cardContainer.__applyFilter = applyCustomFilter;
+        table.__applyFilter = applyCustomFilter;
+
+        // Check for initial status filter button specifically for reminder page table
+        if (cardContainer.querySelector('#reminderTable')) {
+            const initialStatusBtn = cardContainer.querySelector('#filterStatus span');
+            if (initialStatusBtn) {
+                const initText = initialStatusBtn.textContent.trim().toLowerCase();
+                if (initText === 'semua status') {
+                    activeFilterFn = function(row) {
+                        const s = (row.dataset.status || '').trim().toLowerCase();
+                        return s === 'menunggu' || s === 'gagal';
+                    };
+                    currentFilteredRows = originalRows.filter(activeFilterFn);
+                } else if (initText === 'terkirim') {
+                    activeFilterFn = function(row) {
+                        return (row.dataset.status || '').trim().toLowerCase() === 'terkirim';
+                    };
+                    currentFilteredRows = originalRows.filter(activeFilterFn);
+                } else if (initText !== '' && initText !== 'status') {
+                    activeFilterFn = function(row) {
+                        return (row.dataset.status || '').trim().toLowerCase() === initText;
+                    };
+                    currentFilteredRows = originalRows.filter(activeFilterFn);
+                }
+            }
+        }
 
         function refreshPagination() {
             const total = currentFilteredRows.length;
@@ -148,13 +188,11 @@
             searchInput.dataset.paginationBound = 'true';
             searchInput.addEventListener('input', function () {
                 const q = this.value.toLowerCase().trim();
-                if (!q) {
-                    currentFilteredRows = originalRows;
-                } else {
-                    currentFilteredRows = originalRows.filter(row => {
-                        return row.textContent.toLowerCase().includes(q);
-                    });
-                }
+                currentFilteredRows = originalRows.filter(row => {
+                    const matchesSearch = !q || row.textContent.toLowerCase().includes(q);
+                    const matchesCustom = activeFilterFn ? activeFilterFn(row) : true;
+                    return matchesSearch && matchesCustom;
+                });
                 currentPage = 1;
                 refreshPagination();
             });

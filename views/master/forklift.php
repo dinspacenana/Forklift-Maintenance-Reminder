@@ -90,11 +90,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -113,11 +113,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -136,11 +136,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -159,11 +159,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -182,11 +182,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -205,11 +205,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -228,11 +228,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -251,11 +251,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -274,11 +274,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -297,11 +297,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -320,11 +320,11 @@
                         </td>
                         <td class="text-center">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Forklift" data-bs-toggle="modal" data-bs-target="#editForkliftModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Forklift" data-bs-toggle="modal" data-bs-target="#deleteForkliftModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>

@@ -22,6 +22,7 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterTipeOperasi">
+                        <li><a class="dropdown-item" href="#">Semua Tipe</a></li>
                         <li><a class="dropdown-item" href="#">Low Duty</a></li>
                         <li><a class="dropdown-item" href="#">Medium Duty</a></li>
                         <li><a class="dropdown-item" href="#">Heavy Duty</a></li>
@@ -35,13 +36,14 @@
                         <span class="material-symbols-outlined" style="font-size: 1.1rem; color: #1E293B;">expand_more</span>
                     </button>
                     <ul class="dropdown-menu filter-dropdown-menu" aria-labelledby="filterStatus">
+                        <li><a class="dropdown-item" href="#">Semua Status</a></li>
                         <li><a class="dropdown-item" href="#">Aktif</a></li>
                         <li><a class="dropdown-item" href="#">Nonaktif</a></li>
                     </ul>
                 </div>
 
                 <!-- Reset Button -->
-                <button type="button" class="btn-reset-filter" id="btnResetCustomer" onclick="document.getElementById('searchCustomerInput').value='';">
+                <button type="button" class="btn-reset-filter" id="btnResetCustomer">
                     <span class="material-symbols-outlined">restart_alt</span>
                     <span>Reset</span>
                 </button>
@@ -83,17 +85,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
+                                <button type="button" class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Toyo Matsu') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Toyo Matsu') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
                                 </a>
-                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -111,17 +113,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
+                                <button type="button" class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Nusantara Logistik') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Nusantara Logistik') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
                                 </a>
-                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -139,17 +141,17 @@
                         </td>
                         <td>
                             <div class="action-icons-group">
-                                <button type="button" class="action-icon-btn" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">visibility</span>
+                                <button type="button" class="action-icon-btn icon-view" title="Lihat Detail (Read-Only)" data-bs-toggle="modal" data-bs-target="#detailCustomerModal">
+                                    <span class="material-symbols-outlined">visibility</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Customer (Update)" data-bs-toggle="modal" data-bs-target="#editCustomerModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Robin Jaya') ?>" class="action-icon-btn" title="Lihat Unit Forklift">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">forklift</span>
+                                <a href="index.php?page=unit_forklift&customer=<?= urlencode('PT. Robin Jaya') ?>" class="action-icon-btn icon-forklift" title="Lihat Unit Forklift">
+                                    <span class="material-symbols-outlined">forklift</span>
                                 </a>
-                                <button type="button" class="action-icon-btn" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Customer" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -899,17 +901,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Pencarian Tabel Customer
+    // Filter dan Pencarian Tabel Customer
+    const cardCustomer = document.querySelector('.unit-forklift-main-card');
     const searchInput = document.getElementById('searchCustomerInput');
+    const filterTipeBtn = document.querySelector('#filterTipeOperasi span');
+    const filterStatusBtn = document.querySelector('#filterStatus span');
+    const filterTipeItems = document.querySelectorAll('#filterTipeOperasi + .dropdown-menu .dropdown-item');
+    const filterStatusItems = document.querySelectorAll('#filterStatus + .dropdown-menu .dropdown-item');
+    const btnResetCustomer = document.getElementById('btnResetCustomer');
     const tableRows = document.querySelectorAll('.unit-forklift-table-v2 tbody tr');
 
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase().trim();
+    let selectedTipe = 'Semua Tipe';
+    let selectedStatus = 'Semua Status';
+
+    function applyCustomerFilter() {
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+        const filterFn = function(row) {
+            const text = row.textContent.toLowerCase();
+            const matchSearch = !query || text.includes(query);
+
+            let matchTipe = true;
+            if (selectedTipe !== 'Semua Tipe' && selectedTipe !== 'Tipe Operasi') {
+                matchTipe = text.includes(selectedTipe.toLowerCase());
+            }
+
+            let matchStatus = true;
+            if (selectedStatus !== 'Semua Status' && selectedStatus !== 'Status') {
+                const statusBadge = row.querySelector('.status-pill-badge');
+                const rowStatus = statusBadge ? statusBadge.textContent.trim().toLowerCase() : '';
+                matchStatus = (rowStatus === selectedStatus.toLowerCase());
+            }
+
+            return matchSearch && matchTipe && matchStatus;
+        };
+
+        if (cardCustomer && typeof cardCustomer.__applyFilter === 'function') {
+            cardCustomer.__applyFilter(filterFn);
+        } else {
             tableRows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                row.style.display = (!query || text.includes(query)) ? '' : 'none';
+                row.style.display = filterFn(row) ? '' : 'none';
             });
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', applyCustomerFilter);
+    }
+
+    filterTipeItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            selectedTipe = this.textContent.trim();
+            if (filterTipeBtn) filterTipeBtn.textContent = (selectedTipe === 'Semua Tipe' ? 'Tipe Operasi' : selectedTipe);
+            applyCustomerFilter();
+        });
+    });
+
+    filterStatusItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            selectedStatus = this.textContent.trim();
+            if (filterStatusBtn) filterStatusBtn.textContent = (selectedStatus === 'Semua Status' ? 'Status' : selectedStatus);
+            applyCustomerFilter();
+        });
+    });
+
+    if (btnResetCustomer) {
+        btnResetCustomer.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (searchInput) searchInput.value = '';
+            selectedTipe = 'Semua Tipe';
+            selectedStatus = 'Semua Status';
+            if (filterTipeBtn) filterTipeBtn.textContent = 'Tipe Operasi';
+            if (filterStatusBtn) filterStatusBtn.textContent = 'Status';
+            applyCustomerFilter();
         });
     }
 });

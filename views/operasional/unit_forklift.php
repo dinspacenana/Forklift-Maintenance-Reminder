@@ -357,11 +357,11 @@ usort($displayUnits, function($a, $b) {
                                 </td>
                                 <td style="text-align: center;">
                                     <div class="action-icons-group justify-content-center">
-                                        <button type="button" class="action-icon-btn" title="Edit Unit" onclick="event.stopPropagation(); openEditUnitModal('<?= htmlspecialchars($row['unit']) ?>', '<?= htmlspecialchars($row['customer']) ?>', '<?= htmlspecialchars($row['serial']) ?>', '<?= preg_replace('/[^0-9]/', '', $row['hm']) ?>');">
-                                            <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                        <button type="button" class="action-icon-btn icon-edit" title="Edit Unit" onclick="event.stopPropagation(); openEditUnitModal('<?= htmlspecialchars($row['unit']) ?>', '<?= htmlspecialchars($row['customer']) ?>', '<?= htmlspecialchars($row['serial']) ?>', '<?= preg_replace('/[^0-9]/', '', $row['hm']) ?>');">
+                                            <span class="material-symbols-outlined">edit</span>
                                         </button>
-                                        <button type="button" class="action-icon-btn" title="Hapus Unit" onclick="event.stopPropagation(); openDeleteUnitModal('<?= htmlspecialchars($row['unit']) ?>');">
-                                            <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                        <button type="button" class="action-icon-btn icon-delete" title="Hapus Unit" onclick="event.stopPropagation(); openDeleteUnitModal('<?= htmlspecialchars($row['unit']) ?>');">
+                                            <span class="material-symbols-outlined">delete</span>
                                         </button>
                                     </div>
                                 </td>

@@ -75,5 +75,8 @@
 <!-- Custom Datepicker Script for dd/mm/yyyy consistency -->
 <script src="assets/js/custom-datepicker.js"></script>
 
+<!-- Smooth Page Transitions & Tactile Icon Interactions -->
+<script src="assets/js/page-interactive.js?v=<?= time(); ?>"></script>
+
 </body>
 </html>
