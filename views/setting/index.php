@@ -33,7 +33,7 @@
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
                         <span class="settings-pill-prefix">H -</span>
-                        <input type="number" id="reminderGenDays" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
+                        <input type="number" id="reminderGenDays" placeholder="Masukkan Angka" min="0" oninput="this.value = Math.abs(this.value)">
                     </div>
                     <span class="settings-trailing-text">Dari Tanggal Jatuh Tempo Maintenance</span>
                 </div>
@@ -44,7 +44,7 @@
                 <label class="settings-label">Status Due Soon Dimulai Pada</label>
                 <div class="settings-control-group">
                     <div class="settings-pill-input-box">
-                        <input type="number" id="dueSoonHm" placeholder="Harus angka" min="0" oninput="this.value = Math.abs(this.value)">
+                        <input type="number" id="dueSoonHm" placeholder="Masukkan Angka" min="0" oninput="this.value = Math.abs(this.value)">
                         <span class="settings-pill-suffix">HM</span>
                     </div>
                     <span class="settings-trailing-text">Sebelum Tanggal Jatuh Tempo Maintenance</span>

@@ -19,6 +19,9 @@
                                 Nama Customer
                             </label>
                             <input type="text" class="user-form-input" id="namaCustomerInput" placeholder="Masukkan Customer" autocomplete="off">
+                            <div class="text-muted" style="font-size: 0.74rem; margin-top: 5px; color: #64748B; line-height: 1.3;">
+                                Ketik minimal 1 karakter untuk mencari customer yang sudah terdaftar
+                            </div>
 
                             <!-- Autocomplete Suggestions List -->
                             <div id="customerSuggestions" class="autocomplete-suggestions" style="display: none;"></div>
@@ -61,7 +64,8 @@
                             <div class="col-12 col-sm-6">
                                 <label for="tanggalMaintInput" class="user-form-label">Tanggal Maintenance</label>
                                 <div class="user-date-input-group">
-                                    <input type="date" id="tanggalMaintInput" style="width: 100%; border: none; outline: none; background: transparent;">
+                                    <input type="date" id="tanggalMaintInput" style="width: 100%; border: none; outline: none; background: transparent; padding-left: 18px;" class="hide-native-date-icon">
+                                    <span class="material-symbols-outlined" style="cursor: pointer; color: #64748B; margin-right: 14px;" onclick="document.getElementById('tanggalMaintInput').showPicker()">calendar_today</span>
                                 </div>
                             </div>
                         </div>

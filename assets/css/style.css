@@ -1171,7 +1171,8 @@ a {
     font-weight: 700 !important;
 }
 
-.custom-date-native-input::-webkit-calendar-picker-indicator {
+.custom-date-native-input::-webkit-calendar-picker-indicator,
+.hide-native-date-icon::-webkit-calendar-picker-indicator {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -3294,10 +3295,10 @@ a {
 .settings-pill-select {
     border: 1.5px solid #8FAEC2;
     border-radius: 22px;
-    height: 44px;
+    height: 42px;
     min-width: 190px;
     padding: 0 20px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
     color: #64748B;
     background-color: #FFFFFF;
@@ -3305,12 +3306,13 @@ a {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .settings-pill-select:hover,
 .settings-pill-select:focus {
-    border-color: #475569;
+    border-color: var(--fmr-blue-primary);
+    box-shadow: 0 0 0 3px rgba(96, 132, 153, 0.15);
     outline: none;
 }
 
@@ -3342,31 +3344,34 @@ a {
 .settings-pill-input-box {
     border: 1.5px solid #8FAEC2;
     border-radius: 22px;
-    height: 44px;
+    height: 42px;
     width: 210px;
     padding: 0 18px;
     display: inline-flex;
     align-items: center;
     background: #FFFFFF;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .settings-pill-input-box:focus-within {
-    border-color: #475569;
+    border-color: var(--fmr-blue-primary);
+    box-shadow: 0 0 0 3px rgba(96, 132, 153, 0.15);
 }
 
 .settings-pill-input-box input {
     border: none;
     outline: none;
     background: transparent;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: #111827;
     font-weight: 500;
     width: 100%;
 }
 
 .settings-pill-input-box input::placeholder {
-    color: #8FAEC2;
+    color: #94A3B8;
+    opacity: 1;
+    font-size: 0.86rem;
     font-weight: 400;
 }
 
@@ -3417,11 +3422,12 @@ a {
     background-color: #FBBA16;
     color: #111827;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     border: none;
     border-radius: 10px;
-    padding: 11px 34px;
+    padding: 10px 44px;
     cursor: pointer;
+    min-width: 140px;
     transition: background-color 0.15s ease;
 }
 
