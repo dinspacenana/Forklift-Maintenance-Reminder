@@ -766,7 +766,11 @@ a {
     font-size: 0.84rem;
 }
 
-/* Status Badges */
+/* Status Badges - 4 Status Reminder:
+   1. Biru   = Menunggu (Sebelum due date reminder)
+   2. Kuning = Belum Terkirim (Sudah memasuki due date reminder)
+   3. Hijau  = Terkirim
+   4. Merah  = Gagal */
 .status-badge {
     display: inline-block;
     padding: 4px 14px;
@@ -776,31 +780,41 @@ a {
     text-align: center;
 }
 
-.status-badge.due-soon,
+/* 1. Biru = Menunggu (Sebelum Due Date Reminder) */
 .status-badge.menunggu,
 .status-badge.status-menunggu {
+    background-color: #DBEAFE !important;
+    color: #1D4ED8 !important;
+}
+
+/* 2. Kuning = Belum Terkirim (Ketika Sudah Memasuki Due Date Reminder) */
+.status-badge.belum-terkirim,
+.status-badge.status-belum-terkirim,
+.status-badge.due-soon {
     background-color: var(--fmr-yellow-light) !important;
     color: var(--fmr-yellow-text) !important;
 }
 
-.status-badge.over-due,
-.status-badge.gagal,
-.status-badge.status-gagal {
-    background-color: #FEE2E2 !important;
-    color: #EF4444 !important;
-}
-
-.status-badge.h-7 {
-    background-color: var(--fmr-blue-light);
-    color: var(--fmr-blue-primary);
-}
-
+/* 3. Hijau = Terkirim */
 .status-badge.sukses,
 .status-badge.terkirim,
 .status-badge.status-sukses,
 .status-badge.status-terkirim {
     background-color: var(--fmr-green-light) !important;
     color: var(--fmr-green-text) !important;
+}
+
+/* 4. Merah = Gagal */
+.status-badge.over-due,
+.status-badge.gagal,
+.status-badge.status-gagal {
+    background-color: #FEE2E2 !important;
+    color: #DC2626 !important;
+}
+
+.status-badge.h-7 {
+    background-color: var(--fmr-blue-light);
+    color: var(--fmr-blue-primary);
 }
 
 /* Reminder Type Icons */
@@ -814,6 +828,168 @@ a {
     color: var(--fmr-brown-mail);
     font-size: 1.15rem;
     display: inline-block;
+}
+
+/* Badge Keterangan Terupload */
+.badge-lampiran-terupload {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #DEF7EC;
+    color: #03543F;
+    border: 1px solid #BCF0DA;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 50rem;
+    white-space: nowrap;
+    line-height: 1.25;
+}
+
+.badge-lampiran-terupload .material-symbols-outlined {
+    font-size: 16px;
+    color: #0E9F6E;
+}
+
+/* =========================================================
+   REMINDER TABLE ROW INTERACTION & CLIPBOARD TOAST
+   ========================================================= */
+.reminder-row {
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reminder-row:hover {
+    background-color: #F8FAFC !important;
+}
+
+.reminder-row.row-copied-active {
+    background-color: #ECFDF5 !important;
+    box-shadow: inset 4px 0 0 #10B981 !important;
+    animation: rowCopyPulse 0.35s ease;
+}
+
+@keyframes rowCopyPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.998);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Floating Toast Notification for Auto-Copy */
+.reminder-toast-container {
+    position: fixed;
+    bottom: 26px;
+    right: 28px;
+    z-index: 10999;
+    pointer-events: none;
+}
+
+.reminder-toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #111827;
+    color: #FFFFFF;
+    padding: 12px 18px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.3), 0 4px 8px -2px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    min-width: 320px;
+    max-width: 440px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: auto;
+}
+
+.reminder-toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reminder-toast-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.reminder-toast-icon.wa {
+    background: rgba(37, 211, 102, 0.18);
+    color: #25D366;
+}
+
+.reminder-toast-icon.mail {
+    background: rgba(251, 186, 22, 0.18);
+    color: #FBBA16;
+}
+
+.reminder-toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.reminder-toast-title {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #F9FAFB;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reminder-toast-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.reminder-toast-badge.wa {
+    background-color: #25D366;
+    color: #FFFFFF;
+}
+
+.reminder-toast-badge.mail {
+    background-color: #FBBA16;
+    color: #111827;
+}
+
+.reminder-toast-desc {
+    font-size: 0.78rem;
+    color: #94A3B8;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reminder-toast-close {
+    background: none;
+    border: none;
+    color: #64748B;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.reminder-toast-close:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Summary Badges on Sent Reminder Card */
@@ -1293,11 +1469,12 @@ a {
 }
 
 .date-filter-pill-box .material-symbols-outlined {
-    color: #94A3B8 !important;
+    color: #111827 !important;
     font-size: 1.1rem !important;
     cursor: pointer !important;
 }
 
+.date-filter-pill-box input[type="text"]:not(:placeholder-shown),
 .date-filter-pill-box.filter-active input[type="text"] {
     color: #111827 !important;
     font-weight: 600 !important;
@@ -3711,7 +3888,7 @@ a {
 
 .unit-filter-dropdown-btn .material-symbols-outlined {
     transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-    color: #94A3B8 !important;
+    color: #111827 !important;
 }
 
 .unit-filter-dropdown-btn.filter-active {

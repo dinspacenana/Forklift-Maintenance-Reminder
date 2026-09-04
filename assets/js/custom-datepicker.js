@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
             hiddenPicker.style.cursor = 'pointer';
             hiddenPicker.style.zIndex = '3';
 
+            function updateActiveState() {
+                if (txtInput.value && txtInput.value.trim() !== '' && txtInput.value.trim() !== 'dd/mm/yyyy') {
+                    wrap.classList.add('filter-active');
+                } else {
+                    wrap.classList.remove('filter-active');
+                }
+            }
+
             // Jika ada initial value DD/MM/YYYY atau DD/MM/YY
             if (txtInput.value && txtInput.value.includes('/')) {
                 const parts = txtInput.value.split('/');
@@ -48,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     hiddenPicker.value = `${year}-${month}-${day}`;
                 }
             }
+            updateActiveState();
 
             hiddenPicker.addEventListener('change', function() {
                 if (this.value) {
@@ -58,8 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     txtInput.value = '';
                 }
+                updateActiveState();
                 txtInput.dispatchEvent(new Event('change', { bubbles: true }));
             });
+
+            txtInput.addEventListener('input', updateActiveState);
+            txtInput.addEventListener('change', updateActiveState);
 
             // Klik di area wrap, txtInput, atau icon akan memicu kalender muncul
             wrap.addEventListener('click', function(e) {

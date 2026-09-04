@@ -110,15 +110,12 @@
                                 <td>
                                     <span class="due-date">26 Agu 2026</span>
                                 </td>
-                                <td>
-                                    <div class="due-date">26 Agu 2026</div>
-                                    <div class="cust-city">15.00</div>
-                                </td>
+                                <td>-</td>
                                 <td class="text-center">
                                     <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge due-soon">Menunggu</span>
+                                    <span class="status-badge belum-terkirim">Belum Terkirim</span>
                                 </td>
                             </tr>
 
@@ -134,15 +131,12 @@
                                 <td>
                                     <span class="due-date">28 Agu 2026</span>
                                 </td>
-                                <td>
-                                    <div class="due-date">28 Agu 2026</div>
-                                    <div class="cust-city">10.00</div>
-                                </td>
+                                <td>-</td>
                                 <td class="text-center">
                                     <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge due-soon">Menunggu</span>
+                                    <span class="status-badge belum-terkirim">Belum Terkirim</span>
                                 </td>
                             </tr>
 
@@ -156,17 +150,14 @@
                                     <span class="maint-name">Break System</span>
                                 </td>
                                 <td>
-                                    <span class="due-date">30 Agu 2026</span>
+                                    <span class="due-date">02 Sep 2026</span>
                                 </td>
-                                <td>
-                                    <div class="due-date">30 Agu 2026</div>
-                                    <div class="cust-city">14.00</div>
-                                </td>
+                                <td>-</td>
                                 <td class="text-center">
                                     <span class="material-symbols-outlined type-icon-mail">mail</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge due-soon">Menunggu</span>
+                                    <span class="status-badge menunggu">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -180,17 +171,14 @@
                                     <span class="maint-name">Tune Up</span>
                                 </td>
                                 <td>
-                                    <span class="due-date">02 Sep 2026</span>
+                                    <span class="due-date">08 Sep 2026</span>
                                 </td>
-                                <td>
-                                    <div class="due-date">02 Sep 2026</div>
-                                    <div class="cust-city">09.00</div>
-                                </td>
+                                <td>-</td>
                                 <td class="text-center">
                                     <span class="material-symbols-outlined type-icon-wa">chat</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="status-badge due-soon">Menunggu</span>
+                                    <span class="status-badge menunggu">Menunggu</span>
                                 </td>
                             </tr>
 
@@ -256,7 +244,6 @@
                 <!-- Summary Badges -->
                 <div class="summary-pills-row">
                     <span class="summary-pill pill-success">12 Terkirim</span>
-                    <span class="summary-pill pill-danger">2 Gagal</span>
                 </div>
 
                 <!-- Filter Tabs -->
@@ -306,7 +293,7 @@
                                     11:44
                                 </td>
                                 <td style="text-align: end;">
-                                    <span class="status-badge status-gagal">Gagal</span>
+                                    <span class="status-badge status-sukses">Terkirim</span>
                                 </td>
                             </tr>
 

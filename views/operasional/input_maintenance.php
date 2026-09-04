@@ -65,7 +65,7 @@
                                 <label for="tanggalMaintInput" class="user-form-label">Tanggal Maintenance</label>
                                 <div class="user-date-input-group">
                                     <input type="date" id="tanggalMaintInput" style="width: 100%; border: none; outline: none; background: transparent; padding-left: 18px;" class="hide-native-date-icon">
-                                    <span class="material-symbols-outlined" style="cursor: pointer; color: #64748B; margin-right: 14px;" onclick="document.getElementById('tanggalMaintInput').showPicker()">calendar_today</span>
+                                    <span class="material-symbols-outlined" style="cursor: pointer; color: #111827; margin-right: 14px;" onclick="document.getElementById('tanggalMaintInput').showPicker()">calendar_today</span>
                                 </div>
                             </div>
                         </div>
