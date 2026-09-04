@@ -50,6 +50,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     vertical-align: middle;
@@ -58,6 +66,31 @@
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.15s ease, filter 0.15s ease;
+    user-select: none;
+}
+
+/* Tactile Click & Active State on Icons */
+button:active .material-symbols-outlined,
+a:active .material-symbols-outlined,
+.action-icon-btn:active .material-symbols-outlined,
+.dropdown-toggle:active .material-symbols-outlined,
+.btn-reset-filter:active .material-symbols-outlined,
+.btn-assign-unit:active .material-symbols-outlined,
+.material-symbols-outlined:active {
+    transform: scale(0.82) !important;
+}
+
+/* Micro-Interaction: Pop/Bounce on Click */
+@keyframes fmrIconBounce {
+    0% { transform: scale(1); }
+    35% { transform: scale(0.74); }
+    70% { transform: scale(1.22); }
+    100% { transform: scale(1); }
+}
+
+.material-symbols-outlined.icon-bounce {
+    animation: fmrIconBounce 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 body {
@@ -215,7 +248,11 @@ a {
     color: #4B5563;
     font-size: 0.88rem;
     font-weight: 500;
-    transition: all 0.15s ease-in-out;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.sidebar-link * {
+    pointer-events: none;
 }
 
 .sidebar-link .icon-box {
@@ -225,6 +262,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease, color 0.18s ease;
 }
 
 .sidebar-link:hover {
@@ -232,15 +270,32 @@ a {
     color: var(--fmr-text-dark);
 }
 
-.sidebar-link.active {
+.sidebar-link:hover .icon-box {
+    transform: scale(1.12);
+}
+
+.sidebar-link:active {
+    background-color: #E5E7EB;
+    transform: scale(0.98);
+}
+
+.sidebar-link:active .icon-box {
+    transform: scale(0.92);
+}
+
+.sidebar-link.active,
+.sidebar-link.active:hover {
     background-color: var(--fmr-blue-primary);
     color: #FFFFFF;
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(96, 132, 153, 0.25);
+    transform: none;
 }
 
-.sidebar-link.active .icon-box {
+.sidebar-link.active .icon-box,
+.sidebar-link.active:hover .icon-box {
     color: #FFFFFF;
+    transform: none;
 }
 
 /* =========================================================
@@ -395,11 +450,62 @@ a {
 }
 
 /* =========================================================
-   DASHBOARD CONTENT
+   DASHBOARD CONTENT & PAGE TRANSITION
    ========================================================= */
+@keyframes fmrPageEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fmrPageExit {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
+
 .dashboard-container {
     padding: 28px 32px 48px;
     flex: 1;
+    animation: fmrPageEnter 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dashboard-container.fmr-page-exit {
+    animation: fmrPageExit 0.14s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+/* =========================================================
+   MODAL & BACKDROP STACKING CONTEXT & SOLID BACKGROUNDS
+   ========================================================= */
+.modal-backdrop {
+    z-index: 1050;
+}
+
+.modal {
+    z-index: 1055;
+}
+
+.modal-content,
+.modal-user-content,
+.modal-customer-content,
+.modal-forklift-content,
+.modal-delete-content,
+.modal-unit-detail-content,
+.modal-form-unit-content,
+.modal-delete-unit-content,
+.reminder-modal-content,
+.fmr-modal-content {
+    background-color: #FFFFFF !important;
 }
 
 .page-title {
@@ -576,6 +682,27 @@ a {
     height: 100%;
 }
 
+/* Clickable Table Card */
+.fmr-clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.fmr-clickable-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    border-color: #E2E8F0;
+}
+
+.fmr-clickable-card .fmr-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.fmr-clickable-card .fmr-table tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
 .card-heading-main {
     font-size: 1.15rem;
     font-weight: 700;
@@ -735,9 +862,9 @@ a {
 }
 
 .fmr-tab-link.active {
-    color: #D97706;
+    color: #B45309;
     font-weight: 700;
-    border-bottom-color: #F59E0B;
+    border-bottom: 2px solid #FBBA16;
 }
 
 .fmr-tab-link:hover:not(.active) {
@@ -1311,23 +1438,55 @@ a {
     background: transparent;
     border: none;
     padding: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1.05rem;
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    font-size: 1.1rem;
+    color: #111827;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none !important;
+    position: relative;
+}
+
+.action-icon-btn .material-symbols-outlined {
+    font-size: 1.15rem;
+    color: inherit;
+    transition: color 0.15s ease;
 }
 
 .action-icon-btn:hover {
-    transform: scale(1.15);
+    transform: scale(1.18);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.action-icon-btn.icon-view { color: #1F2937; }
-.action-icon-btn.icon-edit { color: #608499; }
-.action-icon-btn.icon-forklift { color: #0F172A; }
-.action-icon-btn.icon-delete { color: #DC2626; }
+.action-icon-btn:active {
+    transform: scale(0.85) !important;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.action-icon-btn.icon-view:hover { 
+    color: #1F2937; 
+    background-color: #F1F5F9;
+}
+
+.action-icon-btn.icon-edit:hover { 
+    color: #486678; 
+    background-color: #E0EBF2;
+}
+
+.action-icon-btn.icon-forklift:hover { 
+    color: #B45309; 
+    background-color: #FEF3C7;
+}
+
+.action-icon-btn.icon-delete:hover { 
+    color: #DC2626; 
+    background-color: #FEE2E2;
+}
 
 /* Customer Modal Styling */
 .modal-customer-content {
@@ -2152,6 +2311,10 @@ a {
     color: #0F172A;
 }
 
+.tab-pill-btn:active {
+    transform: scale(0.96);
+}
+
 .user-filter-bar {
     display: flex;
     align-items: center;
@@ -2174,13 +2337,30 @@ a {
     gap: 8px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.15s ease;
+    transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-reset-filter .material-symbols-outlined {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .btn-reset-filter:hover {
     background-color: #F8FAFC;
     border-color: #1E293B;
     color: #111827;
+    transform: translateY(-1px);
+}
+
+.btn-reset-filter:hover .material-symbols-outlined {
+    transform: rotate(-90deg);
+}
+
+.btn-reset-filter:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.btn-reset-filter:active .material-symbols-outlined {
+    transform: rotate(-180deg) scale(0.82) !important;
 }
 
 .btn-add-user {
@@ -2195,11 +2375,19 @@ a {
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.18s ease;
 }
 
 .btn-add-user:hover {
     background-color: #E5A50A;
+    color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(251, 186, 22, 0.35);
+}
+
+.btn-add-user:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 2px 6px rgba(251, 186, 22, 0.2);
 }
 
 .user-table thead th {
@@ -2396,11 +2584,18 @@ a {
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.18s ease;
 }
 
 .btn-role-edit:hover {
     background-color: #E5A50A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 186, 22, 0.3);
+}
+
+.btn-role-edit:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 1px 4px rgba(251, 186, 22, 0.2);
 }
 
 .btn-role-akses {
@@ -2415,11 +2610,18 @@ a {
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.18s ease;
 }
 
 .btn-role-akses:hover {
     background-color: #E5A50A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 186, 22, 0.3);
+}
+
+.btn-role-akses:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 1px 4px rgba(251, 186, 22, 0.2);
 }
 
 .user-tab-divider {
@@ -2431,6 +2633,7 @@ a {
 
 /* User & Role Modals */
 .modal-user-content {
+    background-color: #FFFFFF !important;
     border-radius: 24px;
     border: none;
     padding: 28px 36px 36px;
@@ -3483,6 +3686,15 @@ a {
     gap: 8px;
     cursor: pointer;
     box-shadow: none !important;
+    transition: all 0.18s ease;
+}
+
+.unit-filter-dropdown-btn .material-symbols-outlined {
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unit-filter-dropdown-btn[aria-expanded="true"] .material-symbols-outlined {
+    transform: rotate(180deg);
 }
 
 .unit-filter-dropdown-btn::after {
@@ -3498,7 +3710,7 @@ a {
     border-radius: 10px;
     padding: 8px 20px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, box-shadow 0.18s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3509,6 +3721,13 @@ a {
 .btn-assign-unit:hover {
     background-color: #E5A50A;
     color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(251, 186, 22, 0.35);
+}
+
+.btn-assign-unit:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow: 0 2px 6px rgba(251, 186, 22, 0.2);
 }
 
 .unit-forklift-table-v2 {

@@ -87,11 +87,11 @@
                         <td>Low Duty</td>
                         <td style="text-align: center;">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -109,11 +109,11 @@
                         <td>Medium Duty</td>
                         <td style="text-align: center;">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -131,11 +131,11 @@
                         <td>Low Duty</td>
                         <td style="text-align: center;">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -153,11 +153,11 @@
                         <td>Low Duty</td>
                         <td style="text-align: center;">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
@@ -175,11 +175,11 @@
                         <td>Low Duty</td>
                         <td style="text-align: center;">
                             <div class="action-icons-group justify-content-center">
-                                <button type="button" class="action-icon-btn" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #94A3B8;">edit</span>
+                                <button type="button" class="action-icon-btn icon-edit" title="Edit Maintenance" data-bs-toggle="modal" data-bs-target="#editJenisMaintModal">
+                                    <span class="material-symbols-outlined">edit</span>
                                 </button>
-                                <button type="button" class="action-icon-btn" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
-                                    <span class="material-symbols-outlined" style="font-size: 1.15rem; color: #DC2626;">delete</span>
+                                <button type="button" class="action-icon-btn icon-delete" title="Hapus Maintenance" data-bs-toggle="modal" data-bs-target="#deleteJenisMaintModal">
+                                    <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </div>
                         </td>
